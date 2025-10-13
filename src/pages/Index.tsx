@@ -14,9 +14,9 @@ const Index = () => {
   const shouldReduceMotion = useReducedMotion();
   
   const heroImages = [
-    "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec",
-    "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
-    "https://images.unsplash.com/photo-1527430253228-e93688616381"
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+    "https://images.unsplash.com/photo-1557804506-669a67965ba0"
   ];
 
   useEffect(() => {
@@ -139,40 +139,26 @@ const Index = () => {
                   </div>
                 ))}
                 
-                {/* Overlay card - Live Results */}
+                {/* Overlay card - Today at a glance */}
                 <Card className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:w-80 shadow-xl bg-white/95 backdrop-blur">
-                  <CardHeader className="pb-2 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-xs text-muted-foreground font-medium">Campaign: Q1 Outreach</CardTitle>
-                      <span className="inline-flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-                    </div>
-                    <CardDescription className="text-sm font-semibold text-foreground leading-tight">
-                      "Hey Sarah, noticed you just expanded into Austin..."
+                  <CardHeader className="pb-3 space-y-1">
+                    <CardTitle className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Today at a glance</CardTitle>
+                    <CardDescription className="text-2xl font-bold text-foreground leading-tight">
+                      Kid Activity Time
                     </CardDescription>
+                    <p className="text-xs text-muted-foreground pt-1">Team bonding session underway</p>
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-muted-foreground">Delivered 8:42 AM</span>
-                      <span className="text-accent font-semibold">Opened 8:51 AM</span>
-                    </div>
-                    <div className="p-3 rounded-lg bg-secondary/30 border border-accent/20">
-                      <p className="text-xs italic text-foreground/80 leading-relaxed">
-                        "This is exactly what we need. Can we jump on a call this week?"
-                      </p>
-                      <p className="text-xs text-muted-foreground mt-2">— Sarah M. • 9:03 AM</p>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2 pt-2">
-                      <div className="text-center">
-                        <p className="text-lg font-bold text-accent">92%</p>
-                        <p className="text-xs text-muted-foreground">Opens</p>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Progress</span>
+                        <span className="text-foreground font-semibold">75%</span>
                       </div>
-                      <div className="text-center">
-                        <p className="text-lg font-bold text-accent">24%</p>
-                        <p className="text-xs text-muted-foreground">Replies</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-lg font-bold text-accent">12%</p>
-                        <p className="text-xs text-muted-foreground">Booked</p>
+                      <div className="h-2 bg-[hsl(var(--eggshell))] rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-[hsl(var(--golden))] rounded-full transition-all duration-500"
+                          style={{ width: '75%' }}
+                        />
                       </div>
                     </div>
                   </CardContent>
