@@ -11,7 +11,6 @@ import { Diagram } from "@/components/Diagram";
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
   const shouldReduceMotion = useReducedMotion();
   
   const heroImages = [
@@ -26,13 +25,6 @@ const Index = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -128,25 +120,23 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              {/* Amber glow behind slideshow */}
-              <div className="absolute inset-0 bg-[#f9904a] opacity-15 blur-3xl rounded-2xl" />
-              
-              {/* Device mockup with cycling images */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-secondary/50 border border-border aspect-[4/3]">
+              {/* Static tile grid of images */}
+              <div className="grid grid-cols-2 gap-4">
                 {heroImages.map((src, index) => (
-                  <motion.img
+                  <div
                     key={src}
-                    src={src}
-                    alt="Dashboard preview"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: activeImage === index ? 1 : 0 }}
-                    transition={{ duration: 1 }}
-                    style={{
-                      transform: shouldReduceMotion ? 'none' : `translateY(${(window.scrollY * 0.2)}px)`
-                    }}
-                  />
+                    className={`rounded-2xl overflow-hidden shadow-lg ${
+                      index === 0 ? 'col-span-2' : ''
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`Dashboard preview ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 ))}
                 
                 {/* Overlay card - Live Results */}
