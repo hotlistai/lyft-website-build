@@ -14,9 +14,9 @@ const Index = () => {
   const shouldReduceMotion = useReducedMotion();
   
   const heroImages = [
-    "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec",
-    "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
-    "https://images.unsplash.com/photo-1527430253228-e93688616381"
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+    "https://images.unsplash.com/photo-1557804506-669a67965ba0"
   ];
 
   useEffect(() => {
