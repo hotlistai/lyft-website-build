@@ -6,6 +6,7 @@ import logo from "@/assets/lyftemail-logo.png";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check, Play } from "lucide-react";
+import { Diagram } from "@/components/Diagram";
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -276,9 +277,7 @@ const Index = () => {
               <Card className="shadow-lg">
                 <CardContent className="pt-6">
                   <p className="text-lg mb-6">Every campaign blends automation with human editing for warmth and clarity.</p>
-                  <div className="w-full h-32 bg-gradient-to-r from-accent/20 to-primary/20 rounded-lg flex items-center justify-center text-sm text-foreground/60">
-                    [AI + Human workflow diagram]
-                  </div>
+                  <Diagram type="ai-human" className="h-[200px]" />
                 </CardContent>
               </Card>
             </TabsContent>
@@ -286,9 +285,7 @@ const Index = () => {
               <Card className="shadow-lg">
                 <CardContent className="pt-6">
                   <p className="text-lg mb-6">Lead Locator filters millions of records to find motivated, verified, ready‑to‑act prospects.</p>
-                  <div className="w-full h-32 bg-gradient-to-r from-accent/20 to-primary/20 rounded-lg flex items-center justify-center text-sm text-foreground/60">
-                    [Data filtering diagram]
-                  </div>
+                  <Diagram type="data-filter" className="h-[240px]" />
                 </CardContent>
               </Card>
             </TabsContent>
@@ -296,9 +293,7 @@ const Index = () => {
               <Card className="shadow-lg">
                 <CardContent className="pt-6">
                   <p className="text-lg mb-6">Modeled from your own words so automation feels like you.</p>
-                  <div className="w-full h-32 bg-gradient-to-r from-accent/20 to-primary/20 rounded-lg flex items-center justify-center text-sm text-foreground/60">
-                    [Tone modeling diagram]
-                  </div>
+                  <Diagram type="tone-model" className="h-[200px]" />
                 </CardContent>
               </Card>
             </TabsContent>
@@ -306,9 +301,7 @@ const Index = () => {
               <Card className="shadow-lg">
                 <CardContent className="pt-6">
                   <p className="text-lg mb-6">Systems learn from every reply and get smarter with each send.</p>
-                  <div className="w-full h-32 bg-gradient-to-r from-accent/20 to-primary/20 rounded-lg flex items-center justify-center text-sm text-foreground/60">
-                    [Learning pipeline diagram]
-                  </div>
+                  <Diagram type="pipeline" className="h-[200px]" />
                 </CardContent>
               </Card>
             </TabsContent>
@@ -613,9 +606,10 @@ const Index = () => {
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                   <p className="text-sm text-foreground/70 mb-4">{step.desc}</p>
-                  <div className="w-full h-20 bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center text-xs text-foreground/40">
-                    [diagram]
-                  </div>
+                  <Diagram 
+                    type={["intake", "trusted-sending", "lead-locator", "launch-learn"][index] as any}
+                    className="h-[180px]"
+                  />
                 </div>
               </div>
             ))}
