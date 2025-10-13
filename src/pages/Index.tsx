@@ -15,9 +15,9 @@ const Index = () => {
   const shouldReduceMotion = useReducedMotion();
   
   const heroImages = [
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    "https://images.unsplash.com/photo-1521791136064-7986c2920216",
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0"
+    "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec",
+    "https://images.unsplash.com/photo-1517433456452-f9633a875f6f",
+    "https://images.unsplash.com/photo-1527430253228-e93688616381"
   ];
 
   useEffect(() => {
@@ -128,8 +128,8 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              {/* Radial glow */}
-              <div className="absolute inset-0 bg-gradient-radial from-accent/20 via-transparent to-transparent blur-3xl" />
+              {/* Amber glow behind slideshow */}
+              <div className="absolute inset-0 bg-[#f9904a] opacity-15 blur-3xl rounded-2xl" />
               
               {/* Device mockup with cycling images */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-secondary/50 border border-border aspect-[4/3]">
@@ -308,11 +308,20 @@ const Index = () => {
           </Tabs>
 
           {/* Lead Intelligence callout */}
-          <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-xl border-2 border-accent/20">
-            <CardHeader>
+          <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-xl border-2 border-accent/20 relative overflow-hidden">
+            <div 
+              className="absolute inset-0 opacity-[0.08] pointer-events-none"
+              style={{
+                backgroundImage: 'url(https://images.unsplash.com/photo-1517433456452-f9633a875f6f)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
+            />
+            <div className="absolute inset-0 bg-[hsl(var(--cream))] opacity-90 pointer-events-none" />
+            <CardHeader className="relative z-10">
               <CardTitle className="text-2xl">Lead Intelligence Advantage</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 relative z-10">
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
                   { label: "Ownership", value: "absentee, corporate, out‑of‑state" },
@@ -463,8 +472,17 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-20 sm:py-32 bg-white relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1527430253228-e93688616381)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: 'rotate(-5deg) scale(1.2)'
+          }}
+        />
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-6 fade-up opacity-0 translate-y-8 transition-all duration-700">
             Simple Plans. Serious Results.
           </h2>
@@ -594,16 +612,36 @@ const Index = () => {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Intake for tone", desc: "We learn your voice and messaging style" },
-              { title: "Trusted sending", desc: "Infrastructure setup with domain warm‑up" },
-              { title: "Lead Locator build", desc: "Precision list creation with verified data" },
-              { title: "Launch and learn", desc: "Live monitoring with continuous optimization" }
+              { 
+                title: "Intake for tone", 
+                desc: "We learn your voice and messaging style",
+                imgUrl: "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec"
+              },
+              { 
+                title: "Trusted sending", 
+                desc: "Infrastructure setup with domain warm‑up",
+                imgUrl: "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec"
+              },
+              { 
+                title: "Lead Locator build", 
+                desc: "Precision list creation with verified data",
+                imgUrl: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f"
+              },
+              { 
+                title: "Launch and learn", 
+                desc: "Live monitoring with continuous optimization",
+                imgUrl: "https://images.unsplash.com/photo-1527430253228-e93688616381"
+              }
             ].map((step, index) => (
               <div key={index} className="fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: `${index * 100}ms` }}>
                 <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                    {index + 1}
-                  </div>
+                  <img 
+                    src={step.imgUrl}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="w-14 h-14 rounded-lg object-cover mx-auto mb-3 border border-[hsl(var(--eggshell))]"
+                  />
                   <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                   <p className="text-sm text-foreground/70 mb-4">{step.desc}</p>
                   <Diagram 
