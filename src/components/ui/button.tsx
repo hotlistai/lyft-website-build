@@ -9,11 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] rounded-full before:absolute before:inset-0 before:bg-gradient-to-t before:from-white/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md",
-        outline: "border-2 border-foreground bg-transparent hover:bg-foreground hover:text-background hover:shadow-md hover:scale-[1.02] rounded-full",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md",
-        ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
+        default: "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:shadow-md hover:scale-[1.02] active:scale-[0.98] rounded-full transition-all",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-full",
+        outline: "border-2 border-input bg-background hover:bg-accent/10 hover:border-primary hover:text-primary hover:shadow-sm hover:scale-[1.02] rounded-full transition-all",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full shadow-sm",
+        ghost: "hover:bg-accent/10 hover:text-accent-foreground rounded-md",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

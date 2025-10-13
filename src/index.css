@@ -8,13 +8,14 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Lyft Email Brand Colors */
-    --chili: 4 100% 63%;
+    /* Lyft Email Brand Colors - Updated to Blue Scheme */
+    --chili: 4 84% 57%;
     --golden: 34 97% 68%;
-    --cream: 42 100% 97%;
-    --eggshell: 30 50% 98%;
+    --cream: 210 40% 98%;
+    --eggshell: 210 30% 97%;
     --white: 0 0% 100%;
-    --amber: 25 95% 63%;
+    --blue-primary: 217 91% 60%;
+    --blue-dark: 221 83% 53%;
     --graphite: 0 0% 19%;
     --navy: 225 47% 11%;
 
@@ -25,8 +26,8 @@ All colors MUST be HSL.
     --card: var(--white);
     --card-foreground: var(--graphite);
 
-    --primary: var(--amber);
-    --primary-foreground: var(--navy);
+    --primary: var(--blue-primary);
+    --primary-foreground: var(--white);
 
     --secondary: var(--eggshell);
     --secondary-foreground: var(--graphite);
@@ -39,7 +40,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: var(--amber);
+    --ring: var(--blue-primary);
 
     --radius: 1rem;
 
