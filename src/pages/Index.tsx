@@ -605,39 +605,31 @@ const Index = () => {
               { 
                 title: "Intake for tone", 
                 desc: "We learn your voice and messaging style",
-                imgUrl: "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec"
+                diagramType: "intake" as const
               },
               { 
                 title: "Trusted sending", 
                 desc: "Infrastructure setup with domain warm‑up",
-                imgUrl: "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec"
+                diagramType: "trusted-sending" as const
               },
               { 
                 title: "Lead Locator build", 
                 desc: "Precision list creation with verified data",
-                imgUrl: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f"
+                diagramType: "lead-locator" as const
               },
               { 
                 title: "Launch and learn", 
                 desc: "Live monitoring with continuous optimization",
-                imgUrl: "https://images.unsplash.com/photo-1527430253228-e93688616381"
+                diagramType: "launch-learn" as const
               }
             ].map((step, index) => (
               <div key={index} className="fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: `${index * 100}ms` }}>
                 <div className="text-center">
-                  <img 
-                    src={step.imgUrl}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    className="w-14 h-14 rounded-lg object-cover mx-auto mb-3 border border-[hsl(var(--eggshell))]"
-                  />
+                  <div className="mb-4 h-32 flex items-center justify-center">
+                    <Diagram type={step.diagramType} className="h-full w-full" />
+                  </div>
                   <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-foreground/70 mb-4">{step.desc}</p>
-                  <Diagram 
-                    type={["intake", "trusted-sending", "lead-locator", "launch-learn"][index] as any}
-                    className="h-[180px]"
-                  />
+                  <p className="text-sm text-foreground/70">{step.desc}</p>
                 </div>
               </div>
             ))}
