@@ -64,7 +64,7 @@ const Index = () => {
                 Pricing
               </a>
               <Button asChild size="sm">
-                <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
               </Button>
             </div>
           </div>
@@ -90,7 +90,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild size="lg">
-                  <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                  <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#how">See How It Works</a>
@@ -331,7 +331,7 @@ const Index = () => {
                 "Fifteen years in the data mines taught us this: The right list is half the sale. Lyft Email finishes the job."
               </blockquote>
               <Button asChild>
-                <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
               </Button>
             </CardContent>
           </Card>
@@ -450,7 +450,7 @@ const Index = () => {
                     <p className="text-foreground/70 mb-4 ml-20">{step.desc}</p>
                     <div className="ml-20">
                       <Button asChild size="sm">
-                        <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                        <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
                       </Button>
                     </div>
                   </div>
@@ -503,7 +503,7 @@ const Index = () => {
                   </li>
                 </ul>
                 <Button asChild className="w-full">
-                  <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                  <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
                 </Button>
               </CardContent>
             </Card>
@@ -532,7 +532,7 @@ const Index = () => {
                   </li>
                 </ul>
                 <Button asChild className="w-full">
-                  <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                  <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
                 </Button>
               </CardContent>
             </Card>
@@ -558,7 +558,7 @@ const Index = () => {
                   </li>
                 </ul>
                 <Button asChild className="w-full">
-                  <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+                  <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
                 </Button>
               </CardContent>
             </Card>
@@ -647,7 +647,7 @@ const Index = () => {
             Schedule a Zoom call and we'll show you how Lyft Email turns cold outreach into warm conversations.
           </p>
           <Button asChild size="lg">
-            <a href="https://join.hotlistai.com/book/">Start My Outreach</a>
+            <a href="https://calendly.com/hotlistai/30min">Start My Outreach</a>
           </Button>
         </div>
       </section>
@@ -668,7 +668,7 @@ const Index = () => {
             <a href="#features" className="hover:text-primary transition-colors">
               Client Results
             </a>
-            <a href="https://join.hotlistai.com/book/" className="hover:text-primary transition-colors">
+            <a href="https://calendly.com/hotlistai/30min" className="hover:text-primary transition-colors">
               Start My Outreach
             </a>
           </div>
