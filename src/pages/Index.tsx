@@ -642,44 +642,31 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="max-w-4xl mx-auto mb-12"
+            className="max-w-3xl mx-auto mb-12"
           >
-            <div className="border-t border-border pt-16">
+            <div className="border-t border-border pt-12">
               <div className="text-center mb-8">
-                <h3 className="text-2xl sm:text-3xl font-semibold mb-3">Pay-Per-Lead</h3>
-                <p className="text-foreground/60 text-lg">Performance-based pricing. Pay only for results.</p>
+                <h3 className="text-2xl font-semibold mb-3">Custom Pay-Per-Lead</h3>
+                <p className="text-foreground/60">Prefer performance-only pricing?</p>
               </div>
               
-              <Card className="bg-white border border-border shadow-sm hover:shadow-md transition-all rounded-xl">
-                <CardContent className="pt-8 pb-8">
-                  <div className="text-center mb-6">
-                    <div className="inline-block bg-primary/5 px-8 py-4 rounded-xl mb-4">
-                      <p className="text-5xl font-bold text-primary mb-2">$180</p>
-                      <p className="text-foreground/60">per booked conversation</p>
+              <Card className="bg-secondary/30 border border-border shadow-sm rounded-xl">
+                <CardContent className="pt-6 space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <p className="font-semibold mb-1">$1,000 setup</p>
+                      <p className="text-xs text-foreground/60">+ $180 per booked conversation</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <p className="font-semibold mb-1">No monthly base</p>
+                      <p className="text-xs text-foreground/60">Perfect for roofing, solar, HVAC</p>
                     </div>
                   </div>
-                  
-                  <div className="grid sm:grid-cols-3 gap-4 mb-6 max-w-2xl mx-auto">
-                    <div className="text-center p-4 bg-muted/50 rounded-lg">
-                      <p className="font-semibold text-lg mb-1">$1,000</p>
-                      <p className="text-sm text-foreground/60">One-time setup</p>
-                    </div>
-                    <div className="text-center p-4 bg-muted/50 rounded-lg">
-                      <p className="font-semibold text-lg mb-1">$0</p>
-                      <p className="text-sm text-foreground/60">Monthly base fee</p>
-                    </div>
-                    <div className="text-center p-4 bg-muted/50 rounded-lg">
-                      <p className="font-semibold text-lg mb-1">48hrs</p>
-                      <p className="text-sm text-foreground/60">Make-good SLA</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-sm text-center text-foreground/60 mb-6 max-w-xl mx-auto">
-                    Perfect for high-ticket verticals like roofing, solar, and HVAC. Optional 2–3% close-fee alignment available.
+                  <p className="text-xs text-center text-foreground/60 pt-2">
+                    Includes 48-hour make-good and optional 2–3% close-fee alignment
                   </p>
-                  
-                  <Button asChild className="w-full sm:w-auto mx-auto block rounded-full" size="lg">
-                    <a href="https://calendly.com/hotlistai/lyftemail">Get Custom PPL Quote</a>
+                  <Button asChild className="w-full rounded-full mt-4" variant="outline">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Contact us for Custom PPL Pricing</a>
                   </Button>
                 </CardContent>
               </Card>
