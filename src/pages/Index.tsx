@@ -655,7 +655,7 @@ const Index = () => {
                   <div className="grid sm:grid-cols-2 gap-3 text-sm">
                     <div className="text-center p-4 bg-white rounded-lg">
                       <p className="font-semibold mb-1">$1,000 setup</p>
-                      <p className="text-xs text-foreground/60">+ $180 per booked conversation</p>
+                      <p className="text-xs text-foreground/60">+ $180 per lead</p>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg">
                       <p className="font-semibold mb-1">No monthly base</p>
