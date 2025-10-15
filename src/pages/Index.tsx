@@ -477,31 +477,64 @@ const Index = () => {
             Simple Plans. Serious Results.
           </h2>
           <p className="text-lg sm:text-xl text-center text-foreground/70 max-w-3xl mx-auto mb-16 sm:mb-20 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            We price like operators, not agencies. No vague retainers or pay‑per‑appointment gimmicks. 
-            Every plan includes voice modeling, domain setup, deliverability protection, and human review.
+            No retainers. No gimmicks. Just data-driven, human-sounding emails that book real conversations.
+            Every plan includes voice modeling, lead intelligence, deliverability protection, and human review.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-8">
+          {/* Why 3-Month Minimum */}
+          <div className="max-w-2xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <h3 className="text-2xl font-bold text-center mb-4">Why a 3-Month Minimum?</h3>
+            <div className="text-center text-foreground/70 space-y-2">
+              <p>Real inbox trust takes time.</p>
+              <p>Warm-ups and deliverability need consistency.</p>
+              <p>Campaigns learn and optimize each week.</p>
+              <p>And 43% of booked appointments come from follow-ups.</p>
+              <p className="pt-2">That's why we build and refine campaigns over a three-month window — it's how we guarantee results that stick.</p>
+            </div>
+          </div>
+
+          {/* Setup Fee */}
+          <div className="text-center mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <h3 className="text-2xl font-bold mb-2">One-Time Setup: $500 flat</h3>
+            <p className="text-foreground/70">Covers domain setup, inbox warm-up, voice model creation, Lead Locator data sourcing, and quality assurance.</p>
+          </div>
+
+          {/* Monthly Plans Header */}
+          <div className="text-center mb-8 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <h3 className="text-3xl font-bold mb-2">Monthly Plans</h3>
+            <p className="text-foreground/70">Three-month minimum required — because real results take consistency.</p>
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
             <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-lg border-2 border-transparent hover:shadow-2xl hover:-translate-y-1 hover:border-accent transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl">Starter</CardTitle>
-                <p className="text-3xl font-bold mt-2">$1,000–1,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
+                <p className="text-3xl font-bold mt-2">$800<span className="text-base font-normal text-foreground/60">/mo</span></p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm mb-6">
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Tone modeling and brand voice</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>3 domains and 9 inboxes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Light personalization plus live check‑in</span>
-                  </li>
-                </ul>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">What's Included:</p>
+                  <ul className="space-y-2 text-sm mb-4">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>3 domains / 9 inboxes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>Tone modeling</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>First 2,000 contact run</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>Basic reporting</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm font-semibold text-primary">Target: 4–8 booked conversations/mo</p>
+                </div>
                 <Button asChild className="w-full">
                   <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
                 </Button>
@@ -514,23 +547,31 @@ const Index = () => {
               </div>
               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl">Growth</CardTitle>
-                <p className="text-3xl font-bold mt-2">$1,500–2,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
+                <p className="text-3xl font-bold mt-2">$1,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm mb-6">
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Advanced data enrichment</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>3+ variants and A/B tests</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Deliverability reporting and predictive segmenting</span>
-                  </li>
-                </ul>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">What's Included:</p>
+                  <ul className="space-y-2 text-sm mb-4">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>5–7 domains / 15–21 inboxes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>Advanced personalization</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>A/B copy testing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>CRM routing</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm font-semibold text-primary">Target: 10–20 booked conversations/mo</p>
+                </div>
                 <Button asChild className="w-full">
                   <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
                 </Button>
@@ -540,23 +581,27 @@ const Index = () => {
             <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 delay-200 shadow-lg border-2 border-transparent hover:shadow-2xl hover:-translate-y-1 hover:border-accent transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl">Surge</CardTitle>
-                <p className="text-3xl font-bold mt-2">$3,000–4,000<span className="text-base font-normal text-foreground/60">+/mo</span></p>
+                <p className="text-3xl font-bold mt-2">$2,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm mb-6">
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Lead Locator Pro access</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Analytics dashboard and CRM routing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Weekly performance calls</span>
-                  </li>
-                </ul>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">What's Included:</p>
+                  <ul className="space-y-2 text-sm mb-4">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>10+ domains / 30+ inboxes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>Full analytics dashboard</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-2">•</span>
+                      <span>Dedicated ops & data lead</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm font-semibold text-primary">Target: 25–40 booked conversations/mo</p>
+                </div>
                 <Button asChild className="w-full">
                   <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
                 </Button>
@@ -564,9 +609,86 @@ const Index = () => {
             </Card>
           </div>
 
-          <p className="text-center text-sm text-foreground/60 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            Average inbox placement: 90%+ | Client retention: 90%+
-          </p>
+          {/* What's Included Section */}
+          <div className="max-w-3xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <div className="bg-secondary/30 rounded-lg p-6 mb-6">
+              <p className="font-semibold mb-3 text-center">✅ Every plan includes:</p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Voice model + tone replication</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Lead Locator™ sourcing & enrichment</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Multi-inbox warm-up & deliverability monitoring</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Human personalization & reply routing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Weekly optimization & CRM/webhook sync</span>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2 text-sm text-foreground/70">
+              <p><span className="font-semibold">🛠 Make-Good Guarantee:</span> Invalid contacts replaced or credited within 48 hours.</p>
+              <p><span className="font-semibold">🎯 Ramp Credit:</span> If booked results fall below plan range in first 3 months → 25% credit on next renewal.</p>
+            </div>
+          </div>
+
+          {/* Custom Pay-Per-Lead Options */}
+          <div className="max-w-3xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-center">Custom Pay-Per-Lead Options</CardTitle>
+                <CardDescription className="text-center">Prefer to pay only when we deliver booked conversations?</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2 font-semibold">Setup:</span>
+                    <span>$1,000 flat</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2 font-semibold">Cost per booked:</span>
+                    <span>$180 per booked conversation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2 font-semibold">Base fee:</span>
+                    <span>No monthly base required</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2 font-semibold">Perfect for:</span>
+                    <span>High-ticket verticals like roofing, solar, and HVAC</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2 font-semibold">Includes:</span>
+                    <span>48-hour make-good and optional 2–3% close-fee alignment</span>
+                  </li>
+                </ul>
+                <div className="pt-4">
+                  <Button asChild className="w-full" variant="outline">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Contact Us for Custom PPL Pricing</a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Results Footer */}
+          <div className="text-center space-y-4 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <div className="max-w-2xl mx-auto">
+              <p className="font-semibold text-lg mb-2">Results That Speak</p>
+              <p className="text-sm text-foreground/60">Average inbox placement: 90%+ | Client retention: 90%+</p>
+              <p className="text-sm text-foreground/70 italic mt-2">"Lead" = booked conversation, never a raw form fill.</p>
+            </div>
+          </div>
         </div>
       </section>
 
