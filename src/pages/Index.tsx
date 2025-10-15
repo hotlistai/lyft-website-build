@@ -462,42 +462,40 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32 bg-background">
+      <section id="pricing" className="py-20 sm:py-32 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          {/* Section Header */}
+          <motion.h2
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-4xl sm:text-5xl font-bold text-center mb-4"
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Simple Plans. Serious Results.
-            </h2>
-            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              No retainers. No gimmicks. Just data-driven, human-sounding emails that book real conversations.
-              Every plan includes voice modeling, lead intelligence, deliverability protection, and human review.
-            </p>
-          </motion.div>
+            Simple Plans. Serious Results.
+          </motion.h2>
+          <motion.p
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-center text-foreground/60 mb-16 max-w-3xl mx-auto"
+          >
+            No retainers. No gimmicks. Just data-driven, human-sounding emails that book real conversations.
+          </motion.p>
 
-          {/* Why 3-Month Minimum */}
+          {/* Why 3 Months Section */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="max-w-2xl mx-auto mb-16 bg-card rounded-2xl p-8 shadow-sm border border-border"
+            className="max-w-2xl mx-auto mb-12 bg-white rounded-xl p-8 shadow-sm border border-border"
           >
-            <h3 className="text-2xl font-semibold text-center mb-6">Why a 3-Month Minimum?</h3>
-            <div className="text-center text-foreground/70 space-y-3 leading-relaxed">
-              <p>Real inbox trust takes time.</p>
-              <p>Warm-ups and deliverability need consistency.</p>
-              <p>Campaigns learn and optimize each week.</p>
-              <p>And 43% of booked appointments come from follow-ups.</p>
-              <p className="pt-4 text-foreground font-medium">
-                That's why we build and refine campaigns over a three-month window — it's how we guarantee results that stick.
-              </p>
-            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">Why 3 Months?</h3>
+            <p className="text-center text-foreground/60 text-sm">
+              Inbox trust and follow-ups (43% of appointments) require consistency.
+            </p>
           </motion.div>
 
           {/* Setup Fee */}
@@ -508,22 +506,24 @@ const Index = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-center mb-16"
           >
-            <div className="inline-block bg-secondary rounded-2xl px-8 py-6 shadow-sm border border-border">
-              <h3 className="text-2xl font-semibold mb-2">One-Time Setup: $500 flat</h3>
-              <p className="text-foreground/70">
-                Covers domain setup, inbox warm-up, voice model creation, Lead Locator data sourcing, and quality assurance.
+            <div className="inline-block bg-white rounded-xl px-8 py-4 shadow-sm border border-border">
+              <p className="text-lg font-semibold">
+                One-Time Setup: <span className="text-primary">$500 flat</span>
+              </p>
+              <p className="text-sm text-foreground/60 mt-1">
+                (covers domain setup, warm-up, voice model, and list sourcing)
               </p>
             </div>
           </motion.div>
 
           {/* Monthly Plans Header */}
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-semibold mb-3">Monthly Plans</h3>
-            <p className="text-foreground/60">Three-month minimum required — because real results take consistency.</p>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold mb-2">Monthly Plans</h3>
+            <p className="text-sm text-foreground/60">Three-month minimum — because real results take consistency.</p>
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
             {/* Starter Card */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
@@ -531,38 +531,21 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Card className="h-full bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden">
-                <CardHeader className="pb-6">
-                  <CardTitle className="text-2xl font-semibold">Starter</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">$800</span>
-                    <span className="text-foreground/60 ml-2">/month</span>
+              <Card className="h-full bg-white border border-border shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 rounded-xl">
+                <CardHeader className="pb-4 text-center">
+                  <div className="text-4xl mb-3">📨</div>
+                  <CardTitle className="text-xl font-semibold">Starter</CardTitle>
+                  <div className="mt-3">
+                    <span className="text-3xl font-bold">$800</span>
+                    <span className="text-foreground/60 text-sm">/mo</span>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div>
-                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
-                    <ul className="space-y-3 text-sm text-foreground/70">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>3 domains / 9 inboxes</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Tone modeling</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>First 2,000 contact run</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Basic reporting</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm font-semibold text-primary">Target: 4–8 booked conversations/mo</p>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-foreground/60 text-center">
+                    For local tests — 3 domains, tone model, 2K contacts.
+                  </p>
+                  <div className="pt-3 border-t border-border">
+                    <p className="text-sm font-medium text-center">Target: 4–10 booked per month</p>
                   </div>
                   <Button asChild className="w-full rounded-full" size="lg">
                     <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
@@ -578,43 +561,26 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Card className="h-full bg-card border-2 border-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                  <span className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-md">
+              <Card className="h-full bg-white border-2 border-primary shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-1 rounded-xl relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-sm">
                     Most Popular
                   </span>
                 </div>
-                <CardHeader className="pb-6 pt-8">
-                  <CardTitle className="text-2xl font-semibold">Growth</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">$1,500</span>
-                    <span className="text-foreground/60 ml-2">/month</span>
+                <CardHeader className="pb-4 text-center pt-6">
+                  <div className="text-4xl mb-3">🚀</div>
+                  <CardTitle className="text-xl font-semibold">Growth</CardTitle>
+                  <div className="mt-3">
+                    <span className="text-3xl font-bold">$1,500</span>
+                    <span className="text-foreground/60 text-sm">/mo</span>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div>
-                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
-                    <ul className="space-y-3 text-sm text-foreground/70">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>5–7 domains / 15–21 inboxes</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Advanced personalization</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>A/B copy testing</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>CRM routing</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm font-semibold text-primary">Target: 10–20 booked conversations/mo</p>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-foreground/60 text-center">
+                    For steady pipeline — 5–7 domains, A/B testing, CRM routing.
+                  </p>
+                  <div className="pt-3 border-t border-border">
+                    <p className="text-sm font-medium text-center">Target: 12–25 booked per month</p>
                   </div>
                   <Button asChild className="w-full rounded-full" size="lg">
                     <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
@@ -630,34 +596,21 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Card className="h-full bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden">
-                <CardHeader className="pb-6">
-                  <CardTitle className="text-2xl font-semibold">Surge</CardTitle>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">$2,500</span>
-                    <span className="text-foreground/60 ml-2">/month</span>
+              <Card className="h-full bg-white border border-border shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 rounded-xl">
+                <CardHeader className="pb-4 text-center">
+                  <div className="text-4xl mb-3">📊</div>
+                  <CardTitle className="text-xl font-semibold">Surge</CardTitle>
+                  <div className="mt-3">
+                    <span className="text-3xl font-bold">$2,500</span>
+                    <span className="text-foreground/60 text-sm">/mo</span>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div>
-                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
-                    <ul className="space-y-3 text-sm text-foreground/70">
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>10+ domains / 30+ inboxes</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Full analytics dashboard</span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Dedicated ops & data lead</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm font-semibold text-primary">Target: 25–40 booked conversations/mo</p>
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-foreground/60 text-center">
+                    For multi-market scale — 10+ domains, analytics dashboard, dedicated ops & data.
+                  </p>
+                  <div className="pt-3 border-t border-border">
+                    <p className="text-sm font-medium text-center">Target: 30–50 booked per month</p>
                   </div>
                   <Button asChild className="w-full rounded-full" size="lg">
                     <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
@@ -667,94 +620,57 @@ const Index = () => {
             </motion.div>
           </div>
 
-          {/* What's Included Section */}
+          {/* Guarantees */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="max-w-3xl mx-auto mb-16"
+            className="max-w-3xl mx-auto mb-16 text-center space-y-2 text-sm text-foreground/60"
           >
-            <div className="bg-secondary rounded-2xl p-8 mb-6 shadow-sm border border-border">
-              <p className="font-semibold text-lg mb-6 text-center">Every plan includes:</p>
-              <ul className="grid sm:grid-cols-2 gap-4 text-sm">
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Voice model + tone replication</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Lead Locator™ sourcing & enrichment</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Multi-inbox warm-up & deliverability monitoring</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Human personalization & reply routing</span>
-                </li>
-                <li className="flex items-start gap-3 sm:col-span-2">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Weekly optimization & CRM/webhook sync</span>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3 text-sm text-foreground/70">
-              <p>
-                <span className="font-semibold text-foreground">Make-Good Guarantee:</span> Invalid contacts replaced or credited within 48 hours.
-              </p>
-              <p>
-                <span className="font-semibold text-foreground">Ramp Credit:</span> If booked results fall below plan range in first 3 months → 25% credit on next renewal.
-              </p>
-            </div>
+            <p>
+              <span className="font-semibold text-foreground">🛠 Make-Good:</span> invalids credited/replaced in 48h
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">🎯 Ramp Credit:</span> if 3-month results below plan → 25% renewal credit
+            </p>
           </motion.div>
 
-          {/* Custom Pay-Per-Lead Options */}
+          {/* Custom Pay-Per-Lead */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="max-w-3xl mx-auto mb-16"
+            className="max-w-3xl mx-auto mb-12"
           >
-            <Card className="bg-muted border border-border shadow-sm rounded-2xl overflow-hidden">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-2xl font-semibold">Custom Pay-Per-Lead Options</CardTitle>
-                <CardDescription className="text-base mt-2">
-                  Prefer to pay only when we deliver booked conversations?
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-foreground">Setup:</span>
-                    <span className="text-foreground/70">$1,000 flat</span>
+            <div className="border-t border-border pt-12">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-semibold mb-3">Custom Pay-Per-Lead</h3>
+                <p className="text-foreground/60">Prefer performance-only pricing?</p>
+              </div>
+              
+              <Card className="bg-secondary/30 border border-border shadow-sm rounded-xl">
+                <CardContent className="pt-6 space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <p className="font-semibold mb-1">$1,000 setup</p>
+                      <p className="text-xs text-foreground/60">+ $180 per booked conversation</p>
+                    </div>
+                    <div className="text-center p-4 bg-white rounded-lg">
+                      <p className="font-semibold mb-1">No monthly base</p>
+                      <p className="text-xs text-foreground/60">Perfect for roofing, solar, HVAC</p>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-foreground">Cost per booked:</span>
-                    <span className="text-foreground/70">$180 per booked conversation</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-foreground">Base fee:</span>
-                    <span className="text-foreground/70">No monthly base required</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="font-semibold text-foreground">Perfect for:</span>
-                    <span className="text-foreground/70">High-ticket verticals like roofing, solar, and HVAC</span>
-                  </div>
-                  <div className="flex flex-col gap-1 sm:col-span-2">
-                    <span className="font-semibold text-foreground">Includes:</span>
-                    <span className="text-foreground/70">48-hour make-good and optional 2–3% close-fee alignment</span>
-                  </div>
-                </div>
-                <div className="pt-4">
-                  <Button asChild className="w-full rounded-full" size="lg" variant="outline">
-                    <a href="https://calendly.com/hotlistai/lyftemail">Contact Us for Custom PPL Pricing</a>
+                  <p className="text-xs text-center text-foreground/60 pt-2">
+                    Includes 48-hour make-good and optional 2–3% close-fee alignment
+                  </p>
+                  <Button asChild className="w-full rounded-full mt-4" variant="outline">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Contact us for Custom PPL Pricing</a>
                   </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </motion.div>
 
           {/* Results Footer */}
@@ -763,15 +679,11 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-center space-y-4"
+            className="text-center"
           >
-            <div className="max-w-2xl mx-auto">
-              <p className="font-semibold text-lg mb-3">Results That Speak</p>
-              <p className="text-foreground/60">Average inbox placement: 90%+ | Client retention: 90%+</p>
-              <p className="text-sm text-foreground/60 italic mt-3">
-                "Lead" = booked conversation, never a raw form fill.
-              </p>
-            </div>
+            <p className="text-sm text-foreground/60">
+              Inbox placement 90%+ · Retention 90%+ · "Lead" = booked conversation
+            </p>
           </motion.div>
         </div>
       </section>
