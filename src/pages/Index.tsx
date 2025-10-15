@@ -462,233 +462,317 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32 bg-white relative overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1527430253228-e93688616381)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            transform: 'rotate(-5deg) scale(1.2)'
-          }}
-        />
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-6 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            Simple Plans. Serious Results.
-          </h2>
-          <p className="text-lg sm:text-xl text-center text-foreground/70 max-w-3xl mx-auto mb-16 sm:mb-20 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            No retainers. No gimmicks. Just data-driven, human-sounding emails that book real conversations.
-            Every plan includes voice modeling, lead intelligence, deliverability protection, and human review.
-          </p>
+      <section id="pricing" className="py-20 sm:py-32 bg-background">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Simple Plans. Serious Results.
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              No retainers. No gimmicks. Just data-driven, human-sounding emails that book real conversations.
+              Every plan includes voice modeling, lead intelligence, deliverability protection, and human review.
+            </p>
+          </motion.div>
 
           {/* Why 3-Month Minimum */}
-          <div className="max-w-2xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <h3 className="text-2xl font-bold text-center mb-4">Why a 3-Month Minimum?</h3>
-            <div className="text-center text-foreground/70 space-y-2">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="max-w-2xl mx-auto mb-16 bg-card rounded-2xl p-8 shadow-sm border border-border"
+          >
+            <h3 className="text-2xl font-semibold text-center mb-6">Why a 3-Month Minimum?</h3>
+            <div className="text-center text-foreground/70 space-y-3 leading-relaxed">
               <p>Real inbox trust takes time.</p>
               <p>Warm-ups and deliverability need consistency.</p>
               <p>Campaigns learn and optimize each week.</p>
               <p>And 43% of booked appointments come from follow-ups.</p>
-              <p className="pt-2">That's why we build and refine campaigns over a three-month window — it's how we guarantee results that stick.</p>
+              <p className="pt-4 text-foreground font-medium">
+                That's why we build and refine campaigns over a three-month window — it's how we guarantee results that stick.
+              </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Setup Fee */}
-          <div className="text-center mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <h3 className="text-2xl font-bold mb-2">One-Time Setup: $500 flat</h3>
-            <p className="text-foreground/70">Covers domain setup, inbox warm-up, voice model creation, Lead Locator data sourcing, and quality assurance.</p>
-          </div>
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block bg-secondary rounded-2xl px-8 py-6 shadow-sm border border-border">
+              <h3 className="text-2xl font-semibold mb-2">One-Time Setup: $500 flat</h3>
+              <p className="text-foreground/70">
+                Covers domain setup, inbox warm-up, voice model creation, Lead Locator data sourcing, and quality assurance.
+              </p>
+            </div>
+          </motion.div>
 
           {/* Monthly Plans Header */}
-          <div className="text-center mb-8 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <h3 className="text-3xl font-bold mb-2">Monthly Plans</h3>
-            <p className="text-foreground/70">Three-month minimum required — because real results take consistency.</p>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-semibold mb-3">Monthly Plans</h3>
+            <p className="text-foreground/60">Three-month minimum required — because real results take consistency.</p>
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-lg border-2 border-transparent hover:shadow-2xl hover:-translate-y-1 hover:border-accent transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl">Starter</CardTitle>
-                <p className="text-3xl font-bold mt-2">$800<span className="text-base font-normal text-foreground/60">/mo</span></p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="mb-4">
-                  <p className="text-sm font-semibold mb-2">What's Included:</p>
-                  <ul className="space-y-2 text-sm mb-4">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>3 domains / 9 inboxes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Tone modeling</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>First 2,000 contact run</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Basic reporting</span>
-                    </li>
-                  </ul>
-                  <p className="text-sm font-semibold text-primary">Target: 4–8 booked conversations/mo</p>
-                </div>
-                <Button asChild className="w-full">
-                  <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Starter Card */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Card className="h-full bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden">
+                <CardHeader className="pb-6">
+                  <CardTitle className="text-2xl font-semibold">Starter</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">$800</span>
+                    <span className="text-foreground/60 ml-2">/month</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
+                    <ul className="space-y-3 text-sm text-foreground/70">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>3 domains / 9 inboxes</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Tone modeling</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>First 2,000 contact run</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Basic reporting</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm font-semibold text-primary">Target: 4–8 booked conversations/mo</p>
+                  </div>
+                  <Button asChild className="w-full rounded-full" size="lg">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 delay-100 shadow-lg border-2 border-primary hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
-                Most Popular
-              </div>
-              <CardHeader className="pt-8">
-                <CardTitle className="text-2xl">Growth</CardTitle>
-                <p className="text-3xl font-bold mt-2">$1,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="mb-4">
-                  <p className="text-sm font-semibold mb-2">What's Included:</p>
-                  <ul className="space-y-2 text-sm mb-4">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>5–7 domains / 15–21 inboxes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Advanced personalization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>A/B copy testing</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>CRM routing</span>
-                    </li>
-                  </ul>
-                  <p className="text-sm font-semibold text-primary">Target: 10–20 booked conversations/mo</p>
+            {/* Growth Card - Most Popular */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Card className="h-full bg-card border-2 border-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <span className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-md">
+                    Most Popular
+                  </span>
                 </div>
-                <Button asChild className="w-full">
-                  <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
-                </Button>
-              </CardContent>
-            </Card>
+                <CardHeader className="pb-6 pt-8">
+                  <CardTitle className="text-2xl font-semibold">Growth</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">$1,500</span>
+                    <span className="text-foreground/60 ml-2">/month</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
+                    <ul className="space-y-3 text-sm text-foreground/70">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>5–7 domains / 15–21 inboxes</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Advanced personalization</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>A/B copy testing</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>CRM routing</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm font-semibold text-primary">Target: 10–20 booked conversations/mo</p>
+                  </div>
+                  <Button asChild className="w-full rounded-full" size="lg">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 delay-200 shadow-lg border-2 border-transparent hover:shadow-2xl hover:-translate-y-1 hover:border-accent transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl">Surge</CardTitle>
-                <p className="text-3xl font-bold mt-2">$2,500<span className="text-base font-normal text-foreground/60">/mo</span></p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="mb-4">
-                  <p className="text-sm font-semibold mb-2">What's Included:</p>
-                  <ul className="space-y-2 text-sm mb-4">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>10+ domains / 30+ inboxes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Full analytics dashboard</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Dedicated ops & data lead</span>
-                    </li>
-                  </ul>
-                  <p className="text-sm font-semibold text-primary">Target: 25–40 booked conversations/mo</p>
-                </div>
-                <Button asChild className="w-full">
-                  <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
-                </Button>
-              </CardContent>
-            </Card>
+            {/* Surge Card */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Card className="h-full bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden">
+                <CardHeader className="pb-6">
+                  <CardTitle className="text-2xl font-semibold">Surge</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">$2,500</span>
+                    <span className="text-foreground/60 ml-2">/month</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <p className="text-sm font-semibold mb-4 text-foreground/80">What's Included:</p>
+                    <ul className="space-y-3 text-sm text-foreground/70">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>10+ domains / 30+ inboxes</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Full analytics dashboard</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>Dedicated ops & data lead</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm font-semibold text-primary">Target: 25–40 booked conversations/mo</p>
+                  </div>
+                  <Button asChild className="w-full rounded-full" size="lg">
+                    <a href="https://calendly.com/hotlistai/lyftemail">Start My Outreach</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
 
           {/* What's Included Section */}
-          <div className="max-w-3xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <div className="bg-secondary/30 rounded-lg p-6 mb-6">
-              <p className="font-semibold mb-3 text-center">✅ Every plan includes:</p>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="max-w-3xl mx-auto mb-16"
+          >
+            <div className="bg-secondary rounded-2xl p-8 mb-6 shadow-sm border border-border">
+              <p className="font-semibold text-lg mb-6 text-center">Every plan includes:</p>
+              <ul className="grid sm:grid-cols-2 gap-4 text-sm">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Voice model + tone replication</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Lead Locator™ sourcing & enrichment</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Multi-inbox warm-up & deliverability monitoring</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Human personalization & reply routing</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
+                <li className="flex items-start gap-3 sm:col-span-2">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span>Weekly optimization & CRM/webhook sync</span>
                 </li>
               </ul>
             </div>
-            <div className="space-y-2 text-sm text-foreground/70">
-              <p><span className="font-semibold">🛠 Make-Good Guarantee:</span> Invalid contacts replaced or credited within 48 hours.</p>
-              <p><span className="font-semibold">🎯 Ramp Credit:</span> If booked results fall below plan range in first 3 months → 25% credit on next renewal.</p>
+            <div className="space-y-3 text-sm text-foreground/70">
+              <p>
+                <span className="font-semibold text-foreground">Make-Good Guarantee:</span> Invalid contacts replaced or credited within 48 hours.
+              </p>
+              <p>
+                <span className="font-semibold text-foreground">Ramp Credit:</span> If booked results fall below plan range in first 3 months → 25% credit on next renewal.
+              </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Custom Pay-Per-Lead Options */}
-          <div className="max-w-3xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center">Custom Pay-Per-Lead Options</CardTitle>
-                <CardDescription className="text-center">Prefer to pay only when we deliver booked conversations?</CardDescription>
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="max-w-3xl mx-auto mb-16"
+          >
+            <Card className="bg-muted border border-border shadow-sm rounded-2xl overflow-hidden">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-2xl font-semibold">Custom Pay-Per-Lead Options</CardTitle>
+                <CardDescription className="text-base mt-2">
+                  Prefer to pay only when we deliver booked conversations?
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2 font-semibold">Setup:</span>
-                    <span>$1,000 flat</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2 font-semibold">Cost per booked:</span>
-                    <span>$180 per booked conversation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2 font-semibold">Base fee:</span>
-                    <span>No monthly base required</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2 font-semibold">Perfect for:</span>
-                    <span>High-ticket verticals like roofing, solar, and HVAC</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2 font-semibold">Includes:</span>
-                    <span>48-hour make-good and optional 2–3% close-fee alignment</span>
-                  </li>
-                </ul>
+              <CardContent className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold text-foreground">Setup:</span>
+                    <span className="text-foreground/70">$1,000 flat</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold text-foreground">Cost per booked:</span>
+                    <span className="text-foreground/70">$180 per booked conversation</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold text-foreground">Base fee:</span>
+                    <span className="text-foreground/70">No monthly base required</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="font-semibold text-foreground">Perfect for:</span>
+                    <span className="text-foreground/70">High-ticket verticals like roofing, solar, and HVAC</span>
+                  </div>
+                  <div className="flex flex-col gap-1 sm:col-span-2">
+                    <span className="font-semibold text-foreground">Includes:</span>
+                    <span className="text-foreground/70">48-hour make-good and optional 2–3% close-fee alignment</span>
+                  </div>
+                </div>
                 <div className="pt-4">
-                  <Button asChild className="w-full" variant="outline">
+                  <Button asChild className="w-full rounded-full" size="lg" variant="outline">
                     <a href="https://calendly.com/hotlistai/lyftemail">Contact Us for Custom PPL Pricing</a>
                   </Button>
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
 
           {/* Results Footer */}
-          <div className="text-center space-y-4 fade-up opacity-0 translate-y-8 transition-all duration-700">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="text-center space-y-4"
+          >
             <div className="max-w-2xl mx-auto">
-              <p className="font-semibold text-lg mb-2">Results That Speak</p>
-              <p className="text-sm text-foreground/60">Average inbox placement: 90%+ | Client retention: 90%+</p>
-              <p className="text-sm text-foreground/70 italic mt-2">"Lead" = booked conversation, never a raw form fill.</p>
+              <p className="font-semibold text-lg mb-3">Results That Speak</p>
+              <p className="text-foreground/60">Average inbox placement: 90%+ | Client retention: 90%+</p>
+              <p className="text-sm text-foreground/60 italic mt-3">
+                "Lead" = booked conversation, never a raw form fill.
+              </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
