@@ -666,7 +666,7 @@ const Index = () => {
                     Includes 48-hour make-good and optional 2–3% close-fee alignment
                   </p>
                   <Button asChild className="w-full rounded-full mt-4" variant="outline">
-                    <a href="https://calendly.com/hotlistai/lyftemail">Contact us for Custom PPL Pricing</a>
+                    <a href="mailto:info@hotlistai.com?subject=Custom%20Pay%20Per%20Lead%20Inquiry%20%E2%80%93%20Hotlist%20AI">Contact us for Custom PPL Pricing</a>
                   </Button>
                 </CardContent>
               </Card>
