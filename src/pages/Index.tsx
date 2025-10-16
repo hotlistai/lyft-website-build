@@ -574,10 +574,10 @@ const Index = () => {
       </section>
 
       {/* Social Proof + Tagline Block */}
-      <section className="py-20 sm:py-24 bg-[#111] text-white">
+      <section className="py-16 sm:py-20 bg-[#1a1a1a] text-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Partner Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16 mb-20 fade-up opacity-0 translate-y-8 transition-all duration-700">
             {[
               { src: smartroofIcon, alt: "Smart Roof" },
               { src: incIcon, alt: "Inc" },
@@ -588,7 +588,7 @@ const Index = () => {
                 key={index}
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                className="h-6 sm:h-7 opacity-40 hover:opacity-60 transition-opacity duration-300 brightness-0 invert"
                 loading="lazy"
               />
             ))}
@@ -599,19 +599,19 @@ const Index = () => {
             <img
               src={lyftEmailIcon}
               alt="Lyft Email"
-              className="w-20 h-20 mx-auto mb-8"
+              className="w-12 h-12 mx-auto mb-10"
               loading="lazy"
             />
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-12">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-10 tracking-tight">
               Real. Human. Outreach.
             </h2>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" size="lg" className="rounded-full hover:scale-105 transition-transform border-white/30 text-white hover:bg-white/10">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button asChild variant="outline" size="lg" className="rounded-md border-white/20 text-white bg-transparent hover:bg-white/5 hover:border-white/30 px-8">
                 <a href="#how">See How It Works</a>
               </Button>
-              <Button asChild size="lg" className="rounded-full hover:scale-105 transition-transform">
+              <Button asChild size="lg" className="rounded-md bg-[#0066FF] hover:bg-[#0052CC] text-white px-8">
                 <a href="#funnel">Get My Outreach Plan</a>
               </Button>
             </div>
