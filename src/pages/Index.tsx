@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-const logo = "https://hotlistai.com/wp-content/uploads/2025/10/lyft-email-logo.avif";
+import logo from "@/assets/lyftemail-logo.png";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check, Shield, Target, TrendingUp, Users, Zap, MessageSquare, BarChart3, Calendar } from "lucide-react";
