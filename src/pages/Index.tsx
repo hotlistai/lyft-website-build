@@ -573,52 +573,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof + Tagline Block */}
-      <section className="py-16 sm:py-20 bg-[#1a1a1a] text-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Partner Logos */}
-          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16 mb-20 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            {[
-              { src: smartroofIcon, alt: "Smart Roof" },
-              { src: incIcon, alt: "Inc" },
-              { src: carrascoIcon, alt: "Carrasco" },
-              { src: stretchlabIcon, alt: "StretchLab" }
-            ].map((logo, index) => (
-              <img
-                key={index}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-6 sm:h-7 opacity-40 hover:opacity-60 transition-opacity duration-300 brightness-0 invert"
-                loading="lazy"
-              />
-            ))}
-          </div>
-
-          {/* Icon & Headline */}
-          <div className="text-center fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
-            <img
-              src={lyftEmailIcon}
-              alt="Lyft Email"
-              className="w-12 h-12 mx-auto mb-10"
-              loading="lazy"
-            />
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-10 tracking-tight">
-              Real. Human. Outreach.
-            </h2>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button asChild variant="outline" size="lg" className="rounded-md border-white/20 text-white bg-transparent hover:bg-white/5 hover:border-white/30 px-8">
-                <a href="#how">See How It Works</a>
-              </Button>
-              <Button asChild size="lg" className="rounded-md bg-[#0066FF] hover:bg-[#0052CC] text-white px-8">
-                <a href="#funnel">Get My Outreach Plan</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-[hsl(var(--navy))] text-white py-12">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
