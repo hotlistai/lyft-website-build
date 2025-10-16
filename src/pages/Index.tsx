@@ -348,10 +348,10 @@ const Index = () => {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 sm:py-32 bg-secondary">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4 fade-up opacity-0 translate-y-8 transition-all duration-700">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-4 fade-up opacity-0 translate-y-8 transition-all duration-700 text-foreground">
             Simple Plans. Serious Results.
           </h2>
-          <p className="text-center text-lg text-foreground/70 mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
+          <p className="text-center text-lg text-foreground mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
             Billing starts only when your campaigns go live.
           </p>
 
@@ -359,12 +359,12 @@ const Index = () => {
             {/* Starter */}
             <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all" style={{ transitionDelay: "200ms" }}>
               <CardHeader>
-                <CardTitle className="text-2xl">Starter</CardTitle>
-                <CardDescription>Perfect for testing outbound</CardDescription>
+                <CardTitle className="text-2xl text-foreground">Starter</CardTitle>
+                <CardDescription className="text-foreground/70">Perfect for testing outbound</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold mb-2">$900<span className="text-lg font-normal text-foreground/60">/mo</span></div>
+                  <div className="text-4xl font-bold mb-2 text-foreground">$900<span className="text-lg font-normal text-foreground/60">/mo</span></div>
                 </div>
                 <ul className="space-y-3">
                   {[
@@ -375,7 +375,7 @@ const Index = () => {
                   ].map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -393,12 +393,12 @@ const Index = () => {
                 </span>
               </div>
               <CardHeader>
-                <CardTitle className="text-2xl">Growth</CardTitle>
-                <CardDescription>For steady pipeline</CardDescription>
+                <CardTitle className="text-2xl text-foreground">Growth</CardTitle>
+                <CardDescription className="text-foreground/70">For steady pipeline</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold mb-2">$1,800<span className="text-lg font-normal text-foreground/60">/mo</span></div>
+                  <div className="text-4xl font-bold mb-2 text-foreground">$1,800<span className="text-lg font-normal text-foreground/60">/mo</span></div>
                 </div>
                 <ul className="space-y-3">
                   {[
@@ -409,7 +409,7 @@ const Index = () => {
                   ].map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -422,12 +422,12 @@ const Index = () => {
             {/* Enterprise */}
             <Card className="fade-up opacity-0 translate-y-8 transition-all duration-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all" style={{ transitionDelay: "400ms" }}>
               <CardHeader>
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <CardDescription>Unlimited scale</CardDescription>
+                <CardTitle className="text-2xl text-foreground">Enterprise</CardTitle>
+                <CardDescription className="text-foreground/70">Unlimited scale</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold mb-2">$3,000+<span className="text-lg font-normal text-foreground/60">/mo</span></div>
+                  <div className="text-4xl font-bold mb-2 text-foreground">$3,000+<span className="text-lg font-normal text-foreground/60">/mo</span></div>
                 </div>
                 <ul className="space-y-3">
                   {[
@@ -438,7 +438,7 @@ const Index = () => {
                   ].map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -452,8 +452,8 @@ const Index = () => {
           {/* Billing Notes */}
           <Card className="max-w-3xl mx-auto mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: "500ms" }}>
             <CardContent className="pt-6">
-              <h3 className="text-lg font-bold mb-4 text-center">Billing Notes</h3>
-              <ul className="space-y-2 text-sm text-foreground/70">
+              <h3 className="text-lg font-bold mb-4 text-center text-foreground">Billing Notes</h3>
+              <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <span>Setup/warm-up is free (2–3 weeks)</span>
