@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import logo from "@/assets/lyftemail-logo.png";
+import lyftEmailIcon from "@/assets/lyft-email-icon.png";
+import hotlistLogo from "@/assets/hotlist-ai-logo.png";
+import smartroofIcon from "@/assets/smartroof-icon.png";
+import incIcon from "@/assets/inc-icon.png";
+import carrascoIcon from "@/assets/carrasco-icon.png";
+import stretchlabIcon from "@/assets/stretchlab-icon.png";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check, Shield, Target, TrendingUp, Users, Zap, MessageSquare, BarChart3, Calendar } from "lucide-react";
@@ -567,6 +573,52 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Social Proof + Tagline Block */}
+      <section className="py-20 sm:py-24 bg-[#111] text-white">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Partner Logos */}
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 mb-12 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            {[
+              { src: smartroofIcon, alt: "Smart Roof" },
+              { src: incIcon, alt: "Inc" },
+              { src: carrascoIcon, alt: "Carrasco" },
+              { src: stretchlabIcon, alt: "StretchLab" }
+            ].map((logo, index) => (
+              <img
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                loading="lazy"
+              />
+            ))}
+          </div>
+
+          {/* Icon & Headline */}
+          <div className="text-center fade-up opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
+            <img
+              src={lyftEmailIcon}
+              alt="Lyft Email"
+              className="w-20 h-20 mx-auto mb-8"
+              loading="lazy"
+            />
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-12">
+              Real. Human. Outreach.
+            </h2>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild variant="outline" size="lg" className="rounded-full hover:scale-105 transition-transform border-white/30 text-white hover:bg-white/10">
+                <a href="#how">See How It Works</a>
+              </Button>
+              <Button asChild size="lg" className="rounded-full hover:scale-105 transition-transform">
+                <a href="#funnel">Get My Outreach Plan</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[hsl(var(--navy))] text-white py-12">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -587,9 +639,20 @@ const Index = () => {
               Get Started
             </a>
           </div>
-          <p className="text-sm text-white/70 text-center">
+          <p className="text-sm text-white/70 text-center mb-4">
             © {new Date().getFullYear()} Lyft Email. AI built, human backed.
           </p>
+          
+          {/* Built by Hotlist AI */}
+          <div className="flex items-center justify-center gap-3 text-sm text-white/50 hover:text-white/80 transition-opacity duration-300">
+            <span>Built by Hotlist AI</span>
+            <img
+              src={hotlistLogo}
+              alt="Hotlist AI"
+              className="h-7"
+              loading="lazy"
+            />
+          </div>
         </div>
       </footer>
     </div>
