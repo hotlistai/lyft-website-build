@@ -555,8 +555,8 @@ const Index = () => {
                   Get My Outreach Plan
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full hover:scale-105 transition-transform border-white !text-white hover:bg-white/10">
-                <a href="#pricing" className="text-white">See Plans & Pricing</a>
+              <Button asChild size="lg" variant="outline" className="rounded-full hover:scale-105 transition-transform bg-white text-foreground border-white hover:bg-white/20 hover:text-white">
+                <a href="#pricing">See Plans & Pricing</a>
               </Button>
             </div>
             <p className="text-sm opacity-75">
