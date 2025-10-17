@@ -237,6 +237,54 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Social Proof Logos */}
+      <section className="py-8 bg-[#2a2a2a] text-white">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
+            {[
+              { src: smartroofIcon, alt: "Smart Roof" },
+              { src: incIcon, alt: "Inc" },
+              { src: carrascoIcon, alt: "Carrasco" },
+              { src: stretchlabIcon, alt: "StretchLab" }
+            ].map((logo, index) => (
+              <img
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-6 sm:h-7 opacity-40 hover:opacity-60 transition-opacity duration-300 brightness-0 invert"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Real. Human. Outreach. Block */}
+      <section className="py-12 sm:py-16 bg-[#1a1a1a] text-white">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center fade-up opacity-0 translate-y-8 transition-all duration-700">
+            <img
+              src={lyftEmailIcon}
+              alt="Lyft Email"
+              className="w-12 h-12 mx-auto mb-6"
+              loading="lazy"
+            />
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-8 tracking-tight">
+              Real. Human. Outreach.
+            </h2>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button asChild variant="outline" size="lg" className="rounded-md border-white/20 text-white bg-transparent hover:bg-white/5 hover:border-white/30 px-8">
+                <a href="#how">See How It Works</a>
+              </Button>
+              <Button asChild size="lg" className="rounded-md bg-[#0066FF] hover:bg-[#0052CC] text-white px-8">
+                <a href="#funnel">Get My Outreach Plan</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 sm:py-32 bg-secondary">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
