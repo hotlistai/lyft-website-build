@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X } from "lucide-react";
 import logoFull from "@/assets/lyft-email-logo-full.png";
+import footerLogo from "@/assets/lyft-footer-logo.png";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -31,7 +32,7 @@ const Index = () => {
                 FAQ
               </button>
             </div>
-            <Button className="gradient-ui text-white" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+            <Button className="gradient-ui text-white" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
               Get My Outreach Plan
             </Button>
           </div>
@@ -50,7 +51,7 @@ const Index = () => {
               <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
                 The same enterprise-grade personalization tech that Fortune 500s use—now accessible to everyone. Replace Thumbtack, Angi, and rising ad costs with direct outreach that actually lands in inboxes and books calls.
               </p>
-              <Button size="lg" className="gradient-ui text-white shadow-lg hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+              <Button size="lg" className="gradient-ui text-white shadow-lg hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
                 Get My Outreach Plan
               </Button>
               <p className="text-sm text-foreground/60 mt-4">
@@ -114,7 +115,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 3: THE PROBLEM */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1F2937]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             <div className="lg:col-span-3">
@@ -309,7 +310,7 @@ const Index = () => {
       </section>
 
       {/* SECTION 8: THE TECH */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#111827]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center text-white mb-16">
             Built different.
@@ -416,7 +417,7 @@ const Index = () => {
           <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
             Book a free strategy call. We'll show you the exact campaigns we'd run, who we'd target, and what results to expect—before you commit to anything.
           </p>
-          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 h-auto shadow-xl" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 h-auto shadow-xl" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
             Get My Outreach Plan
           </Button>
           <p className="text-sm text-white/80 mt-6">
@@ -508,15 +509,14 @@ const Index = () => {
       </section>
 
       {/* SECTION 14: FOOTER */}
-      <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-[#111827]">
+      <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
         <div className="max-w-7xl mx-auto text-center">
-          <img src={logoFull} alt="Lyft Email" className="h-8 mx-auto mb-4 brightness-200" />
-          <p className="text-lg text-white mb-8">Real. Human. Outreach.</p>
+          <img src={footerLogo} alt="Lyft Email" className="h-24 mx-auto mb-8" />
           <div className="flex flex-wrap justify-center gap-8 text-gray-400 mb-8">
             <button onClick={() => scrollToSection("how-it-works")} className="hover:text-secondary transition-colors">
               How It Works
             </button>
-            <button onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")} className="hover:text-secondary transition-colors">
+            <button onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")} className="hover:text-secondary transition-colors">
               Book a Call
             </button>
           </div>
