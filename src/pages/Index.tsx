@@ -1,524 +1,528 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import logo from "@/assets/lyftemail-logo.png";
-import lyftEmailIcon from "@/assets/lyft-email-icon.png";
-import hotlistLogo from "@/assets/hotlist-ai-logo.png";
-import smartroofIcon from "@/assets/smartroof-icon.png";
-import incIcon from "@/assets/inc-icon.png";
-import carrascoIcon from "@/assets/carrasco-icon.png";
-import stretchlabIcon from "@/assets/stretchlab-icon.png";
-import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { Check, Shield, Target, TrendingUp, Users, Zap, MessageSquare, BarChart3, Calendar } from "lucide-react";
+import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X } from "lucide-react";
+import logoFull from "@/assets/lyft-email-logo-full.png";
 
 const Index = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const [scrolled, setScrolled] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  const heroImages = [
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-            entry.target.classList.remove("opacity-0", "translate-y-8");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".fade-up").forEach((el) => {
-      observerRef.current?.observe(el);
-    });
-
-    return () => observerRef.current?.disconnect();
-  }, []);
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-shadow duration-300 ${scrolled ? "shadow-lg" : ""}`}>
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="#overview" className="flex items-center">
-              <img src={logo} alt="Lyft Email" className="h-8 sm:h-10" />
-            </a>
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#how" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                How It Works
-              </a>
-              <Button asChild size="sm" className="rounded-full hover:scale-105 transition-transform">
-                <a href="#funnel">Get My Outreach Plan</a>
-              </Button>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <img src={logoFull} alt="Lyft Email" className="h-8" />
             </div>
+            <div className="hidden md:flex items-center gap-8">
+              <button onClick={() => scrollToSection("how-it-works")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                How It Works
+              </button>
+              <button onClick={() => scrollToSection("results")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                Results
+              </button>
+              <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                FAQ
+              </button>
+            </div>
+            <Button className="gradient-ui text-white" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+              Get My Outreach Plan
+            </Button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="overview" className="py-20 sm:py-32 lg:py-40 bg-white overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div 
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
-                We don't send cold emails. We start real conversations.
+      {/* SECTION 1: HERO */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-3">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
+                Your pipeline shouldn't cost more every year.<br />
+                <span className="gradient-text">Own it instead.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed mb-8 max-w-[540px]">
-                Your voice, your data, your outreach — powered by AI precision and human insight.
+              <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
+                The same enterprise-grade personalization tech that Fortune 500s use—now accessible to everyone. Replace Thumbtack, Angi, and rising ad costs with direct outreach that actually lands in inboxes and books calls.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="rounded-full hover:scale-105 transition-transform shadow-lg">
-                  <a href="#funnel">Get My Outreach Plan</a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full hover:scale-105 transition-transform">
-                  <a href="#how">See How It Works</a>
-                </Button>
-              </div>
-              
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-6 text-sm text-foreground/60 pt-6 border-t border-border">
-                <span className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-primary" />
-                  15+ years experience
-                </span>
-                <span className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-primary" />
-                  Real-time analytics
-                </span>
-                <span className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-primary" />
-                  90%+ inbox rate
-                </span>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              {/* Animated dashboard mockup with cross-fade */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                {heroImages.map((src, index) => (
-                  <motion.img
-                    key={src}
-                    src={src}
-                    alt={`Dashboard preview ${index + 1}`}
-                    className="w-full h-auto"
-                    loading="lazy"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: currentImageIndex === index ? 1 : 0 }}
-                    transition={{ duration: 1 }}
-                    style={{ position: index === 0 ? 'relative' : 'absolute', top: 0, left: 0, right: 0 }}
-                  />
-                ))}
-                {/* Amber glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-3xl -z-10" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Proof & Trust Section */}
-      <section className="py-16 bg-secondary">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-medium text-foreground/60 mb-8 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            Trusted by growth-driven teams in home services, SaaS, and pro services.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: MessageSquare,
-                text: "Started 17 new conversations in the first month."
-              },
-              {
-                icon: Shield,
-                text: "Only verified, permission-safe sources."
-              },
-              {
-                icon: Users,
-                text: "Every campaign reviewed by a real human before launch."
-              }
-            ].map((item, index) => (
-              <Card 
-                key={index} 
-                className="fade-up opacity-0 translate-y-8 transition-all duration-700 hover:shadow-lg hover:scale-105 transition-all"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="pt-6 text-center">
-                  <item.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                  <p className="text-base font-medium">{item.text}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section id="how" className="py-20 sm:py-32 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            How It Works
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Voice Calibration",
-                desc: "We learn your tone and rhythm."
-              },
-              {
-                icon: Shield,
-                title: "Trusted Sending",
-                desc: "Warmed domains, verified delivery."
-              },
-              {
-                icon: Users,
-                title: "Lead Locator Build",
-                desc: "Find high-fit prospects."
-              },
-              {
-                icon: TrendingUp,
-                title: "Launch & Learn",
-                desc: "Live campaign with ongoing optimization."
-              }
-            ].map((item, index) => (
-              <Card 
-                key={index} 
-                className="fade-up opacity-0 translate-y-8 transition-all duration-700 hover:shadow-xl hover:scale-105 transition-all text-center"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="pt-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <item.icon className="w-8 h-8 text-primary" />
+              <Button size="lg" className="gradient-ui text-white shadow-lg hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+                Get My Outreach Plan
+              </Button>
+              <p className="text-sm text-foreground/60 mt-4">
+                Free strategy call • No commitment • See your exact plan first
+              </p>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="relative animate-fade-in">
+                <div className="absolute inset-0 gradient-ui blur-3xl opacity-20 rounded-3xl"></div>
+                <div className="relative bg-muted rounded-2xl shadow-2xl p-8 border border-border">
+                  <div className="space-y-4">
+                    <div className="h-4 bg-primary/20 rounded w-3/4"></div>
+                    <div className="h-4 bg-secondary/20 rounded w-1/2"></div>
+                    <div className="h-32 gradient-ui/10 rounded-lg mt-6 flex items-center justify-center">
+                      <BarChart3 className="w-16 h-16 text-primary" />
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mt-6">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold gradient-text">89%</div>
+                        <div className="text-xs text-foreground/60">Inbox Rate</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold gradient-text">10K+</div>
+                        <div className="text-xs text-foreground/60">Campaigns</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold gradient-text">0</div>
+                        <div className="text-xs text-foreground/60">Spam</div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-foreground/70">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Logos */}
-      <section className="py-8 bg-[#2a2a2a] text-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            {[
-              { src: smartroofIcon, alt: "Smart Roof" },
-              { src: incIcon, alt: "Inc" },
-              { src: carrascoIcon, alt: "Carrasco" },
-              { src: stretchlabIcon, alt: "StretchLab" }
-            ].map((logo, index) => (
-              <img
-                key={index}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-6 sm:h-7 opacity-40 hover:opacity-60 transition-opacity duration-300 brightness-0 invert"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Real. Human. Outreach. Block */}
-      <section className="py-12 sm:py-16 bg-[#1a1a1a] text-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <img
-              src={lyftEmailIcon}
-              alt="Lyft Email"
-              className="w-12 h-12 mx-auto mb-6"
-              loading="lazy"
-            />
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-8 tracking-tight">
-              Real. Human. Outreach.
-            </h2>
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button asChild variant="outline" size="lg" className="rounded-md border-white/20 text-white bg-transparent hover:bg-white/5 hover:border-white/30 px-8">
-                <a href="#how">See How It Works</a>
-              </Button>
-              <Button asChild size="lg" className="rounded-md bg-[#0066FF] hover:bg-[#0052CC] text-white px-8">
-                <a href="#funnel">Get My Outreach Plan</a>
-              </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 sm:py-32 bg-secondary">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            What Makes Us Different
-          </h2>
-          
-          {/* Value cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                icon: Zap,
-                title: "AI-Powered, Human-Backed",
-                desc: "Technology handles the scale. Humans ensure every message sounds like you."
-              },
-              {
-                icon: Target,
-                title: "Lead Intelligence",
-                desc: "We find prospects with real intent—not just contact information."
-              },
-              {
-                icon: BarChart3,
-                title: "Full Transparency",
-                desc: "See every open, reply, and booking in real-time. No black boxes."
-              }
-            ].map((item, index) => (
-              <Card 
-                key={index} 
-                className="fade-up opacity-0 translate-y-8 transition-all duration-700 hover:shadow-xl hover:scale-105 transition-all"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="pt-6">
-                  <item.icon className="w-12 h-12 mb-4 text-primary" />
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Checklist cards */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              ["Voice matched to your style", "Permission-verified lists", "Real-time performance data"],
-              ["Human QA on every campaign", "Warmed sending infrastructure", "90-day engagement cycles"],
-              ["Lead Locator intelligence", "Transparent pricing", "Cancel anytime with 30-day notice"]
-            ].map((list, index) => (
-              <Card 
-                key={index} 
-                className="fade-up opacity-0 translate-y-8 transition-all duration-700"
-                style={{ transitionDelay: `${(index + 3) * 100}ms` }}
-              >
-                <CardContent className="pt-6">
-                  <ul className="space-y-3">
-                    {list.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+      {/* SECTION 2: TRUST BAR */}
+      <section className="py-6 px-4 sm:px-6 lg:px-8 bg-muted">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-foreground/70">
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-secondary" />
+              <span>10,000+ campaigns delivered</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-secondary" />
+              <span>89% average inbox rate</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-secondary" />
+              <span>Zero spam complaints</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5 text-secondary" />
+              <span>Human QA on every email</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Setup Timeline */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            Getting Started Is Simple
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            {/* Connection line */}
-            <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-border" />
-            
-            {[
-              {
-                step: "1",
-                title: "Discovery Call",
-                desc: "We learn your business, tone, and ideal customer profile."
-              },
-              {
-                step: "2",
-                title: "Campaign Build",
-                desc: "Voice calibration, Lead Locator setup, and warm-up (2–3 weeks, no charge)."
-              },
-              {
-                step: "3",
-                title: "Launch & Optimize",
-                desc: "Your campaigns go live. Billing starts. We refine based on results."
-              }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="fade-up opacity-0 translate-y-8 transition-all duration-700 relative"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg relative z-10">
-                    {item.step}
+      {/* SECTION 3: THE PROBLEM */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1F2937]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-3">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+                Lead costs are out of control.<br />
+                And it's only getting worse.
+              </h2>
+              <div className="text-lg text-gray-300 space-y-4 leading-relaxed">
+                <p>
+                  Thumbtack, Angi, and Google Ads raised prices 30-40% in the last year. You're competing with everyone in your market for the same leads. Meanwhile, AI email tools flooded everyone's inbox and killed reply rates across the board.
+                </p>
+                <p>
+                  You're stuck paying more for worse results, with zero alternative.
+                </p>
+                <p className="font-semibold text-white">
+                  Unless you own your own pipeline.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="bg-[#111827] rounded-2xl p-8 shadow-2xl border border-gray-700">
+                <div className="space-y-6">
+                  <div className="flex items-end gap-2 h-48">
+                    <div className="flex-1 bg-red-500/20 rounded-t-lg" style={{ height: "40%" }}></div>
+                    <div className="flex-1 bg-red-500/30 rounded-t-lg" style={{ height: "60%" }}></div>
+                    <div className="flex-1 bg-red-500/40 rounded-t-lg" style={{ height: "75%" }}></div>
+                    <div className="flex-1 bg-red-500/50 rounded-t-lg" style={{ height: "90%" }}></div>
+                    <div className="flex-1 bg-red-500 rounded-t-lg" style={{ height: "100%" }}></div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-foreground/70">{item.desc}</p>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-red-500">+40%</div>
+                    <div className="text-sm text-gray-400">Lead cost increase (2024)</div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* SECTION 4: THE SHIFT */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <div className="border-l-4 border-primary pl-8">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight mb-8">
+              What if you could reach your ideal customers directly—without the platform tax?
+            </h2>
+            <div className="text-lg text-foreground/70 space-y-6 leading-relaxed">
+              <p>
+                That's what Lyft Email does. We build hyper-personalized outbound campaigns that sound human, land in inboxes, and start real conversations. Not templates. Not spam. Not fighting for scraps on lead platforms.
+              </p>
+              <p>
+                We started building this tech for Fortune 500 companies. Then a roofer in Dallas asked if we could help. We applied the same infrastructure—voice modeling, localized messaging, enterprise-grade deliverability—to his local business.
+              </p>
+              <p>
+                Month two: $37.5K contract and 10 free inspections.
+              </p>
+              <p className="font-semibold text-foreground">
+                That's when we realized this wasn't just for enterprise. This kills Thumbtack for everyone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-16 fade-up opacity-0 translate-y-8 transition-all duration-700">
-            Quick Answers for You.
+      {/* SECTION 5: HOW IT WORKS */}
+      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
+            How It Works
           </h2>
-          
-          <Accordion type="single" collapsible className="fade-up opacity-0 translate-y-8 transition-all duration-700">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>When does billing start?</AccordionTrigger>
-              <AccordionContent>
-                Billing starts only when your campaigns go live. Setup and warm-up period (2–3 weeks) is completely free.
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ui text-white text-2xl font-bold mb-6">
+                1
+              </div>
+              <Mic className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">We Learn Your Voice</h3>
+              <p className="text-foreground/70 leading-relaxed">
+                Share a quick voice note or sample email. Our AI models your tone, vocabulary, and style so every message sounds like it came from you—not a template.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ui text-white text-2xl font-bold mb-6">
+                2
+              </div>
+              <Target className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">We Build Your List</h3>
+              <p className="text-foreground/70 leading-relaxed">
+                We identify and verify your exact ideal customers (by industry, location, title, whatever matters). No bought lists. No spam traps. Just real people who need what you offer.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full gradient-ui text-white text-2xl font-bold mb-6">
+                3
+              </div>
+              <Rocket className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-4">We Launch & Optimize</h3>
+              <p className="text-foreground/70 leading-relaxed">
+                Emails go live with human QA on every message. Live dashboard shows opens, replies, and bookings in real time. We adjust based on performance—you just take the calls.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: PROOF (RESULTS) */}
+      <section id="results" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
+            Real businesses. Real results.
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-background rounded-2xl p-8 shadow-lg border border-border">
+              <div className="text-5xl font-bold gradient-text mb-4">$37.5K</div>
+              <p className="text-lg text-foreground mb-2">Contract value closed in month two</p>
+              <p className="text-sm text-foreground/50 italic">Roofing • Dallas</p>
+            </div>
+            <div className="bg-background rounded-2xl p-8 shadow-lg border border-border">
+              <div className="text-5xl font-bold gradient-text mb-4">10 inspections</div>
+              <p className="text-lg text-foreground mb-2">Booked without spending a dollar on ads</p>
+              <p className="text-sm text-foreground/50 italic">Roofing • Dallas</p>
+            </div>
+            <div className="bg-background rounded-2xl p-8 shadow-lg border border-border">
+              <div className="text-5xl font-bold gradient-text mb-4">89% inbox rate</div>
+              <p className="text-lg text-foreground mb-2">Average across all campaigns</p>
+              <p className="text-sm text-foreground/50 italic">All Industries</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7: COMPARISON */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
+            Stop renting. Start owning.
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Old Way (Lead Platforms)</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Costs rise 30-40% per year</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">You compete with everyone else</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Zero control over lead quality</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Pay per lead, win or lose</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <X className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">No pipeline visibility</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Lyft Email Way</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Flat monthly cost, predictable ROI</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Exclusive access to your targets</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">You approve every list and message</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Only pay when it's working</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-lg text-foreground/70">Live dashboard, full transparency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8: THE TECH */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#111827]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-white mb-16">
+            Built different.
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <Shield className="w-12 h-12 text-secondary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-4">Deliverability Infrastructure</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Domain warming, no tracking pixels, AI inbox monitoring. We engineer inbox placement, not just send volume.
+              </p>
+            </div>
+            <div className="text-center">
+              <Brain className="w-12 h-12 text-secondary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-4">Hyper-Personalization Engine</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Voice modeling, street-level localization, dynamic fields that feel natural. Every email sounds like you wrote it.
+              </p>
+            </div>
+            <div className="text-center">
+              <BarChart3 className="w-12 h-12 text-secondary mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-4">Full Transparency</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Live performance dashboards. See opens, replies, and bookings in real time. No black boxes, no guessing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9: WHO THIS IS FOR */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
+            Built for enterprise. Works for everyone.
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-muted rounded-2xl p-8 border border-border">
+              <Home className="w-10 h-10 text-primary mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-3">Home Services</h3>
+              <p className="text-foreground/60 italic">"Thumbtack costs are eating my margins"</p>
+            </div>
+            <div className="bg-muted rounded-2xl p-8 border border-border">
+              <Briefcase className="w-10 h-10 text-primary mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-3">B2B SaaS</h3>
+              <p className="text-foreground/60 italic">"Cold email tools killed our reply rates"</p>
+            </div>
+            <div className="bg-muted rounded-2xl p-8 border border-border">
+              <Syringe className="w-10 h-10 text-primary mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-3">Med Spas & Wellness</h3>
+              <p className="text-foreground/60 italic">"I need clients, not just clicks"</p>
+            </div>
+            <div className="bg-muted rounded-2xl p-8 border border-border">
+              <Hammer className="w-10 h-10 text-primary mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-3">Contractors & Trade Services</h3>
+              <p className="text-foreground/60 italic">"I can't compete with big ad budgets"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 10: RISK REVERSAL */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#FFF7E6] rounded-2xl p-12 border-2 border-[#FCA311]">
+            <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
+              We take the risk, not you.
+            </h2>
+            <p className="text-lg text-foreground/80 leading-relaxed text-center">
+              Free domain warm-up. Free list building. Free first campaign setup. You don't pay until emails are landing in inboxes and conversations are starting. If it doesn't work, you don't pay. That's the deal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 11: TESTIMONIAL */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-background rounded-2xl p-12 shadow-xl border border-border">
+            <div className="flex items-start gap-6 mb-6">
+              <div className="w-16 h-16 rounded-full gradient-ui flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                MT
+              </div>
+              <div className="flex-1">
+                <p className="text-2xl text-foreground leading-relaxed mb-6">
+                  "Month two, we closed a $37.5K contract and booked 10 free inspections—all from emails that sounded like me. I thought this stuff only worked for tech companies. Turns out it works way better than Thumbtack ever did."
+                </p>
+                <div>
+                  <p className="text-lg font-bold text-foreground">Mike T.</p>
+                  <p className="text-foreground/60">Owner, Apex Roofing • Dallas, TX</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 12: FINAL CTA */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 gradient-ui">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            While your competitors rent leads, you could own the pipeline.
+          </h2>
+          <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Book a free strategy call. We'll show you the exact campaigns we'd run, who we'd target, and what results to expect—before you commit to anything.
+          </p>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 h-auto shadow-xl" onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")}>
+            Get My Outreach Plan
+          </Button>
+          <p className="text-sm text-white/80 mt-6">
+            15-minute Zoom • See your plan first • No pressure, just proof
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 13: FAQ */}
+      <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
+            Questions you're probably asking.
+          </h2>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                How is this different from other cold email tools?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                We're not a tool—we're a done-for-you service. You don't set up domains, write copy, or manage lists. We handle everything from voice modeling to inbox monitoring. You just take the calls.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Can I cancel anytime?</AccordionTrigger>
-              <AccordionContent>
-                Yes, you can cancel with 30-day notice. We work on 90-day cycles for best results.
+
+            <AccordionItem value="item-2" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                Will this work for my industry?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                If you have a defined target customer and a clear offer, yes. We've run this for roofers, SaaS companies, med spas, contractors, and more. The infrastructure is the same—we just customize the messaging.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>What makes this different from Apollo or HubSpot?</AccordionTrigger>
-              <AccordionContent>
-                We combine AI-powered personalization with human oversight. Every campaign is reviewed before sending, and we use Lead Locator intelligence to find prospects with real intent.
+
+            <AccordionItem value="item-3" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                How long until I see results?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                Most campaigns start generating replies within 7-10 days. Deals close anywhere from 2 weeks to 2 months depending on your sales cycle. We optimize as we go.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Do I own my data?</AccordionTrigger>
-              <AccordionContent>
-                Absolutely. All prospect data and campaign results belong to you.
+
+            <AccordionItem value="item-4" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                What if my emails go to spam?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                They won't. We warm domains, avoid tracking pixels, and use AI inbox monitoring to guarantee deliverability. 89% inbox rate average across all campaigns.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-5">
-              <AccordionTrigger>Will this hurt my domain reputation?</AccordionTrigger>
-              <AccordionContent>
-                No. We use proper warm-up protocols and verified, permission-safe sending infrastructure. Our 90%+ inbox placement rate proves it.
+
+            <AccordionItem value="item-5" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                Do I have to write the emails?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                Nope. You give us a voice note or sample email. We model your tone and write everything. You review and approve before anything goes live.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-6">
-              <AccordionTrigger>What happens after the first campaign?</AccordionTrigger>
-              <AccordionContent>
-                We optimize based on results. Each campaign gets smarter with data-driven refinements to messaging, timing, and targeting.
+
+            <AccordionItem value="item-6" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                How much does this cost?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                We'll walk you through pricing on the strategy call based on your volume and goals. No surprises, no hidden fees. You'll know exactly what it costs before you decide.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-7">
-              <AccordionTrigger>Do you write the emails?</AccordionTrigger>
-              <AccordionContent>
-                We collaborate with you. Our AI learns your voice, and our team refines every message to sound authentically like you.
+
+            <AccordionItem value="item-7" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                What if it doesn't work?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                We don't get paid until emails are landing and conversations are starting. If it's not working, we don't charge. That's the deal.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-8" className="border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline">
+                How do I get started?
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/70 leading-relaxed">
+                Book a 15-minute strategy call. We'll show you the plan, answer your questions, and you decide if it's a fit. No commitment required.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="funnel" className="py-20 sm:py-32 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Ready to lift your outbound?
-            </h2>
-            <p className="text-lg sm:text-xl mb-8 opacity-90">
-              We'll help you turn cold contacts into real conversations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button asChild size="lg" variant="secondary" className="rounded-full hover:scale-105 transition-transform">
-                <a href="https://calendly.com/hotlistai/lyftemail" className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
-                  Get My Outreach Plan
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full hover:scale-105 transition-transform bg-white text-foreground border-white hover:bg-white/20 hover:text-white">
-                <a href="#pricing">See Plans & Pricing</a>
-              </Button>
-            </div>
-            <p className="text-sm opacity-75">
-              Includes tone analysis, audience targeting, and campaign prep.<br />
-              No billing until campaigns go live.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[hsl(var(--navy))] text-white py-12">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-8 mb-8">
-            <a href="#overview" className="hover:text-primary transition-colors text-sm">
-              About
-            </a>
-            <a href="#how" className="hover:text-primary transition-colors text-sm">
+      {/* SECTION 14: FOOTER */}
+      <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-[#111827]">
+        <div className="max-w-7xl mx-auto text-center">
+          <img src={logoFull} alt="Lyft Email" className="h-8 mx-auto mb-4 brightness-200" />
+          <p className="text-lg text-white mb-8">Real. Human. Outreach.</p>
+          <div className="flex flex-wrap justify-center gap-8 text-gray-400 mb-8">
+            <button onClick={() => scrollToSection("how-it-works")} className="hover:text-secondary transition-colors">
               How It Works
-            </a>
-            <a href="#pricing" className="hover:text-primary transition-colors text-sm">
-              Pricing
-            </a>
-            <a href="#features" className="hover:text-primary transition-colors text-sm">
-              Features
-            </a>
-            <a href="#funnel" className="hover:text-primary transition-colors text-sm">
-              Get Started
-            </a>
+            </button>
+            <button onClick={() => window.open("https://calendly.com/perspective-funnel", "_blank")} className="hover:text-secondary transition-colors">
+              Book a Call
+            </button>
           </div>
-          <p className="text-sm text-white/70 text-center mb-4">
-            © {new Date().getFullYear()} Lyft Email. AI built, human backed.
+          <p className="text-sm text-gray-500">
+            © 2025 Lyft Email. Built by people who hate spam as much as you do.
           </p>
-          
-          {/* Built by Hotlist AI */}
-          <div className="flex items-center justify-center gap-3 text-sm text-white/50 hover:text-white/80 transition-opacity duration-300">
-            <span>Built by Hotlist AI</span>
-            <img
-              src={hotlistLogo}
-              alt="Hotlist AI"
-              className="h-7"
-              loading="lazy"
-            />
-          </div>
         </div>
       </footer>
     </div>

@@ -8,44 +8,68 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Lyft Email Brand Colors - Updated to Blue Scheme */
-    --chili: 4 84% 57%;
-    --golden: 34 97% 68%;
-    --cream: 210 40% 98%;
-    --eggshell: 210 30% 97%;
-    --white: 0 0% 100%;
-    --blue-primary: 217 91% 60%;
-    --blue-dark: 221 83% 53%;
-    --graphite: 0 0% 19%;
-    --navy: 225 47% 11%;
-
-    /* Semantic tokens */
-    --background: var(--white);
-    --foreground: var(--graphite);
-
-    --card: var(--white);
-    --card-foreground: var(--graphite);
-
-    --primary: var(--blue-primary);
-    --primary-foreground: var(--white);
-
-    --secondary: var(--eggshell);
-    --secondary-foreground: var(--graphite);
-
-    --muted: var(--cream);
-    --muted-foreground: var(--graphite);
-
-    --accent: var(--golden);
-    --accent-foreground: var(--navy);
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: var(--blue-primary);
-
-    --radius: 1rem;
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Primary Brand Colors */
+    --primary: 214 93% 60%; /* #3D83F6 Deep Ocean Blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 184 81% 63%; /* #5CE1E6 Bright Aqua */
+    --secondary-foreground: 0 0% 16%; /* Dark text on secondary */
+    --accent-violet: 270 75% 62%; /* #B14AED Soft Violet */
+    --accent-amber: 35 98% 52%; /* #FCA311 Warm Amber */
+    
+    /* Text & Backgrounds */
+    --foreground: 0 0% 16%; /* #2A2A2A Graphite Gray - body text */
+    --background: 0 0% 100%; /* #FFFFFF White - primary background */
+    --muted: 220 14% 96%; /* #F7F8FA Light Smoke - card backgrounds */
+    --muted-foreground: 214 9% 89%; /* #E3E6EA Mist Gray - dividers/borders */
+    
+    /* UI Elements */
+    --card: 220 14% 96%; /* Light Smoke */
+    --card-foreground: 0 0% 16%; /* Graphite Gray */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 16%;
+    --border: 214 9% 89%; /* Mist Gray */
+    --input: 214 9% 89%;
+    --ring: 214 93% 60%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Chart colors */
+    --chart-1: 214 93% 60%;
+    --chart-2: 184 81% 63%;
+    --chart-3: 270 75% 62%;
+    --chart-4: 35 98% 52%;
+    --chart-5: 27 87% 67%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 222 47% 11%; /* #111827 */
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%; /* #1F2937 */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 214 93% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 184 81% 63%;
+    --secondary-foreground: 0 0% 16%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 212 27% 84%;
+    --chart-1: 214 93% 60%;
+    --chart-2: 184 81% 63%;
+    --chart-3: 270 75% 62%;
+    --chart-4: 35 98% 52%;
+    --chart-5: 27 87% 67%;
   }
 }
 
@@ -69,5 +93,21 @@ All colors MUST be HSL.
 
   h4, h5, h6 {
     @apply font-semibold;
+  }
+  
+  /* Custom Gradients */
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 35%, hsl(var(--accent-violet)) 70%, hsl(var(--accent-amber)) 100%);
+  }
+  
+  .gradient-ui {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
