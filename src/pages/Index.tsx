@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X, TrendingUp, Users, Zap } from "lucide-react";
 import logoMain from "@/assets/lyft-logo-main.png";
-import logoWhite from "@/assets/lyft-icon-white.png";
+import footerLogo from "@/assets/lyft-footer-logo.png";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -536,7 +536,7 @@ const Index = () => {
       {/* SECTION 14: FOOTER */}
       <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-100 via-blue-100 to-purple-100">
         <div className="max-w-7xl mx-auto text-center">
-          <img src={logoWhite} alt="Lyft Email" className="h-24 mx-auto mb-8" />
+          <img src={footerLogo} alt="Lyft Email" className="h-32 mx-auto mb-8" />
           <div className="flex flex-wrap justify-center gap-8 text-foreground/70 mb-8">
             <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors font-medium">
               How It Works
