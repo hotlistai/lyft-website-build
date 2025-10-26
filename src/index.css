@@ -8,72 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --primary: 214 93% 60%; /* #3D83F6 Deep Ocean Blue */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
-    --secondary: 184 81% 63%; /* #5CE1E6 Bright Aqua */
-    --secondary-foreground: 0 0% 16%; /* Dark text on secondary */
-    --accent-violet: 270 75% 62%; /* #B14AED Soft Violet */
-    --accent-amber: 35 98% 52%; /* #FCA311 Warm Amber */
+    /* Brand Colors - Purple/Blue Gradient System */
+    --brand-purple: 265 58% 79%;        /* #b394ff */
+    --brand-blue: 211 63% 53%;          /* #3D91D2 */
+    --brand-purple-dark: 250 60% 61%;   /* #645EDA */
+    --brand-gray: 0 0% 89%;             /* #E2E2E2 */
     
-    /* Text & Backgrounds */
-    --foreground: 0 0% 16%; /* #2A2A2A Graphite Gray - body text */
-    --background: 0 0% 100%; /* #FFFFFF White - primary background */
-    --muted: 220 14% 96%; /* #F7F8FA Light Smoke - card backgrounds */
-    --muted-foreground: 214 9% 89%; /* #E3E6EA Mist Gray - dividers/borders */
-    
-    /* UI Elements */
-    --card: 220 14% 96%; /* Light Smoke */
-    --card-foreground: 0 0% 16%; /* Graphite Gray */
+    /* Design System Tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 16%;
-    --border: 214 9% 89%; /* Mist Gray */
-    --input: 214 9% 89%;
-    --ring: 214 93% 60%;
-    
-    /* Destructive */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    
-    /* Chart colors */
-    --chart-1: 214 93% 60%;
-    --chart-2: 184 81% 63%;
-    --chart-3: 270 75% 62%;
-    --chart-4: 35 98% 52%;
-    --chart-5: 27 87% 67%;
-    
-    --radius: 0.5rem;
+    --popover-foreground: 0 0% 13%;
+    --primary: 265 58% 79%;              /* Purple primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 211 63% 53%;            /* Blue secondary */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 250 60% 61%;               /* Purple-dark accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 265 58% 79%;
+    --radius: 0.75rem;
+    --chart-1: 265 58% 79%;
+    --chart-2: 211 63% 53%;
+    --chart-3: 250 60% 61%;
+    --chart-4: 0 0% 89%;
+    --chart-5: 0 0% 96%;
   }
   
   .dark {
-    --background: 222 47% 11%; /* #111827 */
-    --foreground: 210 40% 98%;
-    --card: 217 33% 17%; /* #1F2937 */
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 214 93% 60%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 265 58% 79%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 184 81% 63%;
-    --secondary-foreground: 0 0% 16%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 212 27% 84%;
-    --chart-1: 214 93% 60%;
-    --chart-2: 184 81% 63%;
-    --chart-3: 270 75% 62%;
-    --chart-4: 35 98% 52%;
-    --chart-5: 27 87% 67%;
+    --secondary: 211 63% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 250 60% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 265 58% 79%;
+    --chart-1: 265 58% 79%;
+    --chart-2: 211 63% 53%;
+    --chart-3: 250 60% 61%;
+    --chart-4: 0 0% 89%;
+    --chart-5: 0 0% 96%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -95,19 +90,24 @@ All colors MUST be HSL.
     @apply font-semibold;
   }
   
-  /* Custom Gradients */
+  /* Custom Gradients - Purple/Blue System */
   .gradient-brand {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 35%, hsl(var(--accent-violet)) 70%, hsl(var(--accent-amber)) 100%);
+    background: linear-gradient(135deg, hsl(var(--brand-purple)) 0%, hsl(var(--brand-blue)) 50%, hsl(var(--brand-purple-dark)) 100%);
   }
   
   .gradient-ui {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple)) 100%);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  .gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--brand-purple)) 0%, hsl(var(--brand-purple-dark)) 100%);
   }
 }

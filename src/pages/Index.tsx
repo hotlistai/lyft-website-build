@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X } from "lucide-react";
-import logoFull from "@/assets/lyft-email-logo-full.png";
-import footerLogo from "@/assets/lyft-footer-logo.png";
+import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X, TrendingUp, Users, Zap } from "lucide-react";
+import logoMain from "@/assets/lyft-logo-main.png";
+import logoWhite from "@/assets/lyft-icon-white.png";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -14,25 +14,23 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      {/* NAVIGATION */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-border shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <img src={logoFull} alt="Lyft Email" className="h-8" />
-            </div>
+          <div className="flex items-center justify-between h-20">
+            <img src={logoMain} alt="Lyft Email" className="h-10" />
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection("how-it-works")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection("how-it-works")} className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 How It Works
               </button>
-              <button onClick={() => scrollToSection("results")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection("results")} className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Results
               </button>
-              <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 FAQ
               </button>
             </div>
-            <Button className="gradient-ui text-white" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
+            <Button className="gradient-ui text-white font-semibold px-6 rounded-full hover:shadow-lg transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
               Get My Outreach Plan
             </Button>
           </div>
@@ -40,49 +38,70 @@ const Index = () => {
       </nav>
 
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-muted/30">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
-            <div className="lg:col-span-3">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-                Your pipeline shouldn't cost more every year.<br />
-                <span className="gradient-text">Own it instead.</span>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                Find, Contact & Close <br />
+                <span className="gradient-text">Your Ideal Clients</span>
               </h1>
               <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
-                The same enterprise-grade personalization tech that Fortune 500s use—now accessible to everyone. Replace Thumbtack, Angi, and rising ad costs with direct outreach that actually lands in inboxes and books calls.
+                Replace expensive lead platforms with hyper-personalized outreach that lands in inboxes, starts real conversations, and actually converts—all without the platform tax.
               </p>
-              <Button size="lg" className="gradient-ui text-white shadow-lg hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
+              <Button size="lg" className="gradient-ui text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
                 Get My Outreach Plan
               </Button>
-              <p className="text-sm text-foreground/60 mt-4">
-                Free strategy call • No commitment • See your exact plan first
-              </p>
+              <div className="flex items-center gap-6 mt-6">
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-secondary" />
+                  <span className="text-sm text-foreground/70">Free strategy call</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-secondary" />
+                  <span className="text-sm text-foreground/70">No commitment</span>
+                </div>
+              </div>
             </div>
-            <div className="lg:col-span-2">
-              <div className="relative animate-fade-in">
-                <div className="absolute inset-0 gradient-ui blur-3xl opacity-20 rounded-3xl"></div>
-                <div className="relative bg-muted rounded-2xl shadow-2xl p-8 border border-border">
-                  <div className="space-y-4">
-                    <div className="h-4 bg-primary/20 rounded w-3/4"></div>
-                    <div className="h-4 bg-secondary/20 rounded w-1/2"></div>
-                    <div className="h-32 gradient-ui/10 rounded-lg mt-6 flex items-center justify-center">
-                      <BarChart3 className="w-16 h-16 text-primary" />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-secondary/30 to-accent/30 blur-3xl opacity-50 rounded-3xl"></div>
+              <div className="relative bg-white border border-border rounded-3xl p-8 shadow-2xl">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full gradient-ui flex items-center justify-center">
+                      <BarChart3 className="w-5 h-5 text-white" />
                     </div>
-                    <div className="grid grid-cols-3 gap-4 mt-6">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold gradient-text">89%</div>
-                        <div className="text-xs text-foreground/60">Inbox Rate</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold gradient-text">10K+</div>
-                        <div className="text-xs text-foreground/60">Campaigns</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold gradient-text">0</div>
-                        <div className="text-xs text-foreground/60">Spam</div>
-                      </div>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">Analytics</p>
+                      <p className="text-xs text-muted-foreground">Campaign Dashboard</p>
                     </div>
                   </div>
+                  <span className="text-xs font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">Live</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-4">
+                    <p className="text-sm text-foreground/60 mb-1">Contacted</p>
+                    <p className="text-3xl font-bold text-foreground">1,770</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl p-4">
+                    <p className="text-sm text-foreground/60 mb-1">Opened</p>
+                    <p className="text-3xl font-bold text-foreground">338</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl p-4">
+                    <p className="text-sm text-foreground/60 mb-1">Replied</p>
+                    <p className="text-3xl font-bold text-foreground">44</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-pink-50 to-pink-100/50 rounded-2xl p-4">
+                    <p className="text-sm text-foreground/60 mb-1">Positive</p>
+                    <p className="text-3xl font-bold text-foreground">13</p>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-sm text-foreground/60">Revenue</p>
+                    <TrendingUp className="w-4 h-4 text-green-600" />
+                  </div>
+                  <p className="text-3xl font-bold gradient-text">$3,900</p>
                 </div>
               </div>
             </div>
@@ -115,39 +134,39 @@ const Index = () => {
       </section>
 
       {/* SECTION 3: THE PROBLEM */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-muted/50 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             <div className="lg:col-span-3">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+              <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight mb-6">
                 Lead costs are out of control.<br />
                 And it's only getting worse.
               </h2>
-              <div className="text-lg text-gray-300 space-y-4 leading-relaxed">
+              <div className="text-lg text-foreground/70 space-y-4 leading-relaxed">
                 <p>
                   Thumbtack, Angi, and Google Ads raised prices 30-40% in the last year. You're competing with everyone in your market for the same leads. Meanwhile, AI email tools flooded everyone's inbox and killed reply rates across the board.
                 </p>
                 <p>
                   You're stuck paying more for worse results, with zero alternative.
                 </p>
-                <p className="font-semibold text-white">
+                <p className="font-semibold text-foreground">
                   Unless you own your own pipeline.
                 </p>
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="bg-[#111827] rounded-2xl p-8 shadow-2xl border border-gray-700">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-border">
                 <div className="space-y-6">
                   <div className="flex items-end gap-2 h-48">
-                    <div className="flex-1 bg-red-500/20 rounded-t-lg" style={{ height: "40%" }}></div>
-                    <div className="flex-1 bg-red-500/30 rounded-t-lg" style={{ height: "60%" }}></div>
-                    <div className="flex-1 bg-red-500/40 rounded-t-lg" style={{ height: "75%" }}></div>
-                    <div className="flex-1 bg-red-500/50 rounded-t-lg" style={{ height: "90%" }}></div>
-                    <div className="flex-1 bg-red-500 rounded-t-lg" style={{ height: "100%" }}></div>
+                    <div className="flex-1 bg-gradient-to-t from-red-200 to-red-100 rounded-t-lg" style={{ height: "40%" }}></div>
+                    <div className="flex-1 bg-gradient-to-t from-red-300 to-red-200 rounded-t-lg" style={{ height: "60%" }}></div>
+                    <div className="flex-1 bg-gradient-to-t from-red-400 to-red-300 rounded-t-lg" style={{ height: "75%" }}></div>
+                    <div className="flex-1 bg-gradient-to-t from-red-500 to-red-400 rounded-t-lg" style={{ height: "90%" }}></div>
+                    <div className="flex-1 bg-gradient-to-t from-red-600 to-red-500 rounded-t-lg" style={{ height: "100%" }}></div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-red-500">+40%</div>
-                    <div className="text-sm text-gray-400">Lead cost increase (2024)</div>
+                    <div className="text-4xl font-bold text-red-600">+40%</div>
+                    <div className="text-sm text-foreground/60 font-medium">Lead cost increase (2024)</div>
                   </div>
                 </div>
               </div>
@@ -310,30 +329,36 @@ const Index = () => {
       </section>
 
       {/* SECTION 8: THE TECH */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center text-white mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center text-foreground mb-16">
             Built different.
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <Shield className="w-12 h-12 text-secondary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-4">Deliverability Infrastructure</h3>
-              <p className="text-gray-300 leading-relaxed">
+            <div className="text-center bg-white rounded-3xl p-8 shadow-lg border border-border">
+              <div className="w-16 h-16 rounded-2xl gradient-ui flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Deliverability Infrastructure</h3>
+              <p className="text-foreground/70 leading-relaxed">
                 Domain warming, no tracking pixels, AI inbox monitoring. We engineer inbox placement, not just send volume.
               </p>
             </div>
-            <div className="text-center">
-              <Brain className="w-12 h-12 text-secondary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-4">Hyper-Personalization Engine</h3>
-              <p className="text-gray-300 leading-relaxed">
+            <div className="text-center bg-white rounded-3xl p-8 shadow-lg border border-border">
+              <div className="w-16 h-16 rounded-2xl gradient-purple flex items-center justify-center mx-auto mb-6">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Hyper-Personalization Engine</h3>
+              <p className="text-foreground/70 leading-relaxed">
                 Voice modeling, street-level localization, dynamic fields that feel natural. Every email sounds like you wrote it.
               </p>
             </div>
-            <div className="text-center">
-              <BarChart3 className="w-12 h-12 text-secondary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-4">Full Transparency</h3>
-              <p className="text-gray-300 leading-relaxed">
+            <div className="text-center bg-white rounded-3xl p-8 shadow-lg border border-border">
+              <div className="w-16 h-16 rounded-2xl gradient-ui flex items-center justify-center mx-auto mb-6">
+                <BarChart3 className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Full Transparency</h3>
+              <p className="text-foreground/70 leading-relaxed">
                 Live performance dashboards. See opens, replies, and bookings in real time. No black boxes, no guessing.
               </p>
             </div>
@@ -509,18 +534,18 @@ const Index = () => {
       </section>
 
       {/* SECTION 14: FOOTER */}
-      <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-[#3e96f7]">
+      <footer className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-100 via-blue-100 to-purple-100">
         <div className="max-w-7xl mx-auto text-center">
-          <img src={footerLogo} alt="Lyft Email" className="h-24 mx-auto mb-8" />
-          <div className="flex flex-wrap justify-center gap-8 text-gray-400 mb-8">
-            <button onClick={() => scrollToSection("how-it-works")} className="hover:text-secondary transition-colors">
+          <img src={logoWhite} alt="Lyft Email" className="h-24 mx-auto mb-8" />
+          <div className="flex flex-wrap justify-center gap-8 text-foreground/70 mb-8">
+            <button onClick={() => scrollToSection("how-it-works")} className="hover:text-primary transition-colors font-medium">
               How It Works
             </button>
-            <button onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")} className="hover:text-secondary transition-colors">
+            <button onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")} className="hover:text-primary transition-colors font-medium">
               Book a Call
             </button>
           </div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-foreground/60">
             © 2025 Lyft Email. Built by people who hate spam as much as you do.
           </p>
         </div>
