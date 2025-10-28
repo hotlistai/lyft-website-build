@@ -43,24 +43,19 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-                Find, Contact & Close <br />
-                <span className="gradient-text">Your Ideal Clients</span>
+                Replace Rented Lead Platforms <br />
+                <span className="gradient-text">With Owned Conversations</span>
               </h1>
               <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
-                Replace expensive lead platforms with hyper-personalized outreach that lands in inboxes, starts real conversations, and actually converts—all without the platform tax.
+                Start real conversations that actually convert.
               </p>
-              <Button size="lg" className="gradient-ui text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
-                Get My Outreach Plan
-              </Button>
-              <div className="flex items-center gap-6 mt-6">
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-secondary" />
-                  <span className="text-sm text-foreground/70">Free strategy call</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-secondary" />
-                  <span className="text-sm text-foreground/70">No commitment</span>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="gradient-ui text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
+                  Get My Outreach Plan
+                </Button>
+                <Button size="lg" variant="outline" className="font-semibold px-8 py-6 text-lg rounded-full hover:bg-muted transition-all" onClick={() => scrollToSection("how-it-works")}>
+                  See How It Works
+                </Button>
               </div>
             </div>
             <div className="relative">
@@ -104,6 +99,9 @@ const Index = () => {
                   <p className="text-3xl font-bold gradient-text">$3,900</p>
                 </div>
               </div>
+              <p className="text-center text-sm text-foreground/60 mt-4">
+                Real results: $37.5K contract + 10 inspections, month two
+              </p>
             </div>
           </div>
         </div>
