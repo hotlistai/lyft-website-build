@@ -43,11 +43,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-                Replace Rented Lead Platforms <br />
-                <span className="gradient-text">With Owned Conversations</span>
+                Reach People, <br />
+                <span className="gradient-text">Not Inboxes</span>
               </h1>
               <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
-                Start real conversations that actually convert.
+                Your next customer isn't a data point. Our system blends AI and human review to create natural, one-to-one outreach that converts quietly and consistently.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="gradient-ui text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
