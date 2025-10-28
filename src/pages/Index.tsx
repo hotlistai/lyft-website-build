@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Check, Mic, Target, Rocket, Shield, Brain, BarChart3, Home, Briefcase, Syringe, Hammer, X, TrendingUp, Users, Zap } from "lucide-react";
+import { useState } from "react";
 import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
 
 const Index = () => {
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false);
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -31,7 +35,7 @@ const Index = () => {
               </button>
             </div>
             <Button className="gradient-ui text-white font-semibold px-6 rounded-full hover:shadow-lg transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
-              Get My Outreach Plan
+              Get a 15-Minute Walkthrough
             </Button>
           </div>
         </div>
@@ -51,10 +55,10 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="gradient-ui text-white font-semibold px-8 py-6 text-lg rounded-full hover:shadow-xl transition-all" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
-                  Get My Outreach Plan
+                  Get a 15-Minute Walkthrough
                 </Button>
-                <Button size="lg" variant="outline" className="font-semibold px-8 py-6 text-lg rounded-full hover:bg-muted transition-all" onClick={() => scrollToSection("how-it-works")}>
-                  See How It Works
+                <Button size="lg" variant="outline" className="font-semibold px-8 py-6 text-lg rounded-full hover:bg-muted transition-all" onClick={() => setVideoDialogOpen(true)}>
+                  Hear It From a Real Roofer
                 </Button>
               </div>
             </div>
@@ -441,7 +445,7 @@ const Index = () => {
             Book a free strategy call. We'll show you the exact campaigns we'd run, who we'd target, and what results to expect—before you commit to anything.
           </p>
           <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 h-auto shadow-xl" onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}>
-            Get My Outreach Plan
+            Get a 15-Minute Walkthrough
           </Button>
           <p className="text-sm text-white/80 mt-6">
             15-minute Zoom • See your plan first • No pressure, just proof
@@ -548,6 +552,19 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Video Dialog */}
+      <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
+        <DialogContent className="sm:max-w-[800px]">
+          <DialogHeader>
+            <DialogTitle>Hear From a Real Roofer</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video w-full bg-muted rounded-lg flex items-center justify-center">
+            {/* Video will be embedded here - placeholder for now */}
+            <p className="text-muted-foreground">Video player coming soon</p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
