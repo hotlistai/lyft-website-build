@@ -67,40 +67,81 @@ const Index = () => {
               <div className="relative bg-white border border-border rounded-3xl p-8 shadow-2xl">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full gradient-ui flex items-center justify-center">
-                      <BarChart3 className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00A8E8] to-[#5CE1E6] flex items-center justify-center">
+                      <Users className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">Analytics</p>
+                      <p className="text-sm font-semibold text-foreground">Live Conversations</p>
                       <p className="text-xs text-muted-foreground">Campaign Dashboard</p>
                     </div>
                   </div>
-                  <span className="text-xs font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">Live</span>
-                </div>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-4">
-                    <p className="text-sm text-foreground/60 mb-1">Contacted</p>
-                    <p className="text-3xl font-bold text-foreground">1,770</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl p-4">
-                    <p className="text-sm text-foreground/60 mb-1">Opened</p>
-                    <p className="text-3xl font-bold text-foreground">338</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl p-4">
-                    <p className="text-sm text-foreground/60 mb-1">Replied</p>
-                    <p className="text-3xl font-bold text-foreground">44</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-pink-50 to-pink-100/50 rounded-2xl p-4">
-                    <p className="text-sm text-foreground/60 mb-1">Positive</p>
-                    <p className="text-3xl font-bold text-foreground">13</p>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span className="text-xs font-medium text-green-600">Live</span>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <p className="text-sm text-foreground/60">Revenue</p>
-                    <TrendingUp className="w-4 h-4 text-green-600" />
+                
+                {/* Inbox Messages */}
+                <div className="space-y-3 mb-6">
+                  {/* Message 1 */}
+                  <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all animate-fade-in">
+                    <div className="flex items-start justify-between mb-2">
+                      <p className="text-sm font-semibold text-foreground">Re: Roof inspection this week?</p>
+                      <span className="text-xs text-muted-foreground">2m ago</span>
+                    </div>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      "Hey John, yeah, we're looking for estimates. Thanks for reaching out."
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#00A8E8] to-[#5CE1E6] rounded-full"></div>
+                      <span className="text-xs font-medium text-[#00A8E8]">Positive reply</span>
+                    </div>
                   </div>
-                  <p className="text-3xl font-bold gradient-text">$3,900</p>
+
+                  {/* Message 2 */}
+                  <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all" style={{ animationDelay: '0.2s' }}>
+                    <div className="flex items-start justify-between mb-2">
+                      <p className="text-sm font-semibold text-foreground">Re: Your solar question</p>
+                      <span className="text-xs text-muted-foreground">8m ago</span>
+                    </div>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      "Appreciate the info. Can we schedule a quick call?"
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#00A8E8] to-[#5CE1E6] rounded-full"></div>
+                      <span className="text-xs font-medium text-[#00A8E8]">Meeting requested</span>
+                    </div>
+                  </div>
+
+                  {/* Message 3 */}
+                  <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all opacity-90" style={{ animationDelay: '0.4s' }}>
+                    <div className="flex items-start justify-between mb-2">
+                      <p className="text-sm font-semibold text-foreground">Re: Expansion project</p>
+                      <span className="text-xs text-muted-foreground">15m ago</span>
+                    </div>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      "This is exactly what we need. Let's talk specifics..."
+                    </p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#00A8E8] to-[#5CE1E6] rounded-full"></div>
+                      <span className="text-xs font-medium text-[#00A8E8]">High interest</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats Summary */}
+                <div className="bg-gradient-to-br from-[#00A8E8]/5 to-[#5CE1E6]/5 rounded-2xl p-4 border border-[#00A8E8]/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-foreground">13</p>
+                      <p className="text-sm text-foreground/60">real conversations started this week</p>
+                    </div>
+                    <div className="flex items-center gap-2 animate-pulse">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00A8E8] to-[#5CE1E6] flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">+1</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <p className="text-center text-sm text-foreground/60 mt-4">
