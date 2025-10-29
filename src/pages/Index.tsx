@@ -588,6 +588,15 @@ const Index = () => {
               Book a Call
             </button>
           </div>
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-foreground/60 mb-6">
+            <a href="https://hotlistai.com/privacy/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="https://hotlistai.com/terms/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              Terms of Service
+            </a>
+          </div>
           <p className="text-sm text-foreground/60">
             © 2025 Lyft Email. Built by people who hate spam as much as you do.
           </p>
