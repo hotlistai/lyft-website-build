@@ -8,6 +8,8 @@ import footerLogo from "@/assets/lyft-footer-logo.png";
 
 const Index = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
+  const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false);
+  const [termsDialogOpen, setTermsDialogOpen] = useState(false);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -589,13 +591,13 @@ const Index = () => {
             </button>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-foreground/60 mb-6">
-            <a href="https://hotlistai.com/privacy/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <button onClick={() => setPrivacyDialogOpen(true)} className="hover:text-primary transition-colors">
               Privacy Policy
-            </a>
+            </button>
             <span>•</span>
-            <a href="https://hotlistai.com/terms/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <button onClick={() => setTermsDialogOpen(true)} className="hover:text-primary transition-colors">
               Terms of Service
-            </a>
+            </button>
           </div>
           <p className="text-sm text-foreground/60">
             © 2025 Lyft Email. Built by people who hate spam as much as you do.
@@ -612,6 +614,142 @@ const Index = () => {
           <div className="aspect-video w-full bg-muted rounded-lg flex items-center justify-center">
             {/* Video will be embedded here - placeholder for now */}
             <p className="text-muted-foreground">Video player coming soon</p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Privacy Policy Dialog */}
+      <Dialog open={privacyDialogOpen} onOpenChange={setPrivacyDialogOpen}>
+        <DialogContent className="sm:max-w-[700px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Privacy Policy</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 text-sm">
+            <p className="text-muted-foreground">Last updated: 11.06.2025</p>
+            <p>At Hotlist AI, we take your privacy seriously. This Privacy Policy outlines how we collect, use, and protect your personal information when you interact with our website, forms, and services.</p>
+            
+            <div>
+              <h3 className="font-semibold text-base mb-2">1. What We Collect</h3>
+              <p className="mb-2">When you fill out a form, subscribe to updates, or contact us, we may collect the following information:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Name</li>
+                <li>Email address</li>
+                <li>Phone number</li>
+                <li>Company name</li>
+                <li>Industry & marketing preferences</li>
+                <li>Other relevant business information you choose to share</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">2. How We Use Your Information</h3>
+              <p className="mb-2">We collect this data to:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Respond to your inquiries or requests</li>
+                <li>Provide access to Hotlist AI tools or demos</li>
+                <li>Send you relevant product updates or marketing content (you can unsubscribe anytime)</li>
+                <li>Improve our services and website experience</li>
+                <li>Comply with legal obligations (if required)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">3. Data Sharing & Protection</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>We <strong>do not sell or rent</strong> your information.</li>
+                <li>We may share data with trusted service providers (e.g. CRM or email platforms) solely to help us serve you better.</li>
+                <li>Your data is stored securely and access is limited to authorized personnel only.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">4. Your Rights</h3>
+              <p className="mb-2">You have the right to:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Access or correct your information</li>
+                <li>Request data deletion</li>
+                <li>Opt-out of marketing communications at any time</li>
+              </ul>
+              <p className="mt-2">To make a request, email us at <a href="mailto:info@hotlistai.com" className="text-primary hover:underline">info@hotlistai.com</a></p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">5. Cookies & Tracking</h3>
+              <p>Our website uses cookies to improve user experience and analyze performance. You can manage cookie settings in your browser at any time.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">6. Contact Us</h3>
+              <p>If you have any questions about this policy or how your data is handled, please contact:</p>
+              <p className="mt-2">Hotlist AI<br />469-569-2007<br /><a href="mailto:info@hotlistai.com" className="text-primary hover:underline">info@hotlistai.com</a></p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Terms of Service Dialog */}
+      <Dialog open={termsDialogOpen} onOpenChange={setTermsDialogOpen}>
+        <DialogContent className="sm:max-w-[700px] max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Terms & Conditions</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 text-sm">
+            <p className="text-muted-foreground">Last updated: 11.06.2025</p>
+            <p>Welcome to LeadGEN. By accessing or using our website and services, you agree to be bound by the following Terms & Conditions. Please read them carefully.</p>
+            
+            <div>
+              <h3 className="font-semibold text-base mb-2">1. Use of This Website</h3>
+              <p className="mb-2">By using this site, you confirm that you are at least 18 years old and agree not to use the site or services for any unlawful or unauthorized purposes.</p>
+              <p className="mb-2">You agree not to:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Violate any laws or third-party rights</li>
+                <li>Attempt to disrupt or compromise our website or services</li>
+                <li>Use our content or materials for commercial gain without permission</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">2. Intellectual Property</h3>
+              <p className="mb-2">All content on this site — including text, graphics, logos, and software — is the property of LeadGEN (or its licensors) and is protected by copyright and trademark laws.</p>
+              <p className="mb-2">You may not:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Copy, reproduce, or redistribute content without written consent</li>
+                <li>Use our brand identity or design elements as your own</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">3. Limitation of Liability</h3>
+              <p className="mb-2">While we aim to provide accurate and reliable information, LeadGEN makes no guarantees about the completeness or accuracy of content.</p>
+              <p className="mb-2">We are not liable for:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Any indirect, incidental, or consequential damages</li>
+                <li>Issues arising from third-party integrations or external services</li>
+                <li>Temporary downtime or technical errors</li>
+              </ul>
+              <p className="mt-2">Use the website and services at your own risk.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">4. Subscription & Free Access</h3>
+              <p>LeadGEN may offer free access, trials, or demo versions of its tools. These are provided "as is" and can be modified or removed at any time without notice.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">5. Links to Other Sites</h3>
+              <p>Our website may include links to third-party websites. We are not responsible for their content, terms, or privacy practices.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">6. Changes to These Terms</h3>
+              <p>We may update these Terms occasionally. When we do, we'll revise the "last updated" date at the top of this page. Continued use of the site implies acceptance of any changes.</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-base mb-2">7. Contact Us</h3>
+              <p>If you have any questions about these Terms & Conditions, please contact:</p>
+              <p className="mt-2">LeadGEN<br />123 Growth Avenue, Suite 4B<br />San Francisco, CA 94103<br /><a href="mailto:support@leadgenapp.io" className="text-primary hover:underline">support@leadgenapp.io</a></p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
