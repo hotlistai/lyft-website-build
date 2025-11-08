@@ -10,6 +10,7 @@ const Index = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false);
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
+  const [caseStudyModalOpen, setCaseStudyModalOpen] = useState(false);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -307,6 +308,66 @@ const Index = () => {
               <div className="text-5xl font-bold gradient-text mb-4">89% inbox rate</div>
               <p className="text-lg text-foreground mb-2">Average across all campaigns</p>
               <p className="text-sm text-foreground/50 italic">All Industries</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY: SMARTROOF */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Video Section */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/smartroof-cover.jpg"
+                  className="w-full"
+                >
+                  <source src="/smartroof-case-study.webm" type="video/webm" />
+                </video>
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                  $150K closed in 90 days
+                </div>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                Case study — SmartRoof
+              </h2>
+              <blockquote className="text-xl text-foreground/80 italic mb-6 border-l-4 border-primary pl-4">
+                "In week one we closed a 37K job. Then two more at 50K and 29K."
+              </blockquote>
+              <p className="text-sm text-foreground/60 mb-8">— Keith, SmartRoof</p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-foreground/70">Three jobs closed for 116K in three weeks</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-foreground/70">Fifteen live homeowner conversations</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
+                  <p className="text-foreground/70">From first reply to install in about three weeks</p>
+                </div>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="gradient-ui text-white font-semibold px-8 rounded-full hover:shadow-xl transition-all"
+                onClick={() => setCaseStudyModalOpen(true)}
+              >
+                Watch full 5:02 breakdown
+              </Button>
             </div>
           </div>
         </div>
@@ -614,6 +675,86 @@ const Index = () => {
           <div className="aspect-video w-full bg-muted rounded-lg flex items-center justify-center">
             {/* Video will be embedded here - placeholder for now */}
             <p className="text-muted-foreground">Video player coming soon</p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Case Study Full Video Modal */}
+      <Dialog open={caseStudyModalOpen} onOpenChange={setCaseStudyModalOpen}>
+        <DialogContent className="sm:max-w-[1000px]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">SmartRoof Full Case Study (5:02)</DialogTitle>
+          </DialogHeader>
+          
+          {/* YouTube Video Embed */}
+          <div className="aspect-video w-full rounded-lg overflow-hidden">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/wZ-7GYeaGhc"
+              title="SmartRoof Case Study"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
+          {/* Video Chapters */}
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-foreground mb-3">Chapters</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+              <button className="text-left p-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+                <span className="text-primary font-semibold">0:00</span>
+                <span className="text-foreground/70 ml-2">Why lead platforms failed</span>
+              </button>
+              <button className="text-left p-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+                <span className="text-primary font-semibold">1:00</span>
+                <span className="text-foreground/70 ml-2">First-day replies</span>
+              </button>
+              <button className="text-left p-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+                <span className="text-primary font-semibold">2:10</span>
+                <span className="text-foreground/70 ml-2">Three wins = $116K</span>
+              </button>
+              <button className="text-left p-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+                <span className="text-primary font-semibold">3:15</span>
+                <span className="text-foreground/70 ml-2">Onboarding speed</span>
+              </button>
+              <button className="text-left p-3 rounded-lg bg-muted hover:bg-muted/70 transition-colors">
+                <span className="text-primary font-semibold">4:10</span>
+                <span className="text-foreground/70 ml-2">Fit and expectations</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Metrics */}
+          <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border">
+            <div className="text-center">
+              <div className="text-3xl font-bold gradient-text mb-1">3</div>
+              <div className="text-sm text-foreground/60">Jobs closed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold gradient-text mb-1">$116K</div>
+              <div className="text-sm text-foreground/60">Total value</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold gradient-text mb-1">~3 weeks</div>
+              <div className="text-sm text-foreground/60">Time to install</div>
+            </div>
+          </div>
+
+          {/* Footer CTA */}
+          <div className="mt-6 pt-6 border-t border-border">
+            <Button 
+              size="lg" 
+              className="w-full gradient-ui text-white font-semibold rounded-full hover:shadow-xl transition-all"
+              onClick={() => {
+                setCaseStudyModalOpen(false);
+                scrollToSection("book");
+              }}
+            >
+              See your first conversation
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
