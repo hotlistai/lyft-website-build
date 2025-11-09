@@ -314,14 +314,14 @@ const Home = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <div className="text-5xl font-bold text-primary mb-4">$150K</div>
-              <p className="text-lg text-text-dark mb-2">Contract value closed in 90 days</p>
-              <p className="text-sm text-text-muted italic">Roofing • Dallas</p>
+              <div className="text-5xl font-bold text-primary mb-4">$116K</div>
+              <p className="text-lg text-text-dark mb-2">Three jobs closed in first month</p>
+              <p className="text-sm text-text-muted italic">Roofing • SmartRoof</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <div className="text-5xl font-bold text-primary mb-4">15</div>
-              <p className="text-lg text-text-dark mb-2">Live conversations per week</p>
-              <p className="text-sm text-text-muted italic">Across all campaigns</p>
+              <div className="text-5xl font-bold text-primary mb-4">14+</div>
+              <p className="text-lg text-text-dark mb-2">Real conversations with homeowners</p>
+              <p className="text-sm text-text-muted italic">First campaign</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
               <div className="text-5xl font-bold text-primary mb-4">89%</div>
@@ -348,27 +348,27 @@ const Home = () => {
                 <source src="/smartroof-case-study.webm" type="video/webm" />
               </video>
               <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg border border-border-light">
-                <p className="text-sm font-semibold text-primary">$150K closed in 90 days</p>
+                <p className="text-sm font-semibold text-primary">First reply in 24 hours</p>
               </div>
             </div>
             <div>
               <h3 className="text-3xl font-semibold text-text-dark mb-4">Case Study — SmartRoof</h3>
               <p className="text-lg text-text-muted mb-6 italic">
-                "In week one we closed a 37K job. Then two more at 50K and 29K."
+                "The first three leads turned into three roof inspections. One was $37K, then $50K, then $29K. This is the highest close rate I've ever had."
               </p>
-              <p className="text-base text-text-muted mb-4">— Keith, SmartRoof</p>
+              <p className="text-base text-text-muted mb-4">— Keith, SmartRoof Owner</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Three jobs closed for $116K in three weeks</span>
+                  <span className="text-base text-text-dark">$116K closed from first three jobs</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Fifteen live homeowner conversations</span>
+                  <span className="text-base text-text-dark">14-15 real conversations with qualified homeowners</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">From first reply to install in about three weeks</span>
+                  <span className="text-base text-text-dark">First reply came in day one—roof on in three weeks</span>
                 </li>
               </ul>
               <Button
@@ -486,27 +486,27 @@ const Home = () => {
               ></iframe>
             </div>
             <div className="space-y-4 mb-6">
-              <h4 className="font-semibold text-text-dark">Chapters:</h4>
+              <h4 className="font-semibold text-text-dark">Key Moments:</h4>
               <ul className="space-y-2 text-sm text-text-muted">
-                <li>0:00 - Why lead platforms failed</li>
-                <li>1:00 - First-day replies</li>
-                <li>2:10 - Three wins = $116K</li>
-                <li>3:15 - Onboarding speed</li>
-                <li>4:10 - Fit and expectations</li>
+                <li>0:00 - Why buying leads doesn't work anymore</li>
+                <li>1:00 - Getting real replies in 24 hours</li>
+                <li>2:10 - $37K job in week one, $116K total</li>
+                <li>3:15 - How fast onboarding really is</li>
+                <li>4:10 - Highest close rate ever experienced</li>
               </ul>
             </div>
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div className="bg-bg-alt rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-primary">3</p>
-                <p className="text-sm text-text-muted">Jobs closed</p>
+                <p className="text-2xl font-bold text-primary">14+</p>
+                <p className="text-sm text-text-muted">Real conversations</p>
               </div>
               <div className="bg-bg-alt rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-primary">$116K</p>
-                <p className="text-sm text-text-muted">Total value</p>
+                <p className="text-sm text-text-muted">First 3 jobs</p>
               </div>
               <div className="bg-bg-alt rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-primary">~3 weeks</p>
-                <p className="text-sm text-text-muted">Time to install</p>
+                <p className="text-2xl font-bold text-primary">24hr</p>
+                <p className="text-sm text-text-muted">First reply</p>
               </div>
             </div>
             <Button

@@ -63,7 +63,7 @@ const Pricing = () => {
                 <p className="text-sm text-text-muted text-center italic">One-time $500 setup — first payment $897</p>
               </div>
               <p className="text-base text-text-muted mb-6 text-center">
-                Perfect for teams that want to launch quickly and manage follow-ups in-house.
+                Perfect for teams that want to launch quickly and handle most follow-ups in-house.
               </p>
               <Button
                 className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-6"
@@ -75,11 +75,15 @@ const Pricing = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 curated emails with follow-ups (ready to send)</span>
+                  <span className="text-sm text-text-dark">1 campaign (3-month minimum)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">1,000 qualified leads/month</span>
+                  <span className="text-sm text-text-dark">1 curated email with 3 follow-ups</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">1,000 leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -99,7 +103,7 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">WhatsApp onboarding & call support</span>
+                  <span className="text-sm text-text-dark">WhatsApp + onboarding call support</span>
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-border-light text-center">
@@ -122,7 +126,7 @@ const Pricing = () => {
                 <p className="text-sm text-text-muted text-center italic">One-time $700 setup — first payment $1,497</p>
               </div>
               <p className="text-base text-text-muted mb-6 text-center">
-                Ideal for teams that want full guidance, deeper optimization, and hands-on support from our team.
+                Best for teams that want ongoing optimization and full guidance from our team.
               </p>
               <Button
                 className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl transition-all duration-200 w-full mb-6"
@@ -134,15 +138,15 @@ const Pricing = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 managed campaigns (3-month minimum)</span>
+                  <span className="text-sm text-text-dark">3 campaigns (3-month minimum)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 email sequences with 6 follow-ups each</span>
+                  <span className="text-sm text-text-dark">3 curated emails with 6 follow-ups per campaign</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">5,000 qualified leads/month</span>
+                  <span className="text-sm text-text-dark">5,000 leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -154,7 +158,7 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">Real-time dashboard + analytics access</span>
+                  <span className="text-sm text-text-dark">Real-time dashboard access</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -181,7 +185,7 @@ const Pricing = () => {
                 <div className="text-4xl font-bold text-primary mb-1 text-center">Custom Pricing</div>
               </div>
               <p className="text-base text-text-muted mb-8 text-center">
-                Perfect for teams managing multiple brands or regions that need a fully hands-off outbound system. We handle strategy, deliverability, and optimization — you just review the results.
+                For companies running multiple brands, regions, or offers that need a fully customized outbound system. Includes tailored strategy, advanced deliverability management, and ongoing optimization across campaigns.
               </p>
               <Button
                 className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-8"
@@ -206,26 +210,40 @@ const Pricing = () => {
           <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
             Add-Ons
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Extra Contacts</h3>
-              <div className="text-3xl font-bold text-primary mb-4">$500</div>
-              <p className="text-base text-text-muted mb-6">
-                Add 500 additional verified contacts to your monthly allocation
+              <h3 className="text-2xl font-semibold text-text-dark mb-4">Lead Intelligence Platform</h3>
+              <div className="text-3xl font-bold text-primary mb-4">+$250<span className="text-lg text-text-muted">/mo</span></div>
+              <p className="text-base text-text-muted">
+                Advanced demographic and behavioral targeting using custom filters
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Reply Handling</h3>
-              <div className="text-3xl font-bold text-primary mb-4">$1,000</div>
-              <p className="text-base text-text-muted mb-6">
-                We respond to initial replies and qualify leads before passing to you
+              <h3 className="text-2xl font-semibold text-text-dark mb-4">AI Reply Handling</h3>
+              <div className="text-3xl font-bold text-primary mb-4">Custom</div>
+              <p className="text-base text-text-muted">
+                Automated smart reply routing with human QA review
               </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Calendar Booking</h3>
-              <div className="text-3xl font-bold text-primary mb-4">$750</div>
-              <p className="text-base text-text-muted mb-6">
-                We handle booking qualified leads directly into your calendar
+              <h3 className="text-2xl font-semibold text-text-dark mb-4">Additional Lead Credits</h3>
+              <div className="text-3xl font-bold text-primary mb-4">Custom</div>
+              <p className="text-base text-text-muted">
+                Scale beyond your base monthly limit
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
+              <h3 className="text-2xl font-semibold text-text-dark mb-4">Turnkey Domain Setup</h3>
+              <div className="text-3xl font-bold text-primary mb-4">One-time</div>
+              <p className="text-base text-text-muted">
+                We purchase and configure all domains for you
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
+              <h3 className="text-2xl font-semibold text-text-dark mb-4">Priority Support</h3>
+              <div className="text-3xl font-bold text-primary mb-4">+$49<span className="text-lg text-text-muted">/mo</span></div>
+              <p className="text-base text-text-muted">
+                Same-day responses via Slack or email
               </p>
             </div>
           </div>
