@@ -60,7 +60,7 @@ const Contact = () => {
       </nav>
 
       {/* HERO + FORM */}
-      <section className="pt-32 pb-24 px-8 bg-gradient-to-b from-white to-bg-alt">
+      <section className="pt-32 pb-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-6xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
@@ -157,7 +157,7 @@ const Contact = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-bg-alt border-t border-border-light py-20">
+      <footer className="bg-white border-t border-border-light py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div>

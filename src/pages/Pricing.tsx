@@ -205,7 +205,7 @@ const Pricing = () => {
       </section>
 
       {/* ADD-ONS */}
-      <section className="py-20 px-8 bg-bg-alt">
+      <section className="py-20 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
             Add-Ons
@@ -282,7 +282,7 @@ const Pricing = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-bg-alt border-t border-border-light py-20">
+      <footer className="bg-white border-t border-border-light py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div>

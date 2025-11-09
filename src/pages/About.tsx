@@ -51,7 +51,7 @@ const About = () => {
       </section>
 
       {/* MISSION VISUAL */}
-      <section className="py-20 px-8 bg-bg-alt">
+      <section className="py-20 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="bg-white rounded-2xl p-16 shadow-xl shadow-black/5 border border-border-light text-center">
             <div className="max-w-4xl mx-auto">
@@ -89,7 +89,7 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="bg-bg-alt rounded-2xl p-12 border border-border-light">
+            <div className="bg-white rounded-2xl p-12 border border-border-light shadow-lg shadow-black/5">
               <div className="text-center">
                 <UsersIcon className="w-16 h-16 text-primary mx-auto mb-6" />
                 <p className="text-lg text-text-dark leading-relaxed">
@@ -111,7 +111,7 @@ const About = () => {
       </section>
 
       {/* OUR PRINCIPLES */}
-      <section className="py-24 px-8 bg-bg-alt">
+      <section className="py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
             Our 6 cherished values & principles
@@ -211,7 +211,7 @@ const About = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-bg-alt border-t border-border-light py-20">
+      <footer className="bg-white border-t border-border-light py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div>

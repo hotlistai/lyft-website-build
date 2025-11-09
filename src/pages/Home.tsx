@@ -62,10 +62,10 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* HERO SECTION WITH GRADIENT OVERLAY */}
+      {/* HERO SECTION WITH SUBTLE GRADIENT ACCENT */}
       <section className="pt-32 pb-24 px-8 bg-white relative overflow-hidden">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ height: '200%', top: '-50%' }}></div>
+        {/* Ultra Subtle Animated Gradient Background */}
+        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ height: '150%', top: '-25%' }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -160,7 +160,7 @@ const Home = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section className="py-20 px-8 bg-bg-alt border-t border-border-light">
+      <section className="py-20 px-8 bg-white border-t border-border-light">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-text-muted mb-8 font-medium">You're in good company:</p>
           <div className="flex flex-wrap justify-center items-center gap-12">
@@ -182,8 +182,8 @@ const Home = () => {
 
       {/* HOW IT WORKS - REDESIGNED WITH CINEMATIC EFFECTS */}
       <section id="how-it-works" className="py-32 px-8 bg-white relative overflow-hidden">
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ opacity: 0.15 }}></div>
+        {/* Ultra Subtle Gradient Accent */}
+        <div className="absolute top-0 left-1/4 w-1/2 h-96 hero-gradient-overlay pointer-events-none" style={{ opacity: 0.8 }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header with Animated Underline */}
@@ -307,7 +307,7 @@ const Home = () => {
       </section>
 
       {/* RESULTS */}
-      <section id="results" className="py-24 px-8 bg-bg-alt">
+      <section id="results" className="py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
             Real businesses. Real results.
@@ -402,7 +402,7 @@ const Home = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-bg-alt border-t border-border-light py-20">
+      <footer className="bg-white border-t border-border-light py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div>

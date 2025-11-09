@@ -112,7 +112,7 @@ All colors MUST be HSL.
     background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   }
   
-  /* Dynamic Hero Gradient Animation */
+  /* Dynamic Hero Gradient Animation - Ultra Subtle */
   @keyframes hueShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -123,8 +123,8 @@ All colors MUST be HSL.
     background: linear-gradient(120deg, #2563EB, #7C3AED, #FF4F57, #FFD65B);
     background-size: 300% 300%;
     animation: hueShift 20s ease infinite;
-    opacity: 0.15;
-    filter: blur(80px);
+    opacity: 0.06;
+    filter: blur(100px);
   }
   
   /* Icon Gradient Backgrounds */
