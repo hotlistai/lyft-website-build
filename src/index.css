@@ -8,65 +8,66 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Brand Colors - Purple/Blue Gradient System */
-    --brand-purple: 265 58% 79%;        /* #b394ff */
-    --brand-blue: 211 63% 53%;          /* #3D91D2 */
-    --brand-purple-dark: 250 60% 61%;   /* #645EDA */
-    --brand-gray: 0 0% 89%;             /* #E2E2E2 */
+    /* Perspective-inspired Blue Design System */
+    --brand-blue: 217 91% 60%;          /* #2563EB - Primary Blue */
+    --brand-blue-hover: 224 76% 48%;    /* #1E4FCA - Hover State */
+    --brand-purple-accent: 262 83% 58%; /* #7C3AED - Gradient accent */
     
     /* Design System Tokens */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 13%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 13%;
+    --background: 0 0% 100%;             /* #FFFFFF */
+    --foreground: 215 28% 17%;           /* #111827 */
+    --card: 0 0% 100%;                   /* #FFFFFF */
+    --card-foreground: 215 28% 17%;      /* #111827 */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
-    --primary: 265 58% 79%;              /* Purple primary */
+    --popover-foreground: 215 28% 17%;
+    --primary: 217 91% 60%;              /* #2563EB - Blue primary */
     --primary-foreground: 0 0% 100%;
-    --secondary: 211 63% 53%;            /* Blue secondary */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 250 60% 61%;               /* Purple-dark accent */
+    --primary-hover: 224 76% 48%;        /* #1E4FCA */
+    --secondary: 220 13% 91%;            /* #E5E7EB - Light gray */
+    --secondary-foreground: 215 28% 17%;
+    --muted: 210 20% 98%;                /* #F9FAFB */
+    --muted-foreground: 215 14% 47%;     /* #6B7281 */
+    --accent: 262 83% 58%;               /* #7C3AED - Purple accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 265 58% 79%;
+    --border: 220 13% 91%;               /* #E5E7EB */
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
     --radius: 0.75rem;
-    --chart-1: 265 58% 79%;
-    --chart-2: 211 63% 53%;
-    --chart-3: 250 60% 61%;
-    --chart-4: 0 0% 89%;
-    --chart-5: 0 0% 96%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 224 76% 48%;
+    --chart-4: 220 13% 91%;
+    --chart-5: 210 20% 98%;
   }
   
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 265 58% 79%;
+    --background: 222 47% 11%;           /* #0F172A */
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 211 63% 53%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 250 60% 61%;
+    --primary-hover: 224 76% 48%;
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 14% 47%;
+    --accent: 262 83% 58%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 265 58% 79%;
-    --chart-1: 265 58% 79%;
-    --chart-2: 211 63% 53%;
-    --chart-3: 250 60% 61%;
-    --chart-4: 0 0% 89%;
-    --chart-5: 0 0% 96%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 224 76% 48%;
+    --chart-4: 220 13% 91%;
+    --chart-5: 210 20% 98%;
   }
 
   * {
@@ -90,24 +91,24 @@ All colors MUST be HSL.
     @apply font-semibold;
   }
   
-  /* Custom Gradients - Purple/Blue System */
+  /* Custom Gradients - Blue/Purple System (Perspective Style) */
   .gradient-brand {
-    background: linear-gradient(135deg, hsl(var(--brand-purple)) 0%, hsl(var(--brand-blue)) 50%, hsl(var(--brand-purple-dark)) 100%);
+    background: linear-gradient(180deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple-accent)) 100%);
   }
   
   .gradient-ui {
-    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple)) 100%);
+    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-blue-hover)) 100%);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple)) 100%);
+    background: linear-gradient(135deg, hsl(var(--brand-blue)) 0%, hsl(var(--brand-purple-accent)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
   }
   
-  .gradient-purple {
-    background: linear-gradient(135deg, hsl(var(--brand-purple)) 0%, hsl(var(--brand-purple-dark)) 100%);
+  .gradient-subtle {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   }
 }

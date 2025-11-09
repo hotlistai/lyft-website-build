@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,6 +58,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "text-dark": "hsl(215 28% 17%)",
+        "text-muted": "hsl(215 14% 47%)",
+        "text-light": "hsl(0 0% 100%)",
+        "bg-light": "hsl(0 0% 100%)",
+        "bg-alt": "hsl(210 20% 98%)",
+        "border-light": "hsl(220 13% 91%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -84,6 +91,19 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fadeInUp 0.6s ease-out",
+      },
+      keyframes: {
+        fadeInUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
     },
   },
