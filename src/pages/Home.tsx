@@ -20,7 +20,14 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Dynamic Background Waves */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-20 left-10 w-96 h-96 hero-gradient-overlay rounded-full" style={{ opacity: 0.08 }}></div>
+        <div className="absolute top-96 right-20 w-80 h-80 hero-gradient-overlay rounded-full" style={{ opacity: 0.06, animationDelay: '5s' }}></div>
+        <div className="absolute bottom-40 left-1/4 w-72 h-72 hero-gradient-overlay rounded-full" style={{ opacity: 0.05, animationDelay: '10s' }}></div>
+      </div>
+
       {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border-light">
         <div className="max-w-7xl mx-auto px-8">
@@ -64,209 +71,143 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* HERO SECTION WITH SUBTLE GRADIENT ACCENT */}
-      <section className="pt-32 pb-24 px-8 bg-white relative overflow-hidden">
-        {/* Ultra Subtle Animated Gradient Background */}
-        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ height: '150%', top: '-25%' }}></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in-up">
-              <h1 className="text-6xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
-                Reach People,<br />
-                Not Inboxes
-              </h1>
-              <p className="text-lg font-normal leading-relaxed text-text-dark mb-8">
-                Your next customer isn't a data point. Our system blends AI and human review to create natural, one-to-one outreach that converts quietly and consistently.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-                  onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
-                >
-                  Get My Outreach Plan
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200"
-                  onClick={() => setVideoDialogOpen(true)}
-                >
-                  Watch Case Study
-                </Button>
-              </div>
+      {/* HERO SECTION - CENTERED */}
+      <section className="pt-32 pb-20 px-8 bg-white relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="animate-fade-in-up">
+            <h1 className="text-7xl md:text-8xl font-bold text-text-dark mb-8 leading-[1.1] tracking-tight">
+              Outbound that sounds human.<br/>
+              <span className="gradient-text">Because it is.</span>
+            </h1>
+            <p className="text-xl md:text-2xl font-normal leading-relaxed text-text-muted mb-12 max-w-3xl mx-auto">
+              Stop renting leads. Build your own pipeline with transparent, human-quality outreach that actually lands in inboxes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button
+                size="lg"
+                className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg"
+                onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
+              >
+                Get My Outreach Plan
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent text-primary font-semibold py-4 px-10 rounded-xl border-2 border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 text-lg"
+                onClick={() => setVideoDialogOpen(true)}
+              >
+                Watch Case Study
+              </Button>
             </div>
-            <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <InteractiveEmailClient />
-            </div>
+          </div>
+          
+          {/* Centered Interactive Visual */}
+          <div className="relative animate-fade-in-up max-w-4xl mx-auto" style={{ animationDelay: '0.2s' }}>
+            <InteractiveEmailClient />
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR - REDESIGNED */}
-      <section className="py-24 px-8 bg-white border-t border-border-light relative overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none opacity-50"></div>
-        
-        <div className="max-w-6xl mx-auto relative z-10">
-          <p className="text-center text-text-muted mb-12 font-medium text-lg">Trusted by contractors across North America</p>
+      {/* TRUST BAR WITH SCROLLING LOGOS */}
+      <section className="py-20 px-8 bg-white relative z-10">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-text-muted mb-16 font-medium text-lg">Trusted by contractors across North America</p>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Check className="w-7 h-7 text-white stroke-[3]" />
-              </div>
-              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
+          {/* Stats Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
+              <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 10,000+
               </div>
-              <p className="text-base text-text-muted font-medium">campaigns delivered</p>
+              <p className="text-base text-text-muted font-medium">Campaigns delivered</p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-accent/5 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-[#FF6B6B] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Check className="w-7 h-7 text-white stroke-[3]" />
-              </div>
-              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-accent to-[#FF6B6B] bg-clip-text text-transparent">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
+              <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 89%
               </div>
-              <p className="text-base text-text-muted font-medium">average inbox rate</p>
+              <p className="text-base text-text-muted font-medium">Average inbox rate</p>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-[#7C3AED]/5 hover:shadow-xl hover:shadow-[#7C3AED]/10 hover:-translate-y-1 transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#A855F7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Check className="w-7 h-7 text-white stroke-[3]" />
-              </div>
-              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
+              <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 100%
               </div>
               <p className="text-base text-text-muted font-medium">Human QA on every email</p>
             </div>
           </div>
+
+          {/* Scrolling Logos Section */}
+          <div className="relative overflow-hidden py-8">
+            <div className="flex animate-scroll whitespace-nowrap">
+              <div className="flex items-center gap-16 px-8">
+                <div className="text-2xl font-bold text-text-muted opacity-40">SmartRoof</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">StretchLab</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">Inc.</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">Carrasco</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">HotList AI</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">SmartRoof</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">StretchLab</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">Inc.</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">Carrasco</div>
+                <div className="text-2xl font-bold text-text-muted opacity-40">HotList AI</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS - REDESIGNED WITH CINEMATIC EFFECTS */}
-      <section id="how-it-works" className="py-32 px-8 bg-white relative overflow-hidden">
-        {/* Ultra Subtle Gradient Accent */}
-        <div className="absolute top-0 left-1/4 w-1/2 h-96 hero-gradient-overlay pointer-events-none" style={{ opacity: 0.8 }}></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Section Header with Animated Underline */}
-          <div className="text-center mb-20 animate-fade-in-up">
-            <h2 className="text-6xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
+      {/* HOW IT WORKS - CENTERED */}
+      <section id="how-it-works" className="py-32 px-8 bg-white relative z-10">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-20 animate-fade-in-up">
+            <h2 className="text-6xl md:text-7xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
               How It Works
             </h2>
-            <div className="w-32 h-1.5 mx-auto rounded-full overflow-hidden bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20">
-              <div className="h-full w-1/3 bg-gradient-to-r from-primary via-accent to-primary animate-pulse"></div>
-            </div>
-          </div>
-
-          {/* Interactive Step Cards with Animated Connectors */}
-          <div className="grid md:grid-cols-3 gap-12 mb-16 relative">
-            {/* Animated Connecting Lines SVG */}
-            <svg className="hidden md:block absolute top-24 left-0 w-full h-32 pointer-events-none" style={{ zIndex: 0 }}>
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2563EB" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="#7C3AED" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#FF4F57" stopOpacity="0.6" />
-                </linearGradient>
-                <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#FFD65B" stopOpacity="0.6" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M 220 40 Q 400 20, 580 40"
-                stroke="url(#lineGradient)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="10 6"
-                opacity="0.5"
-                className="animate-pulse"
-              />
-              <path
-                d="M 860 40 Q 1040 20, 1220 40"
-                stroke="url(#lineGradient2)"
-                strokeWidth="3"
-                fill="none"
-                strokeDasharray="10 6"
-                opacity="0.5"
-                className="animate-pulse"
-                style={{ animationDelay: '0.5s' }}
-              />
-            </svg>
-
-            {/* Card 1 - We Learn Your Voice */}
-            <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-blue hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
-              style={{ animationDelay: '0.2s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div 
-                  className="w-24 h-24 rounded-full icon-gradient-blue flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
-                  style={{ animation: 'iconPulse 3s ease-in-out infinite' }}
-                >
-                  <Mic className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Learn Your Voice</h3>
-                <p className="text-base text-text-muted leading-relaxed">
-                  Share a quick voice note or sample email. Our AI models your tone, vocabulary, and style so every message sounds like it came from you—not a template.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 - We Build Your List */}
-            <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-coral hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
-              style={{ animationDelay: '0.4s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div 
-                  className="w-24 h-24 rounded-full icon-gradient-coral flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
-                  style={{ animation: 'iconPulseCoral 3s ease-in-out infinite', animationDelay: '1s' }}
-                >
-                  <Target className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Build Your List</h3>
-                <p className="text-base text-text-muted leading-relaxed">
-                  We identify and verify your exact ideal customers (by industry, location, title, whatever matters). No bought lists. No spam traps. Just real people who need what you offer.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 - We Launch & Optimize */}
-            <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-purple hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
-              style={{ animationDelay: '0.6s' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <div 
-                  className="w-24 h-24 rounded-full icon-gradient-purple flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
-                  style={{ animation: 'iconPulsePurple 3s ease-in-out infinite', animationDelay: '2s' }}
-                >
-                  <Rocket className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Launch & Optimize</h3>
-                <p className="text-base text-text-muted leading-relaxed">
-                  Emails go live with human QA on every message. Live dashboard shows opens, replies, and bookings in real time. We adjust based on performance—you just take the calls.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Footer with Enhanced Animation */}
-          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <p className="text-3xl font-bold text-text-dark mb-8 tracking-tight">
-              Real Conversations. Real Results.
+            <p className="text-xl text-text-muted max-w-3xl mx-auto">
+              Three simple steps to your own transparent outbound engine
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            {/* Step 1 */}
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Mic className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">We Learn Your Voice</h3>
+              <p className="text-lg text-text-muted leading-relaxed">
+                Share a quick voice note or sample email. Our AI models your tone so every message sounds like you wrote it.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.1s' }}>
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-[#FF6B6B] flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">We Build Your List</h3>
+              <p className="text-lg text-text-muted leading-relaxed">
+                We identify and verify your exact ideal customers. No bought lists. No spam traps. Just real people.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#7C3AED] to-[#A855F7] flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
+                <Rocket className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">We Launch & Optimize</h3>
+              <p className="text-lg text-text-muted leading-relaxed">
+                Emails go live with human QA on every message. Live dashboard shows results in real time. You take the calls.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <Button
               size="lg"
-              className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-xl shadow-primary/30 hover:bg-primary-hover hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+              className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-xl shadow-primary/30 hover:bg-primary-hover hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-lg"
               onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Get My Outreach Plan
@@ -275,27 +216,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* RESULTS */}
-      <section id="results" className="py-24 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
-            Real businesses. Real results.
+      {/* RESULTS - CENTERED */}
+      <section id="results" className="py-32 px-8 bg-white relative z-10">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-6xl md:text-7xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
+            Real businesses.<br/>Real results.
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <div className="text-5xl font-bold text-primary mb-4">$116K</div>
-              <p className="text-lg text-text-dark mb-2">Three jobs closed in first month</p>
-              <p className="text-sm text-text-muted italic">Roofing • SmartRoof</p>
+          <p className="text-xl text-text-muted mb-20 max-w-2xl mx-auto">
+            From Dallas roofers to national brands—hyper-personalized outreach that converts.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$116K</div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">Three jobs closed</p>
+              <p className="text-base text-text-muted">First month • SmartRoof</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <div className="text-5xl font-bold text-primary mb-4">14+</div>
-              <p className="text-lg text-text-dark mb-2">Real conversations with homeowners</p>
-              <p className="text-sm text-text-muted italic">First campaign</p>
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">14+</div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">Real conversations</p>
+              <p className="text-base text-text-muted">Qualified homeowners</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <div className="text-5xl font-bold text-primary mb-4">89%</div>
-              <p className="text-lg text-text-dark mb-2">Average inbox rate</p>
-              <p className="text-sm text-text-muted italic">All Industries</p>
+            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">89%</div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">Inbox rate</p>
+              <p className="text-base text-text-muted">Across all industries</p>
             </div>
           </div>
         </div>
@@ -351,18 +296,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-24 px-8 bg-primary">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-semibold leading-snug text-white mb-6">
-            See your first conversation
+      {/* FINAL CTA - CENTERED */}
+      <section className="py-32 px-8 relative z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary opacity-95"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-6xl md:text-7xl font-bold leading-tight text-white mb-8">
+            See Your First<br/>Conversation
           </h2>
-          <p className="text-lg text-white/90 mb-8">
-            Book a 15-minute walkthrough and we'll show you exactly how we'd build your campaign.
+          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+            Book a 15-minute walkthrough. We'll show you exactly how we'd build your campaign.
           </p>
           <Button
             size="lg"
-            className="bg-white text-primary font-semibold py-3.5 px-8 rounded-lg hover:bg-white/90 transition-all duration-200"
+            className="bg-white text-primary font-semibold py-4 px-10 rounded-xl hover:bg-white/90 hover:scale-105 hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl"
             onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
           >
             Get My Outreach Plan
