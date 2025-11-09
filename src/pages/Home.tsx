@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
 import { FloatingBookDemo } from "@/components/FloatingBookDemo";
-import { AnimatedInboxDashboard } from "@/components/AnimatedInboxDashboard";
+import { InteractiveEmailClient } from "@/components/InteractiveEmailClient";
 
 const Home = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
@@ -98,7 +98,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <AnimatedInboxDashboard />
+              <InteractiveEmailClient />
             </div>
           </div>
         </div>
