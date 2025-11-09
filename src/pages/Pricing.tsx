@@ -56,42 +56,58 @@ const Pricing = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* BASE PLAN */}
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">Base</h3>
-              <p className="text-base text-text-muted mb-6">
-                Ideal for getting started with outreach and achieving initial success.
-              </p>
-              <div className="mb-8">
-                <div className="text-5xl font-bold text-primary mb-2">$2,500<span className="text-lg text-text-muted">/mo</span></div>
-                <p className="text-sm text-text-muted">Setup + management</p>
+              <div className="text-sm text-text-muted text-center mb-2 font-medium">Launch Fast</div>
+              <h3 className="text-3xl font-semibold text-text-dark mb-4 text-center">BASE</h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-primary mb-1 text-center">$397<span className="text-lg text-text-muted">/mo</span></div>
+                <p className="text-sm text-text-muted text-center italic">One-time $500 setup — first payment $897</p>
               </div>
+              <p className="text-base text-text-muted mb-6 text-center">
+                Perfect for teams that want to launch quickly and manage follow-ups in-house.
+              </p>
               <Button
-                className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-8"
+                className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-6"
                 onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
-                Get Started
+                Launch My System
               </Button>
-              <ul className="space-y-4">
+              <p className="text-sm font-semibold text-text-dark mb-3">Includes</p>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">500 verified contacts/month</span>
+                  <span className="text-sm text-text-dark">3 curated emails with follow-ups (ready to send)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">AI voice modeling</span>
+                  <span className="text-sm text-text-dark">1,000 qualified leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Human QA on every email</span>
+                  <span className="text-sm text-text-dark">Free 2-3 week warm-up</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Live reply dashboard</span>
+                  <span className="text-sm text-text-dark">3 custom domains & 9 email personas</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Weekly performance reports</span>
+                  <span className="text-sm text-text-dark">Google Workspace included</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">Monthly analytics summary</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">WhatsApp onboarding & call support</span>
                 </li>
               </ul>
+              <div className="mt-6 pt-6 border-t border-border-light text-center">
+                <div className="flex items-center justify-center gap-1 text-yellow-500 mb-1">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p className="text-xs text-text-muted">4.8 stars out of 75 reviews</p>
+              </div>
             </div>
 
             {/* ASSIST PLAN */}
@@ -99,90 +115,86 @@ const Pricing = () => {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                 Most Popular
               </div>
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">Assist</h3>
-              <p className="text-base text-text-muted mb-6">
-                The most popular features & extended support for growing businesses.
-              </p>
-              <div className="mb-8">
-                <div className="text-5xl font-bold text-primary mb-2">$4,500<span className="text-lg text-text-muted">/mo</span></div>
-                <p className="text-sm text-text-muted">Setup + management</p>
+              <div className="text-sm text-text-muted text-center mb-2 font-medium">Growth Partner</div>
+              <h3 className="text-3xl font-semibold text-text-dark mb-4 text-center">ASSIST</h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-primary mb-1 text-center">$797<span className="text-lg text-text-muted">/mo</span></div>
+                <p className="text-sm text-text-muted text-center italic">One-time $700 setup — first payment $1,497</p>
               </div>
+              <p className="text-base text-text-muted mb-6 text-center">
+                Ideal for teams that want full guidance, deeper optimization, and hands-on support from our team.
+              </p>
               <Button
-                className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl transition-all duration-200 w-full mb-8"
+                className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl transition-all duration-200 w-full mb-6"
                 onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
-                Get Started
+                Launch My System
               </Button>
-              <ul className="space-y-4">
+              <p className="text-sm font-semibold text-text-dark mb-3">Includes</p>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">1,500 verified contacts/month</span>
+                  <span className="text-sm text-text-dark">3 managed campaigns (3-month minimum)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Everything in Base</span>
+                  <span className="text-sm text-text-dark">3 email sequences with 6 follow-ups each</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Multi-channel sequences</span>
+                  <span className="text-sm text-text-dark">5,000 qualified leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">A/B testing</span>
+                  <span className="text-sm text-text-dark">Free 2-3 week warm-up</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Dedicated success manager</span>
+                  <span className="text-sm text-text-dark">3 custom domains & 9 email personas</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Priority support (24hr response)</span>
+                  <span className="text-sm text-text-dark">Real-time dashboard + analytics access</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">2 guided onboarding sessions + private Slack channel</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">Google Workspace included</span>
                 </li>
               </ul>
+              <div className="mt-6 pt-6 border-t border-border-light text-center">
+                <div className="flex items-center justify-center gap-1 text-yellow-500 mb-1">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p className="text-xs text-text-muted">4.8 stars out of 75 reviews</p>
+              </div>
             </div>
 
             {/* ENTERPRISE PLAN */}
             <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light hover:scale-105 transition-transform duration-200">
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">Enterprise</h3>
-              <p className="text-base text-text-muted mb-6">
-                Individual plans for fast-growing companies & enterprises.
-              </p>
-              <div className="mb-8">
-                <div className="text-5xl font-bold text-primary mb-2">Custom</div>
-                <p className="text-sm text-text-muted">Tailored to your needs</p>
+              <div className="text-sm text-text-muted text-center mb-2 font-medium">White-Glove, Done-For-You</div>
+              <h3 className="text-3xl font-semibold text-text-dark mb-4 text-center">ENTERPRISE</h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-primary mb-1 text-center">Custom Pricing</div>
               </div>
+              <p className="text-base text-text-muted mb-8 text-center">
+                Perfect for teams managing multiple brands or regions that need a fully hands-off outbound system. We handle strategy, deliverability, and optimization — you just review the results.
+              </p>
               <Button
                 className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-8"
                 onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
-                Contact Sales
+                Book a Strategy Call
               </Button>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Custom contact volume</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Everything in Assist</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">White-label reporting</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Dedicated infrastructure</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Custom integrations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">Dedicated account team</span>
-                </li>
-              </ul>
+              <div className="mt-auto pt-6 border-t border-border-light text-center">
+                <div className="flex items-center justify-center gap-1 text-yellow-500 mb-1">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p className="text-xs text-text-muted">4.8 stars out of 75 reviews</p>
+              </div>
             </div>
           </div>
         </div>
