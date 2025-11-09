@@ -180,59 +180,71 @@ const Home = () => {
         </div>
       </section>
 
-      {/* HOW IT WORKS - REDESIGNED */}
+      {/* HOW IT WORKS - REDESIGNED WITH CINEMATIC EFFECTS */}
       <section id="how-it-works" className="py-32 px-8 bg-white relative overflow-hidden">
         {/* Animated Gradient Background */}
-        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none"></div>
+        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ opacity: 0.15 }}></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Section Header */}
+          {/* Section Header with Animated Underline */}
           <div className="text-center mb-20 animate-fade-in-up">
-            <h2 className="text-6xl font-bold text-text-dark mb-4 leading-tight tracking-tight">
+            <h2 className="text-6xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
               How It Works
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full"></div>
+            <div className="w-32 h-1.5 mx-auto rounded-full overflow-hidden bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20">
+              <div className="h-full w-1/3 bg-gradient-to-r from-primary via-accent to-primary animate-pulse"></div>
+            </div>
           </div>
 
-          {/* Interactive Step Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16 relative">
-            {/* Connecting Lines SVG */}
-            <svg className="hidden md:block absolute top-1/4 left-0 w-full h-32 pointer-events-none" style={{ zIndex: 0 }}>
+          {/* Interactive Step Cards with Animated Connectors */}
+          <div className="grid md:grid-cols-3 gap-12 mb-16 relative">
+            {/* Animated Connecting Lines SVG */}
+            <svg className="hidden md:block absolute top-24 left-0 w-full h-32 pointer-events-none" style={{ zIndex: 0 }}>
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2563EB" />
-                  <stop offset="50%" stopColor="#7C3AED" />
-                  <stop offset="100%" stopColor="#FF4F57" />
+                  <stop offset="0%" stopColor="#2563EB" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="#7C3AED" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#FF4F57" stopOpacity="0.6" />
+                </linearGradient>
+                <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#FFD65B" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
               <path
-                d="M 200 60 Q 400 40, 640 60"
+                d="M 220 40 Q 400 20, 580 40"
                 stroke="url(#lineGradient)"
-                strokeWidth="2"
+                strokeWidth="3"
                 fill="none"
-                strokeDasharray="8 4"
-                opacity="0.4"
+                strokeDasharray="10 6"
+                opacity="0.5"
+                className="animate-pulse"
               />
               <path
-                d="M 840 60 Q 1040 40, 1280 60"
-                stroke="url(#lineGradient)"
-                strokeWidth="2"
+                d="M 860 40 Q 1040 20, 1220 40"
+                stroke="url(#lineGradient2)"
+                strokeWidth="3"
                 fill="none"
-                strokeDasharray="8 4"
-                opacity="0.4"
+                strokeDasharray="10 6"
+                opacity="0.5"
+                className="animate-pulse"
+                style={{ animationDelay: '0.5s' }}
               />
             </svg>
 
             {/* Card 1 - We Learn Your Voice */}
             <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-blue hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
-              style={{ animationDelay: '0.1s' }}
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-blue hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
+              style={{ animationDelay: '0.2s' }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full icon-gradient-blue flex items-center justify-center mb-6 shadow-lg">
-                  <Mic className="w-10 h-10 text-white" />
+                <div 
+                  className="w-24 h-24 rounded-full icon-gradient-blue flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
+                  style={{ animation: 'iconPulse 3s ease-in-out infinite' }}
+                >
+                  <Mic className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Learn Your Voice</h3>
+                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Learn Your Voice</h3>
                 <p className="text-base text-text-muted leading-relaxed">
                   Share a quick voice note or sample email. Our AI models your tone, vocabulary, and style so every message sounds like it came from you—not a template.
                 </p>
@@ -241,14 +253,17 @@ const Home = () => {
 
             {/* Card 2 - We Build Your List */}
             <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-coral hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
-              style={{ animationDelay: '0.3s' }}
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-coral hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
+              style={{ animationDelay: '0.4s' }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full icon-gradient-coral flex items-center justify-center mb-6 shadow-lg">
-                  <Target className="w-10 h-10 text-white" />
+                <div 
+                  className="w-24 h-24 rounded-full icon-gradient-coral flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
+                  style={{ animation: 'iconPulseCoral 3s ease-in-out infinite', animationDelay: '1s' }}
+                >
+                  <Target className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Build Your List</h3>
+                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Build Your List</h3>
                 <p className="text-base text-text-muted leading-relaxed">
                   We identify and verify your exact ideal customers (by industry, location, title, whatever matters). No bought lists. No spam traps. Just real people who need what you offer.
                 </p>
@@ -257,14 +272,17 @@ const Home = () => {
 
             {/* Card 3 - We Launch & Optimize */}
             <div 
-              className="bg-white rounded-2xl p-10 border border-border-light card-glow-purple hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
-              style={{ animationDelay: '0.5s' }}
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-purple hover:scale-[1.05] hover:-translate-y-2 transition-all duration-300 animate-fade-in-up relative z-10 group"
+              style={{ animationDelay: '0.6s' }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full icon-gradient-purple flex items-center justify-center mb-6 shadow-lg">
-                  <Rocket className="w-10 h-10 text-white" />
+                <div 
+                  className="w-24 h-24 rounded-full icon-gradient-purple flex items-center justify-center mb-8 shadow-2xl transition-all duration-300 group-hover:scale-110"
+                  style={{ animation: 'iconPulsePurple 3s ease-in-out infinite', animationDelay: '2s' }}
+                >
+                  <Rocket className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Launch & Optimize</h3>
+                <h3 className="text-3xl font-semibold text-text-dark mb-5">We Launch & Optimize</h3>
                 <p className="text-base text-text-muted leading-relaxed">
                   Emails go live with human QA on every message. Live dashboard shows opens, replies, and bookings in real time. We adjust based on performance—you just take the calls.
                 </p>
@@ -272,14 +290,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* CTA Footer */}
-          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-            <p className="text-2xl font-semibold text-text-dark mb-6">
+          {/* CTA Footer with Enhanced Animation */}
+          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+            <p className="text-3xl font-bold text-text-dark mb-8 tracking-tight">
               Real Conversations. Real Results.
             </p>
             <Button
               size="lg"
-              className="bg-primary text-white font-semibold py-4 px-8 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-xl shadow-primary/30 hover:bg-primary-hover hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300"
               onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Get My Outreach Plan
