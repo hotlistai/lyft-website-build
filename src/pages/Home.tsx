@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Check, Users, Mic, Target, Rocket } from "lucide-react";
+import { Check, Mic, Target, Rocket } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
+import { FloatingBookDemo } from "@/components/FloatingBookDemo";
+import { AnimatedInboxDashboard } from "@/components/AnimatedInboxDashboard";
 
 const Home = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
@@ -96,64 +98,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                      <Users className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-text-dark">Live Conversations</p>
-                      <p className="text-xs text-text-muted">Campaign Dashboard</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <span className="text-xs font-medium text-green-600">Live</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mb-6">
-                  <div className="bg-white rounded-xl p-4 border border-border-light hover:shadow-md transition-all">
-                    <div className="flex items-start justify-between mb-2">
-                      <p className="text-sm font-semibold text-text-dark">Re: Roof inspection this week?</p>
-                      <span className="text-xs text-text-muted">2m ago</span>
-                    </div>
-                    <p className="text-sm text-text-muted leading-relaxed">
-                      "Hey John, yeah, we're looking for estimates. Thanks for reaching out."
-                    </p>
-                  </div>
-
-                  <div className="bg-white rounded-xl p-4 border border-border-light hover:shadow-md transition-all opacity-90">
-                    <div className="flex items-start justify-between mb-2">
-                      <p className="text-sm font-semibold text-text-dark">Re: Your solar question</p>
-                      <span className="text-xs text-text-muted">8m ago</span>
-                    </div>
-                    <p className="text-sm text-text-muted leading-relaxed">
-                      "Appreciate the info. Can we schedule a quick call?"
-                    </p>
-                  </div>
-
-                  <div className="bg-white rounded-xl p-4 border border-border-light hover:shadow-md transition-all opacity-80">
-                    <div className="flex items-start justify-between mb-2">
-                      <p className="text-sm font-semibold text-text-dark">Re: Expansion project</p>
-                      <span className="text-xs text-text-muted">15m ago</span>
-                    </div>
-                    <p className="text-sm text-text-muted leading-relaxed">
-                      "This is exactly what we need. Let's talk specifics..."
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-bg-alt rounded-2xl p-4 border border-border-light">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-2xl font-bold text-text-dark">13</p>
-                      <p className="text-sm text-text-muted">real conversations this week</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AnimatedInboxDashboard />
             </div>
           </div>
         </div>
@@ -521,6 +466,9 @@ const Home = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* FLOATING BOOK DEMO CTA */}
+      <FloatingBookDemo />
     </div>
   );
 };
