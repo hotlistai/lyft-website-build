@@ -62,9 +62,12 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
-      <section className="pt-32 pb-24 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      {/* HERO SECTION WITH GRADIENT OVERLAY */}
+      <section className="pt-32 pb-24 px-8 bg-white relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none" style={{ height: '200%', top: '-50%' }}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-6xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
@@ -177,43 +180,110 @@ const Home = () => {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="py-24 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-2xl font-bold mb-6">
-                1
+      {/* HOW IT WORKS - REDESIGNED */}
+      <section id="how-it-works" className="py-32 px-8 bg-white relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20 animate-fade-in-up">
+            <h2 className="text-6xl font-bold text-text-dark mb-4 leading-tight tracking-tight">
+              How It Works
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full"></div>
+          </div>
+
+          {/* Interactive Step Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16 relative">
+            {/* Connecting Lines SVG */}
+            <svg className="hidden md:block absolute top-1/4 left-0 w-full h-32 pointer-events-none" style={{ zIndex: 0 }}>
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2563EB" />
+                  <stop offset="50%" stopColor="#7C3AED" />
+                  <stop offset="100%" stopColor="#FF4F57" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 200 60 Q 400 40, 640 60"
+                stroke="url(#lineGradient)"
+                strokeWidth="2"
+                fill="none"
+                strokeDasharray="8 4"
+                opacity="0.4"
+              />
+              <path
+                d="M 840 60 Q 1040 40, 1280 60"
+                stroke="url(#lineGradient)"
+                strokeWidth="2"
+                fill="none"
+                strokeDasharray="8 4"
+                opacity="0.4"
+              />
+            </svg>
+
+            {/* Card 1 - We Learn Your Voice */}
+            <div 
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-blue hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full icon-gradient-blue flex items-center justify-center mb-6 shadow-lg">
+                  <Mic className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Learn Your Voice</h3>
+                <p className="text-base text-text-muted leading-relaxed">
+                  Share a quick voice note or sample email. Our AI models your tone, vocabulary, and style so every message sounds like it came from you—not a template.
+                </p>
               </div>
-              <Mic className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">We Learn Your Voice</h3>
-              <p className="text-base font-normal text-text-muted leading-relaxed">
-                Share a quick voice note or sample email. Our AI models your tone, vocabulary, and style so every message sounds like it came from you—not a template.
-              </p>
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-2xl font-bold mb-6">
-                2
+
+            {/* Card 2 - We Build Your List */}
+            <div 
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-coral hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
+              style={{ animationDelay: '0.3s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full icon-gradient-coral flex items-center justify-center mb-6 shadow-lg">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Build Your List</h3>
+                <p className="text-base text-text-muted leading-relaxed">
+                  We identify and verify your exact ideal customers (by industry, location, title, whatever matters). No bought lists. No spam traps. Just real people who need what you offer.
+                </p>
               </div>
-              <Target className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">We Build Your List</h3>
-              <p className="text-base font-normal text-text-muted leading-relaxed">
-                We identify and verify your exact ideal customers (by industry, location, title, whatever matters). No bought lists. No spam traps. Just real people who need what you offer.
-              </p>
             </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white text-2xl font-bold mb-6">
-                3
+
+            {/* Card 3 - We Launch & Optimize */}
+            <div 
+              className="bg-white rounded-2xl p-10 border border-border-light card-glow-purple hover:scale-105 transition-all duration-300 animate-fade-in-up relative z-10"
+              style={{ animationDelay: '0.5s' }}
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full icon-gradient-purple flex items-center justify-center mb-6 shadow-lg">
+                  <Rocket className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-semibold text-text-dark mb-4">We Launch & Optimize</h3>
+                <p className="text-base text-text-muted leading-relaxed">
+                  Emails go live with human QA on every message. Live dashboard shows opens, replies, and bookings in real time. We adjust based on performance—you just take the calls.
+                </p>
               </div>
-              <Rocket className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">We Launch & Optimize</h3>
-              <p className="text-base font-normal text-text-muted leading-relaxed">
-                Emails go live with human QA on every message. Live dashboard shows opens, replies, and bookings in real time. We adjust based on performance—you just take the calls.
-              </p>
             </div>
+          </div>
+
+          {/* CTA Footer */}
+          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+            <p className="text-2xl font-semibold text-text-dark mb-6">
+              Real Conversations. Real Results.
+            </p>
+            <Button
+              size="lg"
+              className="bg-primary text-white font-semibold py-4 px-8 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
+            >
+              Get My Outreach Plan
+            </Button>
           </div>
         </div>
       </section>

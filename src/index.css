@@ -111,4 +111,64 @@ All colors MUST be HSL.
   .gradient-subtle {
     background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
   }
+  
+  /* Dynamic Hero Gradient Animation */
+  @keyframes hueShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .hero-gradient-overlay {
+    background: linear-gradient(120deg, #2563EB, #7C3AED, #FF4F57, #FFD65B);
+    background-size: 300% 300%;
+    animation: hueShift 20s ease infinite;
+    opacity: 0.15;
+    filter: blur(80px);
+  }
+  
+  /* Icon Gradient Backgrounds */
+  .icon-gradient-blue {
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  }
+  
+  .icon-gradient-coral {
+    background: linear-gradient(135deg, #FF4F57 0%, #FF8A4C 100%);
+  }
+  
+  .icon-gradient-purple {
+    background: linear-gradient(135deg, #7C3AED 0%, #FFD65B 100%);
+  }
+  
+  /* Card Glow Effects */
+  .card-glow-blue {
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+  }
+  
+  .card-glow-blue:hover {
+    box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  }
+  
+  .card-glow-coral {
+    box-shadow: 0 8px 32px rgba(255, 79, 87, 0.15);
+  }
+  
+  .card-glow-coral:hover {
+    box-shadow: 0 12px 40px rgba(255, 79, 87, 0.25);
+  }
+  
+  .card-glow-purple {
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15);
+  }
+  
+  .card-glow-purple:hover {
+    box-shadow: 0 12px 40px rgba(124, 58, 237, 0.25);
+  }
+  
+  /* Connector Line Animation */
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 }
