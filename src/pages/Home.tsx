@@ -104,22 +104,46 @@ const Home = () => {
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="py-20 px-8 bg-white border-t border-border-light">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-center text-text-muted mb-8 font-medium">You're in good company:</p>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            <div className="text-center">
-              <Check className="w-5 h-5 text-primary mx-auto mb-2" />
-              <span className="text-base text-text-dark font-medium">10,000+ campaigns delivered</span>
+      {/* TRUST BAR - REDESIGNED */}
+      <section className="py-24 px-8 bg-white border-t border-border-light relative overflow-hidden">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 hero-gradient-overlay pointer-events-none opacity-50"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <p className="text-center text-text-muted mb-12 font-medium text-lg">Trusted by contractors across North America</p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Check className="w-7 h-7 text-white stroke-[3]" />
+              </div>
+              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
+                10,000+
+              </div>
+              <p className="text-base text-text-muted font-medium">campaigns delivered</p>
             </div>
-            <div className="text-center">
-              <Check className="w-5 h-5 text-primary mx-auto mb-2" />
-              <span className="text-base text-text-dark font-medium">89% average inbox rate</span>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-accent/5 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent to-[#FF6B6B] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Check className="w-7 h-7 text-white stroke-[3]" />
+              </div>
+              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-accent to-[#FF6B6B] bg-clip-text text-transparent">
+                89%
+              </div>
+              <p className="text-base text-text-muted font-medium">average inbox rate</p>
             </div>
-            <div className="text-center">
-              <Check className="w-5 h-5 text-primary mx-auto mb-2" />
-              <span className="text-base text-text-dark font-medium">Human QA on every email</span>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-8 border border-border-light shadow-lg shadow-[#7C3AED]/5 hover:shadow-xl hover:shadow-[#7C3AED]/10 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#A855F7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Check className="w-7 h-7 text-white stroke-[3]" />
+              </div>
+              <div className="text-5xl font-bold text-text-dark mb-2 bg-gradient-to-r from-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent">
+                100%
+              </div>
+              <p className="text-base text-text-muted font-medium">Human QA on every email</p>
             </div>
           </div>
         </div>
