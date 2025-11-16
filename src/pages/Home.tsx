@@ -60,12 +60,6 @@ const Home = () => {
               >
                 Pricing
               </Link>
-              <Link
-                to="/about"
-                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
-              >
-                About
-              </Link>
             </div>
             <Button
               className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
@@ -183,9 +177,9 @@ const Home = () => {
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
                 <Mic className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl font-bold text-text-dark mb-5">We Learn Your Voice</h3>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">Discovery & Strategy</h3>
               <p className="text-lg text-text-muted leading-relaxed">
-                Share a quick voice note or sample email. Our AI models your tone so every message sounds like you wrote it.
+                We start with a consultation to understand your company, ideal customers, and unique value. Then we craft personalized email copy that resonates.
               </p>
             </div>
 
@@ -238,7 +232,7 @@ const Home = () => {
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$116K</div>
               <p className="text-xl text-text-dark mb-3 font-semibold">Three jobs closed within 6 months</p>
-              <p className="text-base text-text-muted">First month • SmartRoof</p>
+              <p className="text-base text-text-muted">SmartRoof</p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">14+</div>
@@ -346,11 +340,6 @@ const Home = () => {
             <div>
               <h4 className="font-semibold text-text-dark mb-4">Company</h4>
               <ul className="space-y-2">
-                <li>
-                  <Link to="/about" className="text-text-muted hover:text-primary">
-                    About
-                  </Link>
-                </li>
                 <li>
                   <Link to="/contact" className="text-text-muted hover:text-primary">
                     Contact
