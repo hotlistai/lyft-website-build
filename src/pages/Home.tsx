@@ -7,6 +7,12 @@ import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
 import { FloatingBookDemo } from "@/components/FloatingBookDemo";
 import { InteractiveEmailClient } from "@/components/InteractiveEmailClient";
+import paperlessIQLogo from "@/assets/paperless-iq-logo.avif";
+import simplyClosedLogo from "@/assets/simply-closed-icon.avif";
+import smartRoofLogo from "@/assets/smart-roof-icon-new.avif";
+import carrascoLogo from "@/assets/carrasco-icon-new.avif";
+import fsboLogo from "@/assets/fsbo-marketing-pro-icon.avif";
+import appleAreLogo from "@/assets/apple-are-icon.avif";
 
 const Home = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
@@ -141,16 +147,18 @@ const Home = () => {
           <div className="relative overflow-hidden py-8">
             <div className="flex animate-scroll whitespace-nowrap">
               <div className="flex items-center gap-16 px-8">
-                <div className="text-2xl font-bold text-text-muted opacity-40">SmartRoof</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">StretchLab</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">Inc.</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">Carrasco</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">HotList AI</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">SmartRoof</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">StretchLab</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">Inc.</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">Carrasco</div>
-                <div className="text-2xl font-bold text-text-muted opacity-40">HotList AI</div>
+                <img src={paperlessIQLogo} alt="Paperless IQ" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={simplyClosedLogo} alt="Simply Closed" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={smartRoofLogo} alt="SmartRoof" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={carrascoLogo} alt="Carrasco" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={fsboLogo} alt="FSBO Marketing Pro" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={appleAreLogo} alt="Apple ARE" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={paperlessIQLogo} alt="Paperless IQ" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={simplyClosedLogo} alt="Simply Closed" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={smartRoofLogo} alt="SmartRoof" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={carrascoLogo} alt="Carrasco" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={fsboLogo} alt="FSBO Marketing Pro" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img src={appleAreLogo} alt="Apple ARE" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
               </div>
             </div>
           </div>
