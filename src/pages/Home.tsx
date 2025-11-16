@@ -237,7 +237,7 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$116K</div>
-              <p className="text-xl text-text-dark mb-3 font-semibold">Three jobs closed</p>
+              <p className="text-xl text-text-dark mb-3 font-semibold">Three jobs closed within 6 months</p>
               <p className="text-base text-text-muted">First month • SmartRoof</p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
