@@ -42,9 +42,6 @@ const Contact = () => {
               <Link to="/pricing" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
                 Pricing
               </Link>
-              <Link to="/about" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
-                About
-              </Link>
               <Link to="/contact" className="text-base font-medium text-primary transition-colors">
                 Contact
               </Link>
@@ -178,11 +175,6 @@ const Contact = () => {
             <div>
               <h4 className="font-semibold text-text-dark mb-4">Company</h4>
               <ul className="space-y-2">
-                <li>
-                  <Link to="/about" className="text-text-muted hover:text-primary">
-                    About
-                  </Link>
-                </li>
                 <li>
                   <Link to="/contact" className="text-text-muted hover:text-primary">
                     Contact

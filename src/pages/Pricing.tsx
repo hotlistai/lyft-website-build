@@ -21,9 +21,6 @@ const Pricing = () => {
               <Link to="/pricing" className="text-base font-medium text-primary transition-colors">
                 Pricing
               </Link>
-              <Link to="/about" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
-                About
-              </Link>
               <Link to="/contact" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
                 Contact
               </Link>
@@ -62,9 +59,6 @@ const Pricing = () => {
                 <div className="text-4xl font-bold text-primary mb-1 text-center">$397<span className="text-lg text-text-muted">/mo</span></div>
                 <p className="text-sm text-text-muted text-center italic">One-time $500 setup — first payment $897</p>
               </div>
-              <p className="text-base text-text-muted mb-6 text-center">
-                Perfect for teams that want to launch quickly and handle most follow-ups in-house.
-              </p>
               <Button
                 className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200 w-full mb-6"
                 onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
@@ -79,11 +73,15 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">1 curated email with 3 follow-ups</span>
+                  <span className="text-sm text-text-dark">1 campaign (3-month minimum)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">1,000 leads/month</span>
+                  <span className="text-sm text-text-dark">3 series strategic follow-ups</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-text-dark">2,000 leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -91,19 +89,7 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 custom domains & 9 email personas</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">Google Workspace included</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">Monthly analytics summary</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">WhatsApp + onboarding call support</span>
+                  <span className="text-sm text-text-dark">and more....</span>
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-border-light text-center">
@@ -125,9 +111,6 @@ const Pricing = () => {
                 <div className="text-4xl font-bold text-primary mb-1 text-center">$797<span className="text-lg text-text-muted">/mo</span></div>
                 <p className="text-sm text-text-muted text-center italic">One-time $700 setup — first payment $1,497</p>
               </div>
-              <p className="text-base text-text-muted mb-6 text-center">
-                Best for teams that want ongoing optimization and full guidance from our team.
-              </p>
               <Button
                 className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl transition-all duration-200 w-full mb-6"
                 onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
@@ -142,11 +125,11 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 curated emails with 6 follow-ups per campaign</span>
+                  <span className="text-sm text-text-dark">5,000 leads/month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">5,000 leads/month</span>
+                  <span className="text-sm text-text-dark">3 series strategic follow-ups</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -154,19 +137,7 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">3 custom domains & 9 email personas</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">Real-time dashboard access</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">2 guided onboarding sessions + private Slack channel</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-text-dark">Google Workspace included</span>
+                  <span className="text-sm text-text-dark">and more....</span>
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-border-light text-center">
@@ -204,60 +175,11 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* ADD-ONS */}
-      <section className="py-20 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-semibold leading-snug text-center text-text-dark mb-16">
-            Add-Ons
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Lead Intelligence Platform</h3>
-              <div className="text-3xl font-bold text-primary mb-4">+$250<span className="text-lg text-text-muted">/mo</span></div>
-              <p className="text-base text-text-muted">
-                Advanced demographic and behavioral targeting using custom filters
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">AI Reply Handling</h3>
-              <div className="text-3xl font-bold text-primary mb-4">Custom</div>
-              <p className="text-base text-text-muted">
-                Automated smart reply routing with human QA review
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Additional Lead Credits</h3>
-              <div className="text-3xl font-bold text-primary mb-4">Custom</div>
-              <p className="text-base text-text-muted">
-                Scale beyond your base monthly limit
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Turnkey Domain Setup</h3>
-              <div className="text-3xl font-bold text-primary mb-4">One-time</div>
-              <p className="text-base text-text-muted">
-                We purchase and configure all domains for you
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl shadow-black/5 border border-border-light">
-              <h3 className="text-2xl font-semibold text-text-dark mb-4">Priority Support</h3>
-              <div className="text-3xl font-bold text-primary mb-4">+$49<span className="text-lg text-text-muted">/mo</span></div>
-              <p className="text-base text-text-muted">
-                Same-day responses via Slack or email
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* RENEWAL NOTE */}
-      <section className="py-20 px-8 bg-white">
+      {/* BILLING NOTE */}
+      <section className="py-12 px-8 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-text-dark mb-6">
-            Important: Billing starts after campaign launch
-          </h2>
-          <p className="text-lg text-text-muted leading-relaxed">
-            Your first payment isn't due until your campaign goes live—typically 7-10 days after onboarding. This ensures you're only paying once we're actively sending on your behalf and you're seeing results.
+          <p className="text-lg font-medium text-text-dark">
+            Billing starts after campaign launch
           </p>
         </div>
       </section>
@@ -303,11 +225,6 @@ const Pricing = () => {
             <div>
               <h4 className="font-semibold text-text-dark mb-4">Company</h4>
               <ul className="space-y-2">
-                <li>
-                  <Link to="/about" className="text-text-muted hover:text-primary">
-                    About
-                  </Link>
-                </li>
                 <li>
                   <Link to="/contact" className="text-text-muted hover:text-primary">
                     Contact
