@@ -123,9 +123,9 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
               <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                10,000+
+                500,000+
               </div>
-              <p className="text-base text-text-muted font-medium">Emails delivered</p>
+              <p className="text-base text-text-muted font-medium">Landing in primary inbox</p>
             </div>
 
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
