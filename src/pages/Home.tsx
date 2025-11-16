@@ -146,7 +146,7 @@ const Home = () => {
           {/* Scrolling Logos Section */}
           <div className="relative overflow-hidden py-8">
             <div className="flex animate-scroll whitespace-nowrap">
-              <div className="flex items-center gap-16 px-8">
+              <div className="flex items-center gap-32 px-8">
                 <img src={paperlessIQLogo} alt="Paperless IQ" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                 <img src={simplyClosedLogo} alt="Simply Closed" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                 <img src={smartRoofLogo} alt="SmartRoof" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
