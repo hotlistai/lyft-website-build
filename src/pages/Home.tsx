@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Check, Mic, Target, Rocket } from "lucide-react";
+import { Check } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logoMain from "@/assets/lyft-logo-main.png";
@@ -14,7 +14,8 @@ import carrascoLogo from "@/assets/carrasco-icon-new.avif";
 import fsboLogo from "@/assets/fsbo-marketing-pro-icon.avif";
 import appleAreLogo from "@/assets/apple-are-icon.avif";
 import consultationIllustration from "@/assets/consultation-illustration.png";
-import resultsChart from "@/assets/results-chart.png";
+import listBuildingIllustration from "@/assets/list-building-illustration.png";
+import launchOptimizeIllustration from "@/assets/launch-optimize-illustration.png";
 
 const Home = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
@@ -29,11 +30,19 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Dynamic Background Waves */}
+      {/* Dynamic Background Waves & Geometric Shapes */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-96 h-96 hero-gradient-overlay rounded-full" style={{ opacity: 0.08 }}></div>
         <div className="absolute top-96 right-20 w-80 h-80 hero-gradient-overlay rounded-full" style={{ opacity: 0.06, animationDelay: '5s' }}></div>
         <div className="absolute bottom-40 left-1/4 w-72 h-72 hero-gradient-overlay rounded-full" style={{ opacity: 0.05, animationDelay: '10s' }}></div>
+        
+        {/* Subtle Geometric Shapes */}
+        <div className="absolute top-1/4 right-1/4 w-16 h-16 border border-primary/10 rotate-45 animate-[spin_20s_linear_infinite]"></div>
+        <div className="absolute top-1/3 left-1/3 w-12 h-12 border-2 border-primary/8 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-20 h-20 border border-primary/10 animate-[spin_25s_linear_infinite_reverse]"></div>
+        <div className="absolute top-2/3 left-1/4 w-8 h-8 bg-primary/5 rotate-12 rounded-sm"></div>
+        <div className="absolute top-1/2 right-1/2 w-24 h-24 border border-primary/8 rounded-full" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-1/3 left-1/2 w-14 h-14 border-2 border-primary/6 rotate-45"></div>
       </div>
 
       {/* NAVIGATION */}
@@ -187,8 +196,8 @@ const Home = () => {
 
             {/* Step 2 */}
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.1s' }}>
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-12 h-12 text-primary" strokeWidth={1.5} />
+              <div className="mb-8 mx-auto w-32 h-32 flex items-center justify-center">
+                <img src={listBuildingIllustration} alt="List Building" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <h3 className="text-3xl font-bold text-text-dark mb-5">We Build Your List</h3>
               <p className="text-lg text-text-muted leading-relaxed">
@@ -198,8 +207,8 @@ const Home = () => {
 
             {/* Step 3 */}
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 mx-auto group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-12 h-12 text-primary" strokeWidth={1.5} />
+              <div className="mb-8 mx-auto w-32 h-32 flex items-center justify-center">
+                <img src={launchOptimizeIllustration} alt="Launch & Optimize" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <h3 className="text-3xl font-bold text-text-dark mb-5">We Launch & Optimize</h3>
               <p className="text-lg text-text-muted leading-relaxed">
@@ -226,14 +235,9 @@ const Home = () => {
           <h2 className="text-6xl md:text-7xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
             Real businesses.<br/>Real results.
           </h2>
-          <p className="text-xl text-text-muted mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-text-muted mb-16 max-w-2xl mx-auto">
             From Dallas roofers to national brands—hyper-personalized outreach that converts.
           </p>
-          
-          {/* Results Chart */}
-          <div className="mb-16 max-w-3xl mx-auto">
-            <img src={resultsChart} alt="Performance Growth" className="w-full h-auto opacity-90" />
-          </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
