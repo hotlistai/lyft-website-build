@@ -30,19 +30,22 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Dynamic Background Waves & Geometric Shapes */}
+      {/* Subtle Geometric Background Elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-96 h-96 hero-gradient-overlay rounded-full" style={{ opacity: 0.08 }}></div>
-        <div className="absolute top-96 right-20 w-80 h-80 hero-gradient-overlay rounded-full" style={{ opacity: 0.06, animationDelay: '5s' }}></div>
-        <div className="absolute bottom-40 left-1/4 w-72 h-72 hero-gradient-overlay rounded-full" style={{ opacity: 0.05, animationDelay: '10s' }}></div>
+        {/* Soft gradient orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-bl from-primary/4 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-tr from-primary/3 to-transparent rounded-full blur-3xl" style={{ animationDelay: '4s' }}></div>
         
-        {/* Subtle Geometric Shapes */}
-        <div className="absolute top-1/4 right-1/4 w-16 h-16 border border-primary/10 rotate-45 animate-[spin_20s_linear_infinite]"></div>
-        <div className="absolute top-1/3 left-1/3 w-12 h-12 border-2 border-primary/8 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-20 h-20 border border-primary/10 animate-[spin_25s_linear_infinite_reverse]"></div>
-        <div className="absolute top-2/3 left-1/4 w-8 h-8 bg-primary/5 rotate-12 rounded-sm"></div>
-        <div className="absolute top-1/2 right-1/2 w-24 h-24 border border-primary/8 rounded-full" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute bottom-1/3 left-1/2 w-14 h-14 border-2 border-primary/6 rotate-45"></div>
+        {/* Floating geometric shapes - very subtle */}
+        <div className="absolute top-[15%] right-[20%] w-12 h-12 border border-primary/8 rotate-45 animate-[spin_30s_linear_infinite]"></div>
+        <div className="absolute top-[35%] left-[15%] w-8 h-8 border border-primary/6 rounded-full animate-[pulse_6s_ease-in-out_infinite]"></div>
+        <div className="absolute top-[60%] right-[25%] w-16 h-16 border border-primary/7 rotate-12 animate-[spin_40s_linear_infinite_reverse]"></div>
+        <div className="absolute top-[75%] left-[30%] w-6 h-6 bg-primary/4 rotate-45"></div>
+        <div className="absolute top-[45%] right-[40%] w-10 h-10 border border-primary/5 rounded-full"></div>
+        <div className="absolute bottom-[30%] left-[60%] w-14 h-14 border border-primary/6 rotate-[30deg] animate-[spin_35s_linear_infinite]"></div>
+        <div className="absolute top-[25%] left-[70%] w-8 h-8 border-2 border-primary/5 animate-[pulse_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-[15%] right-[35%] w-12 h-12 border border-primary/7 rounded-full animate-[pulse_10s_ease-in-out_infinite]" style={{ animationDelay: '5s' }}></div>
       </div>
 
       {/* NAVIGATION */}
@@ -128,7 +131,7 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
               <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                500,000+
+                500k+
               </div>
               <p className="text-base text-text-muted font-medium">Landing in primary inbox</p>
             </div>
