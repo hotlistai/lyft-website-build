@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Human quality outbound that lands in inboxes and starts real conversations. Free warm up. Pay when inbox ready. See your first conversation in minutes.",
     images: [
       {
-        url: "https://storage.googleapis.com/gpt-engineer-file-uploads/ps1hw3IhOrSOEVE9jWRCY0aJ4My1/social-images/social-1762611098940-Generated Image November 08, 2025 - 8_07AM.png",
+        url: "/og-image.png",
       },
     ],
   },
@@ -43,9 +43,7 @@ export const metadata: Metadata = {
     title: "Lyft Email | Transparent Outbound Engine",
     description:
       "Human quality outbound that lands in inboxes and starts real conversations. Free warm up. Pay when inbox ready. See your first conversation in minutes.",
-    images: [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ps1hw3IhOrSOEVE9jWRCY0aJ4My1/social-images/social-1762611098940-Generated Image November 08, 2025 - 8_07AM.png",
-    ],
+    images: ["/og-image.png"],
   },
 };
 
