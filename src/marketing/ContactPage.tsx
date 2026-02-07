@@ -1,15 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { getSupabaseClient } from "@/integrations/supabase/client";
 import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
+import { BookDemoButton } from "@/components/BookDemoButton";
+import { trackEvent } from "@/lib/analytics";
 
-const Contact = () => {
+export const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -21,30 +25,43 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (isSubmitting) return;
-    
+
     setIsSubmitting(true);
-    
+    trackEvent("contact_submit_attempt");
+
     try {
-      const { data, error } = await supabase.functions.invoke('contact-form', {
-        body: formData
+      const supabase = getSupabaseClient();
+      if (!supabase) {
+        throw new Error(
+          "Contact form is not configured. Please try again later.",
+        );
+      }
+
+      const { data, error } = await supabase.functions.invoke("contact-form", {
+        body: formData,
       });
 
       if (error) {
-        throw new Error(error.message || 'Failed to send message');
+        throw new Error(error.message || "Failed to send message");
       }
 
       toast({
         title: "Message sent!",
         description: data?.message || "We'll get back to you within 24 hours.",
       });
+      trackEvent("contact_submit_success");
       setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error("Contact form error:", error);
+      trackEvent("contact_submit_error");
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -58,26 +75,41 @@ const Contact = () => {
       <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border-light">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/">
-              <img src={logoMain} alt="Lyft Email" className="h-10" />
+            <Link href="/">
+              <img src={logoMain.src} alt="Lyft Email" className="h-10" />
             </Link>
             <div className="hidden md:flex items-center gap-8">
-              <Link to="/" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
+              <Link
+                href="/"
+                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
+              >
                 Home
               </Link>
-              <Link to="/pricing" className="text-base font-medium text-text-muted hover:text-primary transition-colors">
+              <Link
+                href="/pricing"
+                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
+              >
                 Pricing
               </Link>
-              <Link to="/contact" className="text-base font-medium text-primary transition-colors">
+              <Link
+                href="/about"
+                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-base font-medium text-primary transition-colors"
+              >
                 Contact
               </Link>
             </div>
-            <Button
+            <BookDemoButton
+              eventLocation="nav"
               className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-              onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Book a Demo
-            </Button>
+            </BookDemoButton>
           </div>
         </div>
       </nav>
@@ -90,14 +122,19 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              Have a question or want to learn more about how Lyft Email can help your business? Send us a message and we'll get back to you within 24 hours.
+              Have a question or want to learn more about how Lyft Email can
+              help your business? Send us a message and we'll get back to you
+              within 24 hours.
             </p>
           </div>
 
           <div className="bg-white rounded-2xl p-12 shadow-xl shadow-black/5 border border-border-light">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="name" className="text-base font-medium text-text-dark mb-2 block">
+                <Label
+                  htmlFor="name"
+                  className="text-base font-medium text-text-dark mb-2 block"
+                >
                   Name *
                 </Label>
                 <Input
@@ -105,14 +142,19 @@ const Contact = () => {
                   type="text"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="h-12 text-base border-border-light focus:border-primary focus:ring-primary"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-base font-medium text-text-dark mb-2 block">
+                <Label
+                  htmlFor="email"
+                  className="text-base font-medium text-text-dark mb-2 block"
+                >
                   Email *
                 </Label>
                 <Input
@@ -120,35 +162,47 @@ const Contact = () => {
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="h-12 text-base border-border-light focus:border-primary focus:ring-primary"
                   placeholder="your.email@company.com"
                 />
               </div>
 
               <div>
-                <Label htmlFor="company" className="text-base font-medium text-text-dark mb-2 block">
+                <Label
+                  htmlFor="company"
+                  className="text-base font-medium text-text-dark mb-2 block"
+                >
                   Company
                 </Label>
                 <Input
                   id="company"
                   type="text"
                   value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, company: e.target.value })
+                  }
                   className="h-12 text-base border-border-light focus:border-primary focus:ring-primary"
                   placeholder="Your company name (optional)"
                 />
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-base font-medium text-text-dark mb-2 block">
+                <Label
+                  htmlFor="message"
+                  className="text-base font-medium text-text-dark mb-2 block"
+                >
                   Message *
                 </Label>
                 <Textarea
                   id="message"
                   required
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="min-h-[150px] text-base border-border-light focus:border-primary focus:ring-primary resize-none"
                   placeholder="Tell us about your business and what you're looking to achieve..."
                 />
@@ -169,13 +223,13 @@ const Contact = () => {
             <p className="text-base text-text-muted mb-4">
               Prefer to schedule a call directly?
             </p>
-            <Button
+            <BookDemoButton
+              eventLocation="contact-secondary"
               variant="outline"
               className="bg-transparent text-primary font-semibold py-3.5 px-7 rounded-lg border border-primary hover:bg-primary/5 hover:text-primary-hover transition-all duration-200"
-              onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Book a 15-Minute Call
-            </Button>
+            </BookDemoButton>
           </div>
         </div>
       </section>
@@ -188,12 +242,15 @@ const Contact = () => {
               <h4 className="font-semibold text-text-dark mb-4">Product</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-text-muted hover:text-primary">
+                  <Link href="/" className="text-text-muted hover:text-primary">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/pricing" className="text-text-muted hover:text-primary">
+                  <Link
+                    href="/pricing"
+                    className="text-text-muted hover:text-primary"
+                  >
                     Pricing
                   </Link>
                 </li>
@@ -203,7 +260,10 @@ const Contact = () => {
               <h4 className="font-semibold text-text-dark mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/contact" className="text-text-muted hover:text-primary">
+                  <Link
+                    href="/contact"
+                    className="text-text-muted hover:text-primary"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -213,7 +273,7 @@ const Contact = () => {
               <h4 className="font-semibold text-text-dark mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-text-muted hover:text-primary">
+                  <Link href="/" className="text-text-muted hover:text-primary">
                     Case Studies
                   </Link>
                 </li>
@@ -221,22 +281,26 @@ const Contact = () => {
             </div>
             <div>
               <h4 className="font-semibold text-text-dark mb-4">Get Started</h4>
-              <Button
+              <BookDemoButton
+                eventLocation="contact-footer"
                 className="bg-primary text-white font-semibold py-2.5 px-5 rounded-lg hover:bg-primary-hover transition-all duration-200 w-full"
-                onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
                 Book a Demo
-              </Button>
+              </BookDemoButton>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-light">
-            <img src={footerLogo} alt="Lyft Email" className="h-8 mb-4 md:mb-0" />
-            <p className="text-sm text-text-muted">© 2024 Lyft Email. All rights reserved.</p>
+            <img
+              src={footerLogo.src}
+              alt="Lyft Email"
+              className="h-8 mb-4 md:mb-0"
+            />
+            <p className="text-sm text-text-muted">
+              © 2024 Lyft Email. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
     </div>
   );
 };
-
-export default Contact;

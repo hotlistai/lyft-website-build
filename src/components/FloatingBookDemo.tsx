@@ -1,6 +1,8 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
 import { Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BookDemoButton } from "@/components/BookDemoButton";
 
 export const FloatingBookDemo = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,14 +25,14 @@ export const FloatingBookDemo = () => {
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <Button
+      <BookDemoButton
         size="lg"
+        eventLocation="floating"
         className="bg-primary text-white font-semibold py-4 px-8 rounded-full shadow-2xl shadow-primary/30 hover:bg-primary-hover hover:shadow-primary/40 hover:scale-105 transition-all duration-300 flex items-center gap-3 group"
-        onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
       >
         <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
         <span>Book Demo</span>
-      </Button>
+      </BookDemoButton>
     </div>
   );
 };

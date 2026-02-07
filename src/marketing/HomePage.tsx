@@ -1,23 +1,27 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Check } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import logoMain from "@/assets/lyft-logo-main.png";
 import footerLogo from "@/assets/lyft-footer-logo.png";
 import { FloatingBookDemo } from "@/components/FloatingBookDemo";
 import { InteractiveEmailClient } from "@/components/InteractiveEmailClient";
-import paperlessIQLogo from "@/assets/paperless-iq-logo.avif";
-import simplyClosedLogo from "@/assets/simply-closed-icon.avif";
-import smartRoofLogo from "@/assets/smart-roof-icon-new.avif";
-import carrascoLogo from "@/assets/carrasco-icon-new.avif";
-import fsboLogo from "@/assets/fsbo-marketing-pro-icon.avif";
-import appleAreLogo from "@/assets/apple-are-icon.avif";
+import { BookDemoButton } from "@/components/BookDemoButton";
 import consultationIllustration from "@/assets/consultation-illustration.png";
 import listBuildingIllustration from "@/assets/list-building-illustration.png";
 import launchOptimizeIllustration from "@/assets/launch-optimize-illustration.png";
 
-const Home = () => {
+const paperlessIQLogo = "/assets/paperless-iq-logo.avif";
+const simplyClosedLogo = "/assets/simply-closed-icon.avif";
+const smartRoofLogo = "/assets/smart-roof-icon-new.avif";
+const carrascoLogo = "/assets/carrasco-icon-new.avif";
+const fsboLogo = "/assets/fsbo-marketing-pro-icon.avif";
+const appleAreLogo = "/assets/apple-are-icon.avif";
+
+export const HomePage = () => {
   const [videoDialogOpen, setVideoDialogOpen] = useState(false);
   const [caseStudyModalOpen, setCaseStudyModalOpen] = useState(false);
 
@@ -34,9 +38,15 @@ const Home = () => {
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Soft gradient orbs */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-bl from-primary/4 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-tr from-primary/3 to-transparent rounded-full blur-3xl" style={{ animationDelay: '4s' }}></div>
-        
+        <div
+          className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-bl from-primary/4 to-transparent rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "8s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-tr from-primary/3 to-transparent rounded-full blur-3xl"
+          style={{ animationDelay: "4s" }}
+        ></div>
+
         {/* Floating geometric shapes - very subtle */}
         <div className="absolute top-[15%] right-[20%] w-12 h-12 border border-primary/8 rotate-45 animate-[spin_30s_linear_infinite]"></div>
         <div className="absolute top-[35%] left-[15%] w-8 h-8 border border-primary/6 rounded-full animate-[pulse_6s_ease-in-out_infinite]"></div>
@@ -44,16 +54,22 @@ const Home = () => {
         <div className="absolute top-[75%] left-[30%] w-6 h-6 bg-primary/4 rotate-45"></div>
         <div className="absolute top-[45%] right-[40%] w-10 h-10 border border-primary/5 rounded-full"></div>
         <div className="absolute bottom-[30%] left-[60%] w-14 h-14 border border-primary/6 rotate-[30deg] animate-[spin_35s_linear_infinite]"></div>
-        <div className="absolute top-[25%] left-[70%] w-8 h-8 border-2 border-primary/5 animate-[pulse_8s_ease-in-out_infinite]" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-[15%] right-[35%] w-12 h-12 border border-primary/7 rounded-full animate-[pulse_10s_ease-in-out_infinite]" style={{ animationDelay: '5s' }}></div>
+        <div
+          className="absolute top-[25%] left-[70%] w-8 h-8 border-2 border-primary/5 animate-[pulse_8s_ease-in-out_infinite]"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-[15%] right-[35%] w-12 h-12 border border-primary/7 rounded-full animate-[pulse_10s_ease-in-out_infinite]"
+          style={{ animationDelay: "5s" }}
+        ></div>
       </div>
 
       {/* NAVIGATION */}
       <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border-light">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/">
-              <img src={logoMain} alt="Lyft Email" className="h-10" />
+            <Link href="/">
+              <img src={logoMain.src} alt="Lyft Email" className="h-10" />
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <button
@@ -69,18 +85,30 @@ const Home = () => {
                 Results
               </button>
               <Link
-                to="/pricing"
+                href="/about"
+                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="/pricing"
                 className="text-base font-medium text-text-muted hover:text-primary transition-colors"
               >
                 Pricing
               </Link>
+              <Link
+                href="/contact"
+                className="text-base font-medium text-text-muted hover:text-primary transition-colors"
+              >
+                Contact
+              </Link>
             </div>
-            <Button
+            <BookDemoButton
+              eventLocation="nav"
               className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-              onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Get My Outreach Plan
-            </Button>
+            </BookDemoButton>
           </div>
         </div>
       </nav>
@@ -90,20 +118,22 @@ const Home = () => {
         <div className="max-w-5xl mx-auto text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-7xl md:text-8xl font-bold text-text-dark mb-8 leading-[1.1] tracking-tight">
-              Outbound that sounds human.<br/>
+              Outbound that sounds human.
+              <br />
               <span className="gradient-text">Because it is.</span>
             </h1>
             <p className="text-xl md:text-2xl font-normal leading-relaxed text-text-muted mb-12 max-w-3xl mx-auto">
-              Stop renting leads. Build your own pipeline with transparent, human-quality outreach that actually lands in inboxes.
+              Stop renting leads. Build your own pipeline with transparent,
+              human-quality outreach that actually lands in inboxes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button
+              <BookDemoButton
                 size="lg"
+                eventLocation="hero"
                 className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-lg"
-                onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
                 Get My Outreach Plan
-              </Button>
+              </BookDemoButton>
               <Button
                 size="lg"
                 variant="outline"
@@ -114,9 +144,12 @@ const Home = () => {
               </Button>
             </div>
           </div>
-          
+
           {/* Centered Interactive Visual */}
-          <div className="relative animate-fade-in-up max-w-4xl mx-auto" style={{ animationDelay: '0.2s' }}>
+          <div
+            className="relative animate-fade-in-up max-w-4xl mx-auto"
+            style={{ animationDelay: "0.2s" }}
+          >
             <InteractiveEmailClient />
           </div>
         </div>
@@ -125,29 +158,37 @@ const Home = () => {
       {/* TRUST BAR WITH SCROLLING LOGOS */}
       <section className="py-20 px-8 bg-white relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-text-muted mb-16 font-medium text-lg">Trusted by contractors across North America</p>
-          
+          <p className="text-text-muted mb-16 font-medium text-lg">
+            Trusted by contractors across North America
+          </p>
+
           {/* Stats Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
               <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 500k+
               </div>
-              <p className="text-base text-text-muted font-medium">Landing in primary inbox</p>
+              <p className="text-base text-text-muted font-medium">
+                Landing in primary inbox
+              </p>
             </div>
 
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
               <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 89%
               </div>
-              <p className="text-base text-text-muted font-medium">Average inbox rate</p>
+              <p className="text-base text-text-muted font-medium">
+                Average inbox rate
+              </p>
             </div>
 
             <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border-light hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
               <div className="text-6xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 100%
               </div>
-              <p className="text-base text-text-muted font-medium">Human QA on every email</p>
+              <p className="text-base text-text-muted font-medium">
+                Human QA on every email
+              </p>
             </div>
           </div>
 
@@ -155,18 +196,66 @@ const Home = () => {
           <div className="relative overflow-hidden py-8">
             <div className="flex animate-scroll whitespace-nowrap">
               <div className="flex items-center gap-32 px-8">
-                <img src={paperlessIQLogo} alt="Paperless IQ" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={simplyClosedLogo} alt="Simply Closed" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={smartRoofLogo} alt="SmartRoof" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={carrascoLogo} alt="Carrasco" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={fsboLogo} alt="FSBO Marketing Pro" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={appleAreLogo} alt="Apple ARE" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={paperlessIQLogo} alt="Paperless IQ" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={simplyClosedLogo} alt="Simply Closed" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={smartRoofLogo} alt="SmartRoof" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={carrascoLogo} alt="Carrasco" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={fsboLogo} alt="FSBO Marketing Pro" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-                <img src={appleAreLogo} alt="Apple ARE" className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                <img
+                  src={paperlessIQLogo}
+                  alt="Paperless IQ"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={simplyClosedLogo}
+                  alt="Simply Closed"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={smartRoofLogo}
+                  alt="SmartRoof"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={carrascoLogo}
+                  alt="Carrasco"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={fsboLogo}
+                  alt="FSBO Marketing Pro"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={appleAreLogo}
+                  alt="Apple ARE"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={paperlessIQLogo}
+                  alt="Paperless IQ"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={simplyClosedLogo}
+                  alt="Simply Closed"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={smartRoofLogo}
+                  alt="SmartRoof"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={carrascoLogo}
+                  alt="Carrasco"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={fsboLogo}
+                  alt="FSBO Marketing Pro"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src={appleAreLogo}
+                  alt="Apple ARE"
+                  className="h-12 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
             </div>
           </div>
@@ -189,45 +278,76 @@ const Home = () => {
             {/* Step 1 */}
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group">
               <div className="mb-8 mx-auto w-32 h-32 flex items-center justify-center">
-                <img src={consultationIllustration} alt="Consultation" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={consultationIllustration.src}
+                  alt="Consultation"
+                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
-              <h3 className="text-3xl font-bold text-text-dark mb-5">Discovery & Strategy</h3>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">
+                Discovery & Strategy
+              </h3>
               <p className="text-lg text-text-muted leading-relaxed">
-                We start with a consultation to understand your company, ideal customers, and unique value. Then we craft personalized email copy that resonates.
+                We start with a consultation to understand your company, ideal
+                customers, and unique value. Then we craft personalized email
+                copy that resonates.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.1s' }}>
+            <div
+              className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group"
+              style={{ animationDelay: "0.1s" }}
+            >
               <div className="mb-8 mx-auto w-32 h-32 flex items-center justify-center">
-                <img src={listBuildingIllustration} alt="List Building" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={listBuildingIllustration.src}
+                  alt="List Building"
+                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
-              <h3 className="text-3xl font-bold text-text-dark mb-5">We Build Your List</h3>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">
+                We Build Your List
+              </h3>
               <p className="text-lg text-text-muted leading-relaxed">
-                We identify and verify your exact ideal customers. No bought lists. No spam traps. Just real people.
+                We identify and verify your exact ideal customers. No bought
+                lists. No spam traps. Just real people.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: '0.2s' }}>
+            <div
+              className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="mb-8 mx-auto w-32 h-32 flex items-center justify-center">
-                <img src={launchOptimizeIllustration} alt="Launch & Optimize" className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src={launchOptimizeIllustration.src}
+                  alt="Launch & Optimize"
+                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
-              <h3 className="text-3xl font-bold text-text-dark mb-5">We Launch & Optimize</h3>
+              <h3 className="text-3xl font-bold text-text-dark mb-5">
+                We Launch & Optimize
+              </h3>
               <p className="text-lg text-text-muted leading-relaxed">
-                Emails go live with human QA on every message. Live dashboard shows results in real time. You take the calls.
+                Emails go live with human QA on every message. Live dashboard
+                shows results in real time. You take the calls.
               </p>
             </div>
           </div>
 
-          <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <Button
+          <div
+            className="text-center animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <BookDemoButton
               size="lg"
+              eventLocation="how-it-works"
               className="bg-primary text-white font-semibold py-4 px-10 rounded-xl shadow-xl shadow-primary/30 hover:bg-primary-hover hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-lg"
-              onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
             >
               Get My Outreach Plan
-            </Button>
+            </BookDemoButton>
           </div>
         </div>
       </section>
@@ -236,26 +356,41 @@ const Home = () => {
       <section id="results" className="py-32 px-8 bg-white relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-6xl md:text-7xl font-bold text-text-dark mb-6 leading-tight tracking-tight">
-            Real businesses.<br/>Real results.
+            Real businesses.
+            <br />
+            Real results.
           </h2>
           <p className="text-xl text-text-muted mb-16 max-w-2xl mx-auto">
-            From Dallas roofers to national brands—hyper-personalized outreach that converts.
+            From Dallas roofers to national brands—hyper-personalized outreach
+            that converts.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">$116K</div>
-              <p className="text-xl text-text-dark mb-3 font-semibold">Three jobs closed within 6 months</p>
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                $116K
+              </div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">
+                Three jobs closed within 6 months
+              </p>
               <p className="text-base text-text-muted">SmartRoof</p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">14+</div>
-              <p className="text-xl text-text-dark mb-3 font-semibold">Real conversations</p>
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                14+
+              </div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">
+                Real conversations
+              </p>
               <p className="text-base text-text-muted">Qualified homeowners</p>
             </div>
             <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-10 border border-border-light hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">89%</div>
-              <p className="text-xl text-text-dark mb-3 font-semibold">Inbox rate</p>
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                89%
+              </div>
+              <p className="text-xl text-text-dark mb-3 font-semibold">
+                Inbox rate
+              </p>
               <p className="text-base text-text-muted">Across all industries</p>
             </div>
           </div>
@@ -278,27 +413,41 @@ const Home = () => {
                 <source src="/smartroof-case-study.webm" type="video/webm" />
               </video>
               <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow-lg border border-border-light">
-                <p className="text-sm font-semibold text-primary">First reply in 24 hours</p>
+                <p className="text-sm font-semibold text-primary">
+                  First reply in 24 hours
+                </p>
               </div>
             </div>
             <div>
-              <h3 className="text-3xl font-semibold text-text-dark mb-4">Case Study — SmartRoof</h3>
+              <h3 className="text-3xl font-semibold text-text-dark mb-4">
+                Case Study — SmartRoof
+              </h3>
               <p className="text-lg text-text-muted mb-6 italic">
-                "The first three leads turned into three roof inspections. One was $37K, then $50K, then $29K. This is the highest close rate I've ever had."
+                "The first three leads turned into three roof inspections. One
+                was $37K, then $50K, then $29K. This is the highest close rate
+                I've ever had."
               </p>
-              <p className="text-base text-text-muted mb-4">— Keith, SmartRoof Owner</p>
+              <p className="text-base text-text-muted mb-4">
+                — Keith, SmartRoof Owner
+              </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">$116K closed from first three jobs</span>
+                  <span className="text-base text-text-dark">
+                    $116K closed from first three jobs
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">14-15 real conversations with qualified homeowners</span>
+                  <span className="text-base text-text-dark">
+                    14-15 real conversations with qualified homeowners
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-base text-text-dark">First reply came in day one—roof on in three weeks</span>
+                  <span className="text-base text-text-dark">
+                    First reply came in day one—roof on in three weeks
+                  </span>
                 </li>
               </ul>
               <Button
@@ -317,18 +466,21 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary opacity-95"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-6xl md:text-7xl font-bold leading-tight text-white mb-8">
-            See Your First<br/>Conversation
+            See Your First
+            <br />
+            Conversation
           </h2>
           <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Book a 15-minute walkthrough. We'll show you exactly how we'd build your campaign.
+            Book a 15-minute walkthrough. We'll show you exactly how we'd build
+            your campaign.
           </p>
-          <Button
+          <BookDemoButton
             size="lg"
+            eventLocation="final-cta"
             className="bg-white text-primary font-semibold py-4 px-10 rounded-xl hover:bg-white/90 hover:scale-105 hover:-translate-y-1 transition-all duration-300 text-lg shadow-2xl"
-            onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
           >
             Get My Outreach Plan
-          </Button>
+          </BookDemoButton>
         </div>
       </section>
 
@@ -340,12 +492,18 @@ const Home = () => {
               <h4 className="font-semibold text-text-dark mb-4">Product</h4>
               <ul className="space-y-2">
                 <li>
-                  <button onClick={() => scrollToSection("how-it-works")} className="text-text-muted hover:text-primary">
+                  <button
+                    onClick={() => scrollToSection("how-it-works")}
+                    className="text-text-muted hover:text-primary"
+                  >
                     How It Works
                   </button>
                 </li>
                 <li>
-                  <Link to="/pricing" className="text-text-muted hover:text-primary">
+                  <Link
+                    href="/pricing"
+                    className="text-text-muted hover:text-primary"
+                  >
                     Pricing
                   </Link>
                 </li>
@@ -355,7 +513,10 @@ const Home = () => {
               <h4 className="font-semibold text-text-dark mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/contact" className="text-text-muted hover:text-primary">
+                  <Link
+                    href="/contact"
+                    className="text-text-muted hover:text-primary"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -365,7 +526,10 @@ const Home = () => {
               <h4 className="font-semibold text-text-dark mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li>
-                  <button onClick={() => scrollToSection("results")} className="text-text-muted hover:text-primary">
+                  <button
+                    onClick={() => scrollToSection("results")}
+                    className="text-text-muted hover:text-primary"
+                  >
                     Case Studies
                   </button>
                 </li>
@@ -373,17 +537,23 @@ const Home = () => {
             </div>
             <div>
               <h4 className="font-semibold text-text-dark mb-4">Get Started</h4>
-              <Button
+              <BookDemoButton
+                eventLocation="footer"
                 className="bg-primary text-white font-semibold py-2.5 px-5 rounded-lg hover:bg-primary-hover transition-all duration-200 w-full"
-                onClick={() => window.open("https://calendly.com/hotlistai/lyftemail", "_blank")}
               >
                 Book a Demo
-              </Button>
+              </BookDemoButton>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-light">
-            <img src={footerLogo} alt="Lyft Email" className="h-8 mb-4 md:mb-0" />
-            <p className="text-sm text-text-muted">© 2024 Lyft Email. All rights reserved.</p>
+            <img
+              src={footerLogo.src}
+              alt="Lyft Email"
+              className="h-8 mb-4 md:mb-0"
+            />
+            <p className="text-sm text-text-muted">
+              © 2024 Lyft Email. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
@@ -391,7 +561,12 @@ const Home = () => {
       {/* VIDEO DIALOG */}
       <Dialog open={videoDialogOpen} onOpenChange={setVideoDialogOpen}>
         <DialogContent className="max-w-4xl">
-          <video className="w-full rounded-lg" poster="/smartroof-cover.jpg" controls autoPlay>
+          <video
+            className="w-full rounded-lg"
+            poster="/smartroof-cover.jpg"
+            controls
+            autoPlay
+          >
             <source src="/smartroof-case-study.webm" type="video/webm" />
           </video>
         </DialogContent>
@@ -401,7 +576,9 @@ const Home = () => {
       <Dialog open={caseStudyModalOpen} onOpenChange={setCaseStudyModalOpen}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <div className="p-6">
-            <h3 className="text-3xl font-semibold text-text-dark mb-6">SmartRoof Full Case Study (5:02)</h3>
+            <h3 className="text-3xl font-semibold text-text-dark mb-6">
+              SmartRoof Full Case Study (5:02)
+            </h3>
             <div className="aspect-video mb-6">
               <iframe
                 className="w-full h-full rounded-lg"
@@ -435,15 +612,13 @@ const Home = () => {
                 <p className="text-sm text-text-muted">First reply</p>
               </div>
             </div>
-            <Button
+            <BookDemoButton
+              eventLocation="case-study-modal"
               className="bg-primary text-white font-semibold py-3.5 px-7 rounded-lg w-full hover:bg-primary-hover transition-all duration-200"
-              onClick={() => {
-                setCaseStudyModalOpen(false);
-                window.open("https://calendly.com/hotlistai/lyftemail", "_blank");
-              }}
+              onClick={() => setCaseStudyModalOpen(false)}
             >
               See Your First Conversation
-            </Button>
+            </BookDemoButton>
           </div>
         </DialogContent>
       </Dialog>
@@ -453,5 +628,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
