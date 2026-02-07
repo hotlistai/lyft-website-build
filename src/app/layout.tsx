@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   },
   description:
     "Human quality outbound that lands in inboxes and starts real conversations. Free warm up. Pay when inbox ready. See your first conversation in minutes.",
+  icons: {
+    icon: [
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
